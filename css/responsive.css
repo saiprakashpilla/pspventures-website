@@ -41,9 +41,13 @@
     margin-bottom: 3rem;
   }
 
-  .grid-2, .grid-3 {
+  .grid-2, .grid-3, .bento-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .bento-col-2, .bento-col-1 {
+    grid-column: span 1;
   }
 
   /* Hamburger Menu & Navigation Toggle */

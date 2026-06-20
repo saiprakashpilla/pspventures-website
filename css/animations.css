@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PSP Ventures Redesigned Animations
+   PSP Ventures Redesigned Animations (Lovable Recreation)
    ========================================================================== */
 
 /* Ambient Glowing Background Elements */
@@ -18,7 +18,7 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(140px);
-  opacity: 0.12;
+  opacity: 0.14;
   mix-blend-mode: screen;
   pointer-events: none;
 }
@@ -51,20 +51,20 @@
 }
 
 @keyframes float-glow-1 {
-  0% { transform: translate(0, 0) scale(1); opacity: 0.12; }
-  50% { transform: translate(-80px, 60px) scale(1.1); opacity: 0.22; }
-  100% { transform: translate(40px, -40px) scale(0.9); opacity: 0.12; }
+  0% { transform: translate(0, 0) scale(1); opacity: 0.14; }
+  50% { transform: translate(-80px, 60px) scale(1.1); opacity: 0.24; }
+  100% { transform: translate(40px, -40px) scale(0.9); opacity: 0.14; }
 }
 
 @keyframes float-glow-2 {
-  0% { transform: translate(0, 0) scale(1.1); opacity: 0.1; }
-  50% { transform: translate(60px, -90px) scale(0.95); opacity: 0.18; }
-  100% { transform: translate(-40px, 40px) scale(1.05); opacity: 0.1; }
+  0% { transform: translate(0, 0) scale(1.1); opacity: 0.11; }
+  50% { transform: translate(60px, -90px) scale(0.95); opacity: 0.2; }
+  100% { transform: translate(-40px, 40px) scale(1.05); opacity: 0.11; }
 }
 
 @keyframes float-glow-3 {
   0% { transform: translate(0, 0) scale(0.9); opacity: 0.08; }
-  50% { transform: translate(-60px, -60px) scale(1.15); opacity: 0.15; }
+  50% { transform: translate(-60px, -60px) scale(1.15); opacity: 0.16; }
   100% { transform: translate(50px, 70px) scale(0.85); opacity: 0.08; }
 }
 
@@ -172,7 +172,7 @@
   height: 100%;
   background-image: url('../assets/images/grid-bg.svg');
   background-repeat: repeat;
-  opacity: 0.5;
+  opacity: 0.45;
   pointer-events: none;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.1) 85%, rgba(0, 0, 0, 0));
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.1) 85%, rgba(0, 0, 0, 0));
@@ -205,11 +205,9 @@
 @keyframes hologram-float {
   0% {
     transform: translateY(10px) rotate(0deg);
-    filter: drop-shadow(0 0 25px rgba(0, 229, 255, 0.35)) drop-shadow(0 0 50px rgba(124, 255, 0, 0.15));
   }
   100% {
     transform: translateY(-15px) rotate(1deg);
-    filter: drop-shadow(0 0 35px rgba(0, 229, 255, 0.5)) drop-shadow(0 0 65px rgba(138, 92, 255, 0.25));
   }
 }
 
@@ -225,16 +223,16 @@
 }
 
 .ring-1 {
-  width: 260px;
-  height: 260px;
+  width: 280px;
+  height: 280px;
   border: 2px dashed rgba(0, 229, 255, 0.15);
   box-shadow: 0 0 20px rgba(0, 229, 255, 0.03) inset;
   animation: rotate-clockwise 15s linear infinite;
 }
 
 .ring-2 {
-  width: 360px;
-  height: 360px;
+  width: 380px;
+  height: 380px;
   border: 1px solid rgba(124, 255, 0, 0.1);
   border-left: 2px solid rgba(124, 255, 0, 0.4);
   border-right: 2px solid rgba(124, 255, 0, 0.4);
@@ -242,8 +240,8 @@
 }
 
 .ring-3 {
-  width: 460px;
-  height: 460px;
+  width: 480px;
+  height: 480px;
   border: 1px dashed rgba(138, 92, 255, 0.08);
   border-top: 2px solid rgba(138, 92, 255, 0.3);
   animation: rotate-clockwise 25s linear infinite;
@@ -264,8 +262,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 480px;
-  height: 180px;
+  width: 500px;
+  height: 200px;
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 50%;
   transform: translate(-50%, -50%) rotate(-15deg);
@@ -275,8 +273,8 @@
 /* Orbit Node (glowing particle orbiting) */
 .orbit-node {
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--primary-accent-alt);
   box-shadow: 0 0 12px var(--primary-accent-alt);
@@ -284,13 +282,8 @@
 }
 
 @keyframes orbit-move {
-  0% {
-    /* Orbit path emulation using transform offsets */
-    transform: rotate(0deg) translate(240px) rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg) translate(240px) rotate(-360deg);
-  }
+  0% { transform: rotate(0deg) translate(250px) rotate(0deg); }
+  100% { transform: rotate(360deg) translate(250px) rotate(-360deg); }
 }
 
 /* Hologram Scanning Line overlay effect */
@@ -303,7 +296,7 @@
   background: linear-gradient(
     to bottom,
     rgba(0, 229, 255, 0) 0%,
-    rgba(0, 229, 255, 0.04) 50%,
+    rgba(0, 229, 255, 0.05) 50%,
     rgba(0, 229, 255, 0) 100%
   );
   background-size: 100% 30px;
@@ -321,4 +314,56 @@
   color: var(--primary-accent);
   filter: drop-shadow(0 0 5px rgba(124, 255, 0, 0.6));
   font-weight: bold;
+}
+
+/* Floating Card Animation */
+@keyframes float-card {
+  0% {
+    transform: translateY(0px) rotate(-1.5deg);
+  }
+  100% {
+    transform: translateY(-20px) rotate(1.5deg);
+  }
+}
+
+/* ==========================================================================
+   Background Floating Particles CSS
+   ========================================================================== */
+
+.particles-overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle-item {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--primary-accent-alt);
+  box-shadow: 0 0 8px var(--primary-accent-alt);
+  pointer-events: none;
+  opacity: 0.15;
+  animation: float-upwards 8s linear infinite;
+}
+
+@keyframes float-upwards {
+  0% {
+    transform: translateY(100px) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.25;
+  }
+  90% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(-500px) scale(1.2);
+    opacity: 0;
+  }
 }

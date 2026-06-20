@@ -1,13 +1,14 @@
 /**
- * PSP Ventures - Main Redesigned JavaScript
+ * PSP Ventures - Main Redesigned JavaScript (Lovable Edition)
  * Author: Antigravity Code Assistant
- * Core interactive scripts: navigation, scroll reveals, stats animation, form validation
+ * Core interactive scripts: navigation, scroll reveals, stats animation, background particles, form validation
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollReveals();
   initStatsCounter();
+  initBackgroundParticles();
   initContactForm();
 });
 
@@ -51,7 +52,7 @@ function initNavigation() {
     });
   }
 
-  // Active Link State based on scroll position (if hash links are used)
+  // Active Link State based on scroll position
   const sections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', () => {
     let scrollY = window.pageYOffset;
@@ -88,8 +89,8 @@ function initScrollReveals() {
       }
     });
   }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
   });
 
   reveals.forEach(reveal => {
@@ -124,7 +125,7 @@ function initStatsCounter() {
     const suffix = element.getAttribute('data-suffix') || '';
     const isDecimal = element.getAttribute('data-decimal') === 'true';
     let current = 0;
-    const duration = 1500; // 1.5 seconds
+    const duration = 1800; // 1.8 seconds
     const steps = 60;
     const increment = target / steps;
     const stepTime = duration / steps;
@@ -145,6 +146,51 @@ function initStatsCounter() {
 }
 
 /* ==========================================================================
+   Dynamic Floating Particles Generator
+   ========================================================================== */
+function initBackgroundParticles() {
+  const targetContainers = document.querySelectorAll('.particle-target');
+  if (targetContainers.length === 0) return;
+
+  targetContainers.forEach(container => {
+    // Check if container contains particles overlay already
+    let overlay = container.querySelector('.particles-overlay-container');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'particles-overlay-container';
+      container.appendChild(overlay);
+    }
+
+    const numParticles = 25;
+    for (let i = 0; i < numParticles; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle-item';
+      
+      // Random coordinates, sizes, delays and translations
+      const size = Math.random() * 4 + 2; // 2px to 6px
+      const left = Math.random() * 100;
+      const bottom = Math.random() * 40; // start near bottom
+      const delay = Math.random() * 8; // 0s to 8s
+      const duration = Math.random() * 6 + 6; // 6s to 12s
+      
+      // Alternate colors: Neon Green (#7CFF00) and Neon Cyan (#00E5FF)
+      const color = Math.random() > 0.5 ? '#7CFF00' : '#00E5FF';
+
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${left}%`;
+      particle.style.bottom = `${bottom}%`;
+      particle.style.animationDelay = `${delay}s`;
+      particle.style.animationDuration = `${duration}s`;
+      particle.style.background = color;
+      particle.style.boxShadow = `0 0 10px ${color}`;
+
+      overlay.appendChild(particle);
+    }
+  });
+}
+
+/* ==========================================================================
    Contact & Partnership Form Validation
    ========================================================================== */
 function initContactForm() {
@@ -152,14 +198,12 @@ function initContactForm() {
   if (!form) return;
 
   const submitBtn = form.querySelector('button[type="submit"]');
-  
-  // Create status feedback overlay element
   const statusContainer = document.createElement('div');
   statusContainer.className = 'form-status';
   statusContainer.style.marginTop = '1.5rem';
   statusContainer.style.fontSize = '0.95rem';
-  statusContainer.style.borderRadius = 'var(--border-radius-sm)';
-  statusContainer.style.padding = '0.85rem 1rem';
+  statusContainer.style.borderRadius = '24px'; // match capsule styling
+  statusContainer.style.padding = '0.85rem 1.25rem';
   statusContainer.style.display = 'none';
   statusContainer.style.transition = 'all 0.3s ease';
   
