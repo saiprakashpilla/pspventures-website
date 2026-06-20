@@ -1,26 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ==========================================================================
-   PSP Ventures Custom Design System
+   PSP Ventures Redesigned Design System
    ========================================================================== */
 
 :root {
   /* Colors */
   --bg-primary: #050505;
-  --bg-secondary: #0D1117;
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --card-bg-hover: rgba(255, 255, 255, 0.06);
-  --primary-accent: #00F5A0;
-  --secondary-accent: #00D9FF;
-  --highlight-accent: #7B61FF;
+  --bg-secondary: #0A0A0A;
+  --bg-tertiary: #111111;
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-bg-hover: rgba(255, 255, 255, 0.07);
+  
+  --primary-accent: #7CFF00;      /* Neon Lime Green */
+  --primary-accent-alt: #00E5FF;  /* Neon Cyan */
+  --secondary-accent: #4DFFB8;    /* Mint Green */
+  --secondary-accent-alt: #8A5CFF;/* Indigo/Purple */
+  
   --text-primary: #FFFFFF;
-  --text-secondary: #B0B0B0;
+  --text-secondary: #B8C0CC;
   --text-muted: #626C7A;
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-color-hover: rgba(255, 255, 255, 0.18);
-  --glow-green: rgba(0, 245, 160, 0.15);
-  --glow-blue: rgba(0, 217, 255, 0.15);
-  --glow-purple: rgba(123, 97, 255, 0.2);
+  --border-color: rgba(255, 255, 255, 0.06);
+  --border-color-hover: rgba(255, 255, 255, 0.16);
   
   /* Fonts */
   --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -28,11 +29,11 @@
 
   /* Layout / UI */
   --max-width: 1200px;
-  --header-height: 80px;
+  --header-height: 90px;
   --border-radius-sm: 8px;
   --border-radius-md: 16px;
   --border-radius-lg: 24px;
-  --transition-speed: 0.3s;
+  --transition-speed: 0.35s;
   --ease-custom: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -72,17 +73,17 @@ body {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 5px;
   border: 2px solid var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--primary-accent-alt);
 }
 
 /* Selection Highlight */
 ::selection {
-  background: rgba(123, 97, 255, 0.3);
+  background: rgba(0, 229, 255, 0.25);
   color: var(--text-primary);
 }
 
@@ -98,7 +99,7 @@ img {
   display: block;
 }
 
-input, textarea, button {
+input, select, textarea, button {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -114,25 +115,25 @@ input, textarea, button {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--text-primary);
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 800;
   margin-bottom: 1.5rem;
 }
 
 h2 {
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-size: clamp(2rem, 4vw, 3.25rem);
   margin-bottom: 1.25rem;
   letter-spacing: -0.01em;
 }
 
 h3 {
-  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
   margin-bottom: 1rem;
 }
 
@@ -144,14 +145,14 @@ p {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-accent) 50%, var(--highlight-accent) 100%);
+  background: linear-gradient(135deg, var(--primary-accent) 0%, var(--primary-accent-alt) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.gradient-text-purple {
-  background: linear-gradient(135deg, var(--secondary-accent) 0%, var(--highlight-accent) 100%);
+.gradient-text-alt {
+  background: linear-gradient(135deg, var(--secondary-accent) 0%, var(--secondary-accent-alt) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -164,19 +165,19 @@ p {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
   width: 100%;
 }
 
 .section {
-  padding: 8rem 0;
+  padding: 9rem 0;
   position: relative;
   overflow: hidden;
 }
 
 .section-header {
-  max-width: 650px;
-  margin-bottom: 4.5rem;
+  max-width: 700px;
+  margin-bottom: 5rem;
   text-align: left;
 }
 
@@ -191,29 +192,28 @@ p {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.85rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   color: var(--primary-accent);
   margin-bottom: 0.75rem;
   display: block;
 }
 
-/* Grid helper utilities */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 /* ==========================================================================
@@ -223,12 +223,13 @@ p {
 .glass-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: var(--border-radius-md);
   padding: 2.5rem;
   transition: all var(--transition-speed) var(--ease-custom);
   position: relative;
+  overflow: hidden;
 }
 
 .glass-card::before {
@@ -242,15 +243,30 @@ p {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
   pointer-events: none;
   opacity: 1;
-  transition: opacity var(--transition-speed) var(--ease-custom);
 }
 
 .glass-card:hover {
   background: var(--card-bg-hover);
   border-color: var(--border-color-hover);
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 
-              0 0 25px rgba(123, 97, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+              0 0 30px rgba(0, 229, 255, 0.05);
+}
+
+/* Specific cards glow accents */
+.glass-card.glow-green:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(124, 255, 0, 0.1);
+  border-color: rgba(124, 255, 0, 0.3);
+}
+
+.glass-card.glow-cyan:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 229, 255, 0.1);
+  border-color: rgba(0, 229, 255, 0.3);
+}
+
+.glass-card.glow-purple:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(138, 92, 255, 0.1);
+  border-color: rgba(138, 92, 255, 0.3);
 }
 
 /* ==========================================================================
@@ -261,7 +277,7 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.95rem 2rem;
+  padding: 1rem 2.25rem;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.95rem;
@@ -270,43 +286,42 @@ p {
   transition: all var(--transition-speed) var(--ease-custom);
   position: relative;
   overflow: hidden;
-  letter-spacing: 0.02em;
-  gap: 0.5rem;
+  letter-spacing: 0.03em;
+  gap: 0.6rem;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-accent) 100%);
+  background: linear-gradient(135deg, var(--primary-accent) 0%, var(--primary-accent-alt) 100%);
   color: #000000;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 245, 160, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 229, 255, 0.35);
 }
 
 .btn-secondary {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.02);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
 }
 
 .btn-secondary:hover {
   border-color: var(--border-color-hover);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.06);
   transform: translateY(-2px);
 }
 
 .btn-accent {
-  background: linear-gradient(135deg, var(--secondary-accent) 0%, var(--highlight-accent) 100%);
+  background: linear-gradient(135deg, var(--secondary-accent-alt) 0%, #B693FF 100%);
   color: var(--text-primary);
 }
 
 .btn-accent:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(123, 97, 255, 0.3);
+  box-shadow: 0 8px 30px rgba(138, 92, 255, 0.35);
 }
 
-/* Icon placement */
 .btn svg {
   width: 18px;
   height: 18px;
@@ -314,11 +329,11 @@ p {
 }
 
 .btn:hover svg {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
 /* ==========================================================================
-   Sticky Navigation Bar
+   Floating Glassmorphism Navbar
    ========================================================================== */
 
 header {
@@ -331,25 +346,35 @@ header {
   display: flex;
   align-items: center;
   transition: all var(--transition-speed) var(--ease-custom);
-  border-bottom: 1px solid transparent;
+  padding: 1.5rem 0;
 }
 
 header.scrolled {
-  background: rgba(5, 5, 5, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  height: 70px;
-  border-bottom: 1px solid var(--border-color);
+  height: 80px;
+  padding: 0.75rem 0;
 }
 
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0.75rem 2rem;
+  background: rgba(5, 5, 5, 0.5);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 50px;
+  transition: all var(--transition-speed) var(--ease-custom);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+header.scrolled .nav-container {
+  background: rgba(5, 5, 5, 0.85);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 40px rgba(0, 229, 255, 0.04);
 }
 
 .logo-wrapper {
@@ -359,19 +384,14 @@ header.scrolled {
 }
 
 .logo-img {
-  height: 40px;
+  height: 36px;
   width: auto;
-  transition: all var(--transition-speed) var(--ease-custom);
-}
-
-header.scrolled .logo-img {
-  height: 34px;
 }
 
 .logo-text {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   letter-spacing: -0.01em;
   color: var(--text-primary);
 }
@@ -379,7 +399,7 @@ header.scrolled .logo-img {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2.25rem;
+  gap: 2rem;
   list-style: none;
 }
 
@@ -389,7 +409,7 @@ header.scrolled .logo-img {
   font-size: 0.95rem;
   color: var(--text-secondary);
   position: relative;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
 }
 
 .nav-links a:hover {
@@ -403,7 +423,7 @@ header.scrolled .logo-img {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  background: linear-gradient(90deg, var(--primary-accent), var(--primary-accent-alt));
   transition: width var(--transition-speed) var(--ease-custom);
 }
 
@@ -449,15 +469,15 @@ header.scrolled .logo-img {
 footer {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
-  padding: 5rem 0 2rem 0;
+  padding: 6rem 0 2rem 0;
   position: relative;
   overflow: hidden;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 3rem;
   margin-bottom: 4rem;
 }
 
@@ -499,18 +519,18 @@ footer {
 }
 
 .social-icon:hover {
-  border-color: var(--secondary-accent);
-  background: rgba(0, 217, 255, 0.05);
+  border-color: var(--primary-accent-alt);
+  background: rgba(0, 229, 255, 0.05);
   transform: translateY(-2px);
 }
 
 .social-icon:hover svg {
-  fill: var(--secondary-accent);
+  fill: var(--primary-accent-alt);
 }
 
 .footer-column h4 {
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;

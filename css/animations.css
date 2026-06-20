@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PSP Ventures Custom Animations
+   PSP Ventures Redesigned Animations
    ========================================================================== */
 
 /* Ambient Glowing Background Elements */
@@ -18,7 +18,7 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(140px);
-  opacity: 0.15;
+  opacity: 0.12;
   mix-blend-mode: screen;
   pointer-events: none;
 }
@@ -26,7 +26,7 @@
 .glow-1 {
   width: 500px;
   height: 500px;
-  background: var(--highlight-accent);
+  background: var(--primary-accent);
   top: -10%;
   right: -5%;
   animation: float-glow-1 25s infinite alternate ease-in-out;
@@ -35,7 +35,7 @@
 .glow-2 {
   width: 600px;
   height: 600px;
-  background: var(--secondary-accent);
+  background: var(--primary-accent-alt);
   bottom: 10%;
   left: -10%;
   animation: float-glow-2 30s infinite alternate ease-in-out;
@@ -44,55 +44,28 @@
 .glow-3 {
   width: 450px;
   height: 450px;
-  background: var(--primary-accent);
+  background: var(--secondary-accent-alt);
   top: 40%;
   right: 15%;
   animation: float-glow-3 22s infinite alternate ease-in-out;
 }
 
 @keyframes float-glow-1 {
-  0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.15;
-  }
-  50% {
-    transform: translate(-100px, 80px) scale(1.1);
-    opacity: 0.25;
-  }
-  100% {
-    transform: translate(50px, -50px) scale(0.9);
-    opacity: 0.15;
-  }
+  0% { transform: translate(0, 0) scale(1); opacity: 0.12; }
+  50% { transform: translate(-80px, 60px) scale(1.1); opacity: 0.22; }
+  100% { transform: translate(40px, -40px) scale(0.9); opacity: 0.12; }
 }
 
 @keyframes float-glow-2 {
-  0% {
-    transform: translate(0, 0) scale(1.1);
-    opacity: 0.12;
-  }
-  50% {
-    transform: translate(80px, -120px) scale(0.95);
-    opacity: 0.22;
-  }
-  100% {
-    transform: translate(-50px, 50px) scale(1.05);
-    opacity: 0.12;
-  }
+  0% { transform: translate(0, 0) scale(1.1); opacity: 0.1; }
+  50% { transform: translate(60px, -90px) scale(0.95); opacity: 0.18; }
+  100% { transform: translate(-40px, 40px) scale(1.05); opacity: 0.1; }
 }
 
 @keyframes float-glow-3 {
-  0% {
-    transform: translate(0, 0) scale(0.9);
-    opacity: 0.1;
-  }
-  50% {
-    transform: translate(-70px, -70px) scale(1.15);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translate(60px, 90px) scale(0.85);
-    opacity: 0.1;
-  }
+  0% { transform: translate(0, 0) scale(0.9); opacity: 0.08; }
+  50% { transform: translate(-60px, -60px) scale(1.15); opacity: 0.15; }
+  100% { transform: translate(50px, 70px) scale(0.85); opacity: 0.08; }
 }
 
 /* ==========================================================================
@@ -106,24 +79,15 @@
               transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal.reveal-left {
-  transform: translateX(-35px);
-}
-
-.reveal.reveal-right {
-  transform: translateX(35px);
-}
-
-.reveal.reveal-scale {
-  transform: scale(0.95);
-}
+.reveal.reveal-left { transform: translateX(-35px); }
+.reveal.reveal-right { transform: translateX(35px); }
+.reveal.reveal-scale { transform: scale(0.95); }
 
 .reveal.active {
   opacity: 1;
   transform: translate(0) scale(1);
 }
 
-/* Scroll reveal delays */
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
@@ -131,20 +95,25 @@
 .delay-5 { transition-delay: 0.5s; }
 
 /* ==========================================================================
-   Pulse & Glow Interactions
+   Status Badges Pulsing
    ========================================================================== */
 
-/* Neon status badge pulsing animation */
-@keyframes status-pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0, 245, 160, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 8px rgba(0, 245, 160, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(0, 245, 160, 0);
-  }
+@keyframes status-pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(124, 255, 0, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(124, 255, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(124, 255, 0, 0); }
+}
+
+@keyframes status-pulse-cyan {
+  0% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(0, 229, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); }
+}
+
+@keyframes status-pulse-purple {
+  0% { box-shadow: 0 0 0 0 rgba(138, 92, 255, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(138, 92, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(138, 92, 255, 0); }
 }
 
 .pulse-badge {
@@ -157,9 +126,9 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  background: rgba(0, 245, 160, 0.1);
+  background: rgba(124, 255, 0, 0.08);
   color: var(--primary-accent);
-  border: 1px solid rgba(0, 245, 160, 0.2);
+  border: 1px solid rgba(124, 255, 0, 0.2);
 }
 
 .pulse-badge::before {
@@ -169,81 +138,29 @@
   height: 6px;
   border-radius: 50%;
   background: var(--primary-accent);
-  animation: status-pulse 2s infinite;
+  animation: status-pulse-green 2s infinite;
 }
 
-/* Dev Status Badge (Blue) */
 .pulse-badge.dev-status {
-  background: rgba(0, 217, 255, 0.1);
-  color: var(--secondary-accent);
-  border: 1px solid rgba(0, 217, 255, 0.2);
+  background: rgba(0, 229, 255, 0.08);
+  color: var(--primary-accent-alt);
+  border: 1px solid rgba(0, 229, 255, 0.2);
 }
 
 .pulse-badge.dev-status::before {
-  background: var(--secondary-accent);
-  animation: status-pulse-blue 2s infinite;
+  background: var(--primary-accent-alt);
+  animation: status-pulse-cyan 2s infinite;
 }
 
-@keyframes status-pulse-blue {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0, 217, 255, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 8px rgba(0, 217, 255, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(0, 217, 255, 0);
-  }
-}
-
-/* Coming Soon Badge (Purple) */
 .pulse-badge.soon-status {
-  background: rgba(123, 97, 255, 0.1);
-  color: var(--highlight-accent);
-  border: 1px solid rgba(123, 97, 255, 0.2);
+  background: rgba(138, 92, 255, 0.08);
+  color: var(--secondary-accent-alt);
+  border: 1px solid rgba(138, 92, 255, 0.2);
 }
 
 .pulse-badge.soon-status::before {
-  background: var(--highlight-accent);
+  background: var(--secondary-accent-alt);
   animation: status-pulse-purple 2s infinite;
-}
-
-@keyframes status-pulse-purple {
-  0% {
-    box-shadow: 0 0 0 0 rgba(123, 97, 255, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 8px rgba(123, 97, 255, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(123, 97, 255, 0);
-  }
-}
-
-/* Futuristic Logo Glow effect */
-.logo-glow-effect {
-  position: relative;
-  transition: all var(--transition-speed) var(--ease-custom);
-}
-
-.logo-glow-effect::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 90%;
-  height: 90%;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
-  filter: blur(25px);
-  opacity: 0;
-  z-index: -1;
-  border-radius: 50%;
-  transition: opacity var(--transition-speed) var(--ease-custom);
-}
-
-.logo-glow-effect:hover::after {
-  opacity: 0.35;
 }
 
 /* Geometric Grid Background Overlay */
@@ -255,22 +172,153 @@
   height: 100%;
   background-image: url('../assets/images/grid-bg.svg');
   background-repeat: repeat;
-  opacity: 0.6;
+  opacity: 0.5;
   pointer-events: none;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.1) 85%, rgba(0, 0, 0, 0));
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.1) 85%, rgba(0, 0, 0, 0));
 }
 
-/* Floating Animation for Hero Elements */
-.float-element {
-  animation: float-slow 6s ease-in-out infinite alternate;
+/* ==========================================================================
+   Holographic Logo & Orbit Rings Animations
+   ========================================================================== */
+
+/* Outer Hologram Wrapper */
+.hologram-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1/1;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes float-slow {
+/* Floating Logo */
+.holographic-logo {
+  position: relative;
+  z-index: 5;
+  filter: drop-shadow(0 0 25px rgba(0, 229, 255, 0.35)) drop-shadow(0 0 50px rgba(124, 255, 0, 0.15));
+  animation: hologram-float 6s ease-in-out infinite alternate;
+}
+
+@keyframes hologram-float {
   0% {
-    transform: translateY(0px);
+    transform: translateY(10px) rotate(0deg);
+    filter: drop-shadow(0 0 25px rgba(0, 229, 255, 0.35)) drop-shadow(0 0 50px rgba(124, 255, 0, 0.15));
   }
   100% {
-    transform: translateY(-15px);
+    transform: translateY(-15px) rotate(1deg);
+    filter: drop-shadow(0 0 35px rgba(0, 229, 255, 0.5)) drop-shadow(0 0 65px rgba(138, 92, 255, 0.25));
   }
+}
+
+/* Concentric Rings */
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+.ring-1 {
+  width: 260px;
+  height: 260px;
+  border: 2px dashed rgba(0, 229, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.03) inset;
+  animation: rotate-clockwise 15s linear infinite;
+}
+
+.ring-2 {
+  width: 360px;
+  height: 360px;
+  border: 1px solid rgba(124, 255, 0, 0.1);
+  border-left: 2px solid rgba(124, 255, 0, 0.4);
+  border-right: 2px solid rgba(124, 255, 0, 0.4);
+  animation: rotate-counter-clockwise 20s linear infinite;
+}
+
+.ring-3 {
+  width: 460px;
+  height: 460px;
+  border: 1px dashed rgba(138, 92, 255, 0.08);
+  border-top: 2px solid rgba(138, 92, 255, 0.3);
+  animation: rotate-clockwise 25s linear infinite;
+}
+
+@keyframes rotate-clockwise {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rotate-counter-clockwise {
+  0% { transform: translate(-50%, -50%) rotate(360deg); }
+  100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+/* Orbit Line (Elliptical) */
+.orbit-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 480px;
+  height: 180px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  pointer-events: none;
+}
+
+/* Orbit Node (glowing particle orbiting) */
+.orbit-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary-accent-alt);
+  box-shadow: 0 0 12px var(--primary-accent-alt);
+  animation: orbit-move 8s linear infinite;
+}
+
+@keyframes orbit-move {
+  0% {
+    /* Orbit path emulation using transform offsets */
+    transform: rotate(0deg) translate(240px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(240px) rotate(-360deg);
+  }
+}
+
+/* Hologram Scanning Line overlay effect */
+.hologram-scan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 229, 255, 0) 0%,
+    rgba(0, 229, 255, 0.04) 50%,
+    rgba(0, 229, 255, 0) 100%
+  );
+  background-size: 100% 30px;
+  pointer-events: none;
+  animation: scanning 10s linear infinite;
+}
+
+@keyframes scanning {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 600px; }
+}
+
+/* Achievement bar glowing checkmark pulse */
+.checkmark-glow {
+  color: var(--primary-accent);
+  filter: drop-shadow(0 0 5px rgba(124, 255, 0, 0.6));
+  font-weight: bold;
 }
