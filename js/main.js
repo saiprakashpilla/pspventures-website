@@ -153,40 +153,108 @@ function initBackgroundParticles() {
   if (targetContainers.length === 0) return;
 
   targetContainers.forEach(container => {
-    // Check if container contains particles overlay already
-    let overlay = container.querySelector('.particles-overlay-container');
-    if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.className = 'particles-overlay-container';
-      container.appendChild(overlay);
+    // Remove existing DOM overlay if present
+    const oldOverlay = container.querySelector('.particles-overlay-container');
+    if (oldOverlay) oldOverlay.remove();
+
+    const canvas = document.createElement('canvas');
+    canvas.className = 'particles-canvas';
+    canvas.style.position = 'absolute';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '1';
+    container.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    let animationFrameId = null;
+    let width = 0;
+    let height = 0;
+    const particles = [];
+    const maxParticles = container.id === 'hero' ? 120 : 60;
+
+    function resize() {
+      const rect = container.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
+      canvas.width = width * window.devicePixelRatio;
+      canvas.height = height * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
     }
 
-    const numParticles = 25;
-    for (let i = 0; i < numParticles; i++) {
-      const particle = document.createElement('div');
-      particle.className = 'particle-item';
-      
-      // Random coordinates, sizes, delays and translations
-      const size = Math.random() * 4 + 2; // 2px to 6px
-      const left = Math.random() * 100;
-      const bottom = Math.random() * 40; // start near bottom
-      const delay = Math.random() * 8; // 0s to 8s
-      const duration = Math.random() * 6 + 6; // 6s to 12s
-      
-      // Alternate colors: Neon Green (#7CFF00) and Neon Cyan (#00E5FF)
-      const color = Math.random() > 0.5 ? '#7CFF00' : '#00E5FF';
+    resize();
+    window.addEventListener('resize', resize);
 
-      particle.style.width = `${size}px`;
-      particle.style.height = `${size}px`;
-      particle.style.left = `${left}%`;
-      particle.style.bottom = `${bottom}%`;
-      particle.style.animationDelay = `${delay}s`;
-      particle.style.animationDuration = `${duration}s`;
-      particle.style.background = color;
-      particle.style.boxShadow = `0 0 10px ${color}`;
-
-      overlay.appendChild(particle);
+    // Create particles
+    for (let i = 0; i < maxParticles; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: -(Math.random() * 0.5 + 0.15), // upward drift
+        radius: Math.random() * 1.5 + 0.75, // 0.75px to 2.25px
+        alpha: Math.random() * 0.4 + 0.1,
+        targetAlpha: Math.random() * 0.4 + 0.1,
+        fadeSpeed: Math.random() * 0.005 + 0.002,
+        color: Math.random() > 0.5 ? 'rgba(124, 255, 0, ' : 'rgba(0, 229, 255, ' // Neon Green / Cyan
+      });
     }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+
+      particles.forEach(p => {
+        // Update physics
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Wrap around boundaries
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) {
+          p.y = height;
+          p.x = Math.random() * width;
+        }
+
+        // Random fade calculation
+        if (Math.abs(p.alpha - p.targetAlpha) < 0.02) {
+          p.targetAlpha = Math.random() * 0.45 + 0.05;
+        }
+        p.alpha += (p.targetAlpha - p.alpha) * p.fadeSpeed;
+
+        // Draw particle core
+        ctx.beginPath();
+        ctx.fillStyle = p.color + p.alpha + ')';
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw outer soft glow
+        ctx.beginPath();
+        ctx.fillStyle = p.color + (p.alpha * 0.25) + ')';
+        ctx.arc(p.x, p.y, p.radius * 3.5, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      animationFrameId = requestAnimationFrame(animate);
+    }
+
+    // Performance optimization: only draw when inside the viewport
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!animationFrameId) animate();
+        } else {
+          if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+          }
+        }
+      });
+    }, { threshold: 0.01 });
+
+    observer.observe(container);
   });
 }
 

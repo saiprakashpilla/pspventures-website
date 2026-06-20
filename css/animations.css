@@ -227,7 +227,7 @@
   height: 280px;
   border: 2px dashed rgba(0, 229, 255, 0.15);
   box-shadow: 0 0 20px rgba(0, 229, 255, 0.03) inset;
-  animation: rotate-clockwise 15s linear infinite;
+  animation: rotate-clockwise 30s linear infinite;
 }
 
 .ring-2 {
@@ -236,7 +236,7 @@
   border: 1px solid rgba(124, 255, 0, 0.1);
   border-left: 2px solid rgba(124, 255, 0, 0.4);
   border-right: 2px solid rgba(124, 255, 0, 0.4);
-  animation: rotate-counter-clockwise 20s linear infinite;
+  animation: rotate-counter-clockwise 30s linear infinite;
 }
 
 .ring-3 {
@@ -244,7 +244,88 @@
   height: 480px;
   border: 1px dashed rgba(138, 92, 255, 0.08);
   border-top: 2px solid rgba(138, 92, 255, 0.3);
-  animation: rotate-clockwise 25s linear infinite;
+  animation: rotate-clockwise 30s linear infinite;
+}
+
+/* Energy Portal Background Pulsing Glow & Waves */
+.energy-portal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 255, 0, 0.16) 0%, rgba(0, 229, 255, 0.08) 50%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(25px);
+  z-index: 1;
+  pointer-events: none;
+  animation: energy-glow-pulse 6s ease-in-out infinite alternate;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes energy-glow-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.6;
+    filter: blur(25px);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+    filter: blur(15px);
+  }
+}
+
+.energy-wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1.5px solid var(--primary-accent);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  animation: wave-ripple 6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  will-change: transform, opacity;
+}
+
+.energy-wave:nth-child(2) {
+  animation-delay: 2s;
+  border-color: var(--primary-accent-alt);
+}
+
+.energy-wave:nth-child(3) {
+  animation-delay: 4s;
+  border-color: var(--secondary-accent-alt);
+}
+
+@keyframes wave-ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+.hero-featured-card-wrapper {
+  position: absolute;
+  bottom: -10px;
+  left: -60px;
+  width: 290px;
+  z-index: 10;
+  pointer-events: none;
+  animation: float-card 6s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 @keyframes rotate-clockwise {
@@ -366,4 +447,16 @@
     transform: translateY(-500px) scale(1.2);
     opacity: 0;
   }
+}
+
+@keyframes glow-pulse-primary {
+  0% { box-shadow: 0 12px 35px rgba(124, 255, 0, 0.4), 0 0 0 0 rgba(124, 255, 0, 0.4); }
+  70% { box-shadow: 0 12px 35px rgba(124, 255, 0, 0.4), 0 0 0 10px rgba(124, 255, 0, 0); }
+  100% { box-shadow: 0 12px 35px rgba(124, 255, 0, 0.4), 0 0 0 0 rgba(124, 255, 0, 0); }
+}
+
+@keyframes glow-pulse-secondary {
+  0% { box-shadow: 0 12px 35px rgba(0, 229, 255, 0.25), 0 0 0 0 rgba(0, 229, 255, 0.4); }
+  70% { box-shadow: 0 12px 35px rgba(0, 229, 255, 0.25), 0 0 0 10px rgba(0, 229, 255, 0); }
+  100% { box-shadow: 0 12px 35px rgba(0, 229, 255, 0.25), 0 0 0 0 rgba(0, 229, 255, 0); }
 }
