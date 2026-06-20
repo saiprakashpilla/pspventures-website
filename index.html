@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PSP Ventures is a premier Silicon Valley-grade technology company building innovative mobile applications, SaaS products, AI solutions, and digital tools for tomorrow.">
+  <meta name="keywords" content="PSP Ventures, App Publishing, SaaS Products, AI Solutions, Digital Tools, Venture Studio, Tech Startup">
+  <meta name="author" content="PSP Ventures">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://psp.ventures/">
+  <meta property="og:title" content="PSP Ventures | Building Digital Products for Tomorrow">
+  <meta property="og:description" content="A premium technology company showcasing top-tier app publishing, SaaS products, AI solutions, and digital tool ventures.">
+  <meta property="og:image" content="assets/images/logo-full.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://psp.ventures/">
+  <meta property="twitter:title" content="PSP Ventures | Building Digital Products for Tomorrow">
+  <meta property="twitter:description" content="A premium technology company showcasing top-tier app publishing, SaaS products, AI solutions, and digital tool ventures.">
+  <meta property="twitter:image" content="assets/images/logo-full.png">
+
+  <title>PSP Ventures | Building Innovative Digital Products for a Better Tomorrow</title>
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
+
+  <!-- Structured Data / JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PSP Ventures",
+    "url": "https://psp.ventures",
+    "logo": "https://psp.ventures/assets/images/logo-full.png",
+    "description": "PSP Ventures is a premium technology company building mobile applications, SaaS products, AI solutions, and digital tools.",
+    "sameAs": [
+      "https://github.com/pspventures",
+      "https://twitter.com/pspventures",
+      "https://linkedin.com/company/pspventures"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo-wrapper logo-glow-effect">
+        <img src="assets/images/logo-icon.png" alt="PSP Ventures Icon" class="logo-img">
+        <span class="logo-text">PSP VENTURES</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="#future-ventures">Future Ventures</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header CTA -->
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Get In Touch</a>
+        <!-- Hamburger Icon for Mobile -->
+        <button class="hamburger" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="section" id="hero" style="min-height: 100vh; display: flex; align-items: center; padding-top: calc(var(--header-height) + 2rem); padding-bottom: 4rem;">
+    <!-- Ambient floating glows -->
+    <div class="glow-container">
+      <div class="ambient-glow glow-1"></div>
+      <div class="ambient-glow glow-2"></div>
+      <div class="ambient-glow glow-3"></div>
+    </div>
+
+    <!-- Tech Grid Background -->
+    <div class="grid-bg-overlay"></div>
+
+    <!-- Interactive Canvas Particles -->
+    <canvas id="hero-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></canvas>
+
+    <div class="container" style="position: relative; z-index: 2; text-align: center;">
+      <!-- Glowing Centered Logo Emblem -->
+      <div class="float-element" style="display: inline-block; margin-bottom: 2rem;">
+        <img src="assets/images/logo-icon.png" alt="PSP Ventures Logo Emblem" style="max-height: 130px; filter: drop-shadow(0 0 30px rgba(0, 245, 160, 0.45));">
+      </div>
+
+      <div class="reveal">
+        <span class="section-subtitle" style="font-size: 0.95rem; margin-bottom: 1rem;">Welcome to PSP Ventures</span>
+        <h1>Building Innovative Digital Products for a <span class="gradient-text">Better Tomorrow</span></h1>
+        
+        <p style="max-width: 750px; margin: 0 auto 3rem auto; font-size: 1.25rem; color: var(--text-secondary); line-height: 1.8;">
+          We design, develop, and publish enterprise-grade mobile applications, intelligent SaaS ecosystems, state-of-the-art AI solutions, and digital tools tailored for global scale.
+        </p>
+
+        <div class="hero-buttons" style="display: flex; gap: 1.5rem; justify-content: center; align-items: center;">
+          <a href="products.html" class="btn btn-primary">
+            Explore Products
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+          <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Brief Section -->
+  <section class="section" id="about-brief" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="grid-2" style="align-items: center;">
+        <div class="reveal reveal-left">
+          <span class="section-subtitle">Our Vision</span>
+          <h2>Redefining Technology through Premium Digital Products</h2>
+          <p>
+            At PSP Ventures, we believe that software should be intuitive, highly performant, and beautifully crafted. We exist at the intersection of stunning product design and robust system architecture.
+          </p>
+          <p>
+            Whether it is publishing consumer-facing mobile applications that top app store charts, launching SaaS systems that accelerate developer workflows, or training localized AI models, we deliver software built to scale for millions.
+          </p>
+          <a href="about.html" class="btn btn-secondary" style="margin-top: 1.5rem;">
+            Learn More About Us
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="reveal reveal-right" style="position: relative;">
+          <!-- Visual mockup of technology stack inside a premium glass card -->
+          <div class="glass-card" style="padding: 3rem; background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.05) 100%);">
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F56;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #FFBD2E;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #27C93F;"></div>
+                <span style="font-family: var(--font-display); font-size: 0.85rem; color: var(--text-muted); margin-left: auto;">ventures-system.sys</span>
+              </div>
+              <div style="font-family: monospace; font-size: 0.9rem; color: var(--primary-accent); line-height: 1.6;">
+                <span style="color: var(--text-muted);">// Initialize PSP Studio Ventures</span><br>
+                <span style="color: var(--highlight-accent);">const</span> pspVentures = <span style="color: var(--secondary-accent);">new</span> VentureStudio();<br><br>
+                pspVentures.addDomain(<span style="color: #E2C08D;">'Mobile App Publishing'</span>);<br>
+                pspVentures.addDomain(<span style="color: #E2C08D;">'SaaS & Digital Tools'</span>);<br>
+                pspVentures.addDomain(<span style="color: #E2C08D;">'Artificial Intelligence'</span>);<br><br>
+                pspVentures.compile({<br>
+                &nbsp;&nbsp;performance: <span style="color: #E2C08D;">'100%'</span>,<br>
+                &nbsp;&nbsp;uxAesthetic: <span style="color: #E2C08D;">'Premium'</span>,<br>
+                &nbsp;&nbsp;scaleReady: <span style="color: var(--secondary-accent);">true</span><br>
+                });
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="section" id="featured-products">
+    <div class="container">
+      <div class="section-header center reveal">
+        <span class="section-subtitle">Showcase</span>
+        <h2>Featured Products</h2>
+        <p>A handpicked selection of our active platforms and services currently serving global audiences.</p>
+      </div>
+
+      <div class="grid-2 reveal delay-1">
+        <!-- Product Card 1 (Taskify) -->
+        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+              <!-- Product Icon Placeholder (Stylized SVG) -->
+              <div style="width: 54px; height: 54px; border-radius: var(--border-radius-sm); background: linear-gradient(135deg, rgba(0, 245, 160, 0.2), rgba(0, 217, 255, 0.2)); border: 1px solid rgba(0, 245, 160, 0.3); display: flex; align-items: center; justify-content: center;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4"></path>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+              </div>
+              <span class="pulse-badge">Live</span>
+            </div>
+            <h3>Taskify</h3>
+            <p style="margin-bottom: 2rem;">
+              A futuristic, minimalist project planning and task management application designed for high-performance remote engineering teams. Re-engineered with responsive card views, custom markdown files support, and integrated subtask tracking.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1rem; align-items: center;">
+            <a href="product-taskify.html" class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem; width: 100%;">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Product Card 2 (ScribeAI) -->
+        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+              <div style="width: 54px; height: 54px; border-radius: var(--border-radius-sm); background: linear-gradient(135deg, rgba(123, 97, 255, 0.2), rgba(0, 217, 255, 0.2)); border: 1px solid rgba(123, 97, 255, 0.3); display: flex; align-items: center; justify-content: center;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--highlight-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20h9"></path>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                </svg>
+              </div>
+              <span class="pulse-badge dev-status">In Development</span>
+            </div>
+            <h3>ScribeAI</h3>
+            <p style="margin-bottom: 2rem;">
+              An advanced AI writer and contextual intelligence assistant that transforms unformatted ideas, speech transcripts, and meeting summaries into professional structured documentation, emails, and articles instantly.
+            </p>
+          </div>
+          <div style="display: flex; gap: 1rem; align-items: center;">
+            <a href="product-scribeai.html" class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem; width: 100%;">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal center" style="margin-top: 4rem;">
+        <a href="products.html" class="btn btn-accent">
+          View All Products
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose PSP Ventures Section -->
+  <section class="section" id="why-choose" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header center reveal">
+        <span class="section-subtitle">Core Strengths</span>
+        <h2>Why Choose PSP Ventures</h2>
+        <p>We apply rigid, world-class operational principles to design, engineer, and launch digital assets.</p>
+      </div>
+
+      <div class="grid-3 reveal delay-1">
+        <!-- Feature 1: Innovation -->
+        <div class="glass-card">
+          <div style="margin-bottom: 1.5rem; color: var(--primary-accent);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <h4>Continuous Innovation</h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">We build on the cutting edge of tech, continually researching and adapting LLMs, edge computing, and reactive UI frameworks.</p>
+        </div>
+
+        <!-- Feature 2: Security -->
+        <div class="glass-card">
+          <div style="margin-bottom: 1.5rem; color: var(--secondary-accent);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h4>Absolute Security</h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">Strict security audits, robust encryption models (AES-256), and serverless microservices isolate user data securely from attacks.</p>
+        </div>
+
+        <!-- Feature 3: Performance -->
+        <div class="glass-card">
+          <div style="margin-bottom: 1.5rem; color: var(--highlight-accent);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h4>Ultra-Performance</h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">Lighthouse optimization targeting >95 scores. Zero bloat, responsive asset loading, and CDN caching ensure speed.</p>
+        </div>
+
+        <!-- Feature 4: Scalability -->
+        <div class="glass-card">
+          <div style="margin-bottom: 1.5rem; color: var(--highlight-accent);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+          </div>
+          <h4>Global Scalability</h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">Architected with containerized backends and global static distribution networks capable of autoscaling workloads gracefully.</p>
+        </div>
+
+        <!-- Feature 5: UX -->
+        <div class="glass-card">
+          <div style="margin-bottom: 1.5rem; color: var(--primary-accent);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+              <path d="M12 2a10 10 0 0 1 10 10h-10V2z"></path>
+            </svg>
+          </div>
+          <h4>User Experience</h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">Subtle micro-animations, glassmorphic themes, and responsive design structures build intuitive, premium digital habits.</p>
+        </div>
+
+        <!-- Feature 6: Future Readiness -->
+        <div class="glass-card">
+          <div style="margin-bottom: 1.5rem; color: var(--secondary-accent);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h4>Future-Ready Tech</h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">Built clean with modular codes, structured schemas, and standard compliance, ensuring simple additions in future years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Ventures Section -->
+  <section class="section" id="future-ventures">
+    <div class="container">
+      <div class="section-header center reveal">
+        <span class="section-subtitle">Roadmap</span>
+        <h2>Future Ventures</h2>
+        <p>A look at upcoming tech products and platforms currently in research or early phase development.</p>
+      </div>
+
+      <div class="grid-3 reveal delay-1">
+        <!-- Upcoming App -->
+        <div class="glass-card" style="border-top: 3px solid var(--highlight-accent);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <span class="pulse-badge soon-status">Research</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-family: monospace;">#004A</span>
+          </div>
+          <h4 style="margin-bottom: 0.75rem;">Aura Fit</h4>
+          <p style="font-size: 0.95rem; margin-bottom: 0;">An AI-driven mobile app mapping bio-signals and workout telemetry to dynamically generate customized yoga and wellness playlists.</p>
+        </div>
+
+        <!-- Upcoming SaaS -->
+        <div class="glass-card" style="border-top: 3px solid var(--secondary-accent);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <span class="pulse-badge soon-status">Concept</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-family: monospace;">#005B</span>
+          </div>
+          <h4 style="margin-bottom: 0.75rem;">Hyperion Link</h4>
+          <p style="font-size: 0.95rem; margin-bottom: 0;">A cross-platform real-time databases synchronizer using custom sockets to push data to edge servers with sub-millisecond latencies.</p>
+        </div>
+
+        <!-- Upcoming AI -->
+        <div class="glass-card" style="border-top: 3px solid var(--primary-accent);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <span class="pulse-badge soon-status">Concept</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-family: monospace;">#006C</span>
+          </div>
+          <h4 style="margin-bottom: 0.75rem;">Nexus LLM</h4>
+          <p style="font-size: 0.95rem; margin-bottom: 0;">A localized, privacy-first conversational model running directly on client machines to index, search, and answer complex project query workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="section" id="contact" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="grid-2">
+        <div class="reveal reveal-left">
+          <span class="section-subtitle">Get In Touch</span>
+          <h2>Let's Collaborate</h2>
+          <p>
+            Have questions about our products, or looking to discuss licensing, publishing agreements, or strategic investor placements? Send us a message and our partners will reach out to you directly.
+          </p>
+
+          <div style="margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(0, 245, 160, 0.08); border: 1px solid rgba(0, 245, 160, 0.2); display: flex; align-items: center; justify-content: center; color: var(--primary-accent);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">Email Us</span>
+                <a href="mailto:ventures@psp.company" style="font-family: var(--font-display); font-weight: 500; color: var(--text-primary); font-size: 1.05rem;">ventures@psp.company</a>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(0, 217, 255, 0.08); border: 1px solid rgba(0, 217, 255, 0.2); display: flex; align-items: center; justify-content: center; color: var(--secondary-accent);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <div>
+                <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">Official Domain</span>
+                <a href="https://psp.ventures" target="_blank" style="font-family: var(--font-display); font-weight: 500; color: var(--text-primary); font-size: 1.05rem;">psp.ventures</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-right">
+          <!-- Glassmorphism Form Card -->
+          <form class="glass-card" id="contact-form" style="background: rgba(255, 255, 255, 0.02);">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="name" style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" style="width: 100%; padding: 0.85rem 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); transition: border-color 0.3s ease;" required>
+              </div>
+              
+              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="email" style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" style="width: 100%; padding: 0.85rem 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); transition: border-color 0.3s ease;" required>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="message" style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="How can we partner together?" style="width: 100%; padding: 0.85rem 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); transition: border-color 0.3s ease; resize: none;" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">
+                Send Message
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <a href="index.html" class="logo-wrapper logo-glow-effect" style="display: inline-flex; margin-bottom: 1.5rem;">
+            <img src="assets/images/logo-icon.png" alt="PSP Ventures Logo Icon" class="logo-img">
+            <span class="logo-text">PSP VENTURES</span>
+          </a>
+          <p class="footer-description">
+            Building innovative, world-class mobile applications, websites, SaaS platforms, and intelligent digital products for global users.
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com" class="social-icon" aria-label="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
+            <a href="https://twitter.com" class="social-icon" aria-label="Twitter">
+              <svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </a>
+            <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Sitemap</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#future-ventures">Future Ventures</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Featured Products</h4>
+          <ul class="footer-links">
+            <li><a href="product-taskify.html">Taskify App</a></li>
+            <li><a href="product-scribeai.html">ScribeAI Writer</a></li>
+            <li><a href="products.html">All Products</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Venture Resources</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Investor Relations</a></li>
+            <li><a href="contact.html">App Publishing</a></li>
+            <li><a href="contact.html">Partnerships</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="copyright">&copy; 2026 PSP Ventures. All rights reserved.</span>
+        <ul class="footer-legal-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

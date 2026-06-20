@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse the full suite of mobile applications, enterprise SaaS platforms, AI models, and digital utilities engineered by PSP Ventures.">
+  <meta name="keywords" content="PSP Ventures Products, SaaS Tools, Mobile Applications, AI Models, Portfolio, Venture Suite">
+  <meta name="author" content="PSP Ventures">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://psp.ventures/products.html">
+  <meta property="og:title" content="Our Products | PSP Ventures Portfolio">
+  <meta property="og:description" content="Explore active and upcoming products engineered by PSP Ventures.">
+  <meta property="og:image" content="assets/images/logo-full.png">
+
+  <title>Our Products | PSP Ventures</title>
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
+  
+  <style>
+    /* Specialized inline styles for products filter nav */
+    .filter-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: var(--font-display);
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: var(--card-bg);
+      transition: all var(--transition-speed) var(--ease-custom);
+    }
+    
+    .filter-btn:hover {
+      border-color: var(--border-color-hover);
+      color: var(--text-primary);
+      background: var(--card-bg-hover);
+    }
+    
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+      color: #000000;
+      border-color: transparent;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0, 245, 160, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo-wrapper logo-glow-effect">
+        <img src="assets/images/logo-icon.png" alt="PSP Ventures Icon" class="logo-img">
+        <span class="logo-text">PSP VENTURES</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="index.html#future-ventures">Future Ventures</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header CTA -->
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Get In Touch</a>
+        <button class="hamburger" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Products Hero Section -->
+  <section class="section" style="padding-top: calc(var(--header-height) + 5rem); padding-bottom: 3rem; text-align: center;">
+    <div class="glow-container">
+      <div class="ambient-glow glow-2" style="top: -20%; left: 10%;"></div>
+      <div class="ambient-glow glow-3" style="top: 20%; right: 10%;"></div>
+    </div>
+    <div class="grid-bg-overlay"></div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="reveal">
+        <span class="section-subtitle">Our Suite</span>
+        <h1>Engineered for Global <span class="gradient-text">Impact</span></h1>
+        <p style="max-width: 800px; margin: 0 auto 3rem auto; font-size: 1.25rem; color: var(--text-secondary); line-height: 1.8;">
+          Explore our portfolio of consumer applications, software-as-a-service configurations, and context-driven artificial intelligence systems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Portfolio Showcase -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <!-- Category Filter Controls -->
+      <div class="filter-container reveal">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+        <button class="filter-btn" data-filter="saas">SaaS Platforms</button>
+        <button class="filter-btn" data-filter="ai">AI Solutions</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid-3 reveal delay-1">
+        <!-- 1. Taskify -->
+        <div class="product-card-wrapper" data-category="saas">
+          <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); background: linear-gradient(135deg, rgba(0, 245, 160, 0.15), rgba(0, 217, 255, 0.15)); border: 1px solid rgba(0, 245, 160, 0.25); display: flex; align-items: center; justify-content: center;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 11l3 3L22 4"></path>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                  </svg>
+                </div>
+                <span class="pulse-badge">Live</span>
+              </div>
+              <h3>Taskify</h3>
+              <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">
+                A clean, ultra-responsive project coordinator and checklist management dashboard for remote design and product organizations.
+              </p>
+            </div>
+            <a href="product-taskify.html" class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem; width: 100%;">Explore Details</a>
+          </div>
+        </div>
+
+        <!-- 2. ScribeAI -->
+        <div class="product-card-wrapper" data-category="ai">
+          <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); background: linear-gradient(135deg, rgba(123, 97, 255, 0.15), rgba(0, 217, 255, 0.15)); border: 1px solid rgba(123, 97, 255, 0.25); display: flex; align-items: center; justify-content: center;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--highlight-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 20h9"></path>
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                  </svg>
+                </div>
+                <span class="pulse-badge dev-status">In Development</span>
+              </div>
+              <h3>ScribeAI</h3>
+              <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">
+                An intelligent context-aware writing helper mapping rough transcripts into structures.
+              </p>
+            </div>
+            <a href="product-scribeai.html" class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem; width: 100%;">Explore Details</a>
+          </div>
+        </div>
+
+        <!-- 3. FocusFlow -->
+        <div class="product-card-wrapper" data-category="mobile saas">
+          <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(123, 97, 255, 0.15)); border: 1px solid rgba(0, 217, 255, 0.25); display: flex; align-items: center; justify-content: center;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--secondary-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <span class="pulse-badge soon-status">Coming Soon</span>
+              </div>
+              <h3>FocusFlow</h3>
+              <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">
+                A productivity-timer utility that restricts notification systems and blocks visual feeds to sustain focus habits on macOS and iOS.
+              </p>
+            </div>
+            <button class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem; width: 100%; cursor: not-allowed;" disabled>Details Pending</button>
+          </div>
+        </div>
+
+        <!-- 4. Aura Fit -->
+        <div class="product-card-wrapper" data-category="mobile ai">
+          <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); background: linear-gradient(135deg, rgba(0, 245, 160, 0.15), rgba(123, 97, 255, 0.15)); border: 1px solid rgba(0, 245, 160, 0.25); display: flex; align-items: center; justify-content: center;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </div>
+                <span class="pulse-badge soon-status">Research</span>
+              </div>
+              <h3>Aura Fit</h3>
+              <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">
+                An intelligent bio-integrating app that compiles health metrics dynamically to compose optimal acoustic yoga sounds and schedules.
+              </p>
+            </div>
+            <button class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem; width: 100%; cursor: not-allowed;" disabled>Research Stage</button>
+          </div>
+        </div>
+
+        <!-- 5. Hyperion Link -->
+        <div class="product-card-wrapper" data-category="saas">
+          <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(123, 97, 255, 0.15)); border: 1px solid rgba(0, 217, 255, 0.25); display: flex; align-items: center; justify-content: center;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--secondary-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                  </svg>
+                </div>
+                <span class="pulse-badge soon-status">Concept</span>
+              </div>
+              <h3>Hyperion Link</h3>
+              <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">
+                A low-latency socket engine synchronized to edge servers to push workspace data in sub-millisecond durations.
+              </p>
+            </div>
+            <button class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem; width: 100%; cursor: not-allowed;" disabled>Concept Stage</button>
+          </div>
+        </div>
+
+        <!-- 6. Nexus LLM -->
+        <div class="product-card-wrapper" data-category="ai">
+          <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); background: linear-gradient(135deg, rgba(123, 97, 255, 0.15), rgba(0, 245, 160, 0.15)); border: 1px solid rgba(123, 97, 255, 0.25); display: flex; align-items: center; justify-content: center;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--highlight-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <span class="pulse-badge soon-status">Concept</span>
+              </div>
+              <h3>Nexus LLM</h3>
+              <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">
+                A secure localized LLM indexing files locally and answering contextual workspace prompts privately.
+              </p>
+            </div>
+            <button class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem; width: 100%; cursor: not-allowed;" disabled>Concept Stage</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <a href="index.html" class="logo-wrapper logo-glow-effect" style="display: inline-flex; margin-bottom: 1.5rem;">
+            <img src="assets/images/logo-icon.png" alt="PSP Ventures Logo Icon" class="logo-img">
+            <span class="logo-text">PSP VENTURES</span>
+          </a>
+          <p class="footer-description">
+            Building innovative, world-class mobile applications, websites, SaaS platforms, and intelligent digital products for global users.
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com" class="social-icon" aria-label="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
+            <a href="https://twitter.com" class="social-icon" aria-label="Twitter">
+              <svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </a>
+            <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Sitemap</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="index.html#future-ventures">Future Ventures</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Featured Products</h4>
+          <ul class="footer-links">
+            <li><a href="product-taskify.html">Taskify App</a></li>
+            <li><a href="product-scribeai.html">ScribeAI Writer</a></li>
+            <li><a href="products.html">All Products</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Venture Resources</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Investor Relations</a></li>
+            <li><a href="contact.html">App Publishing</a></li>
+            <li><a href="contact.html">Partnerships</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="copyright">&copy; 2026 PSP Ventures. All rights reserved.</span>
+        <ul class="footer-legal-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

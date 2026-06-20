@@ -1,0 +1,154 @@
+/* ==========================================================================
+   PSP Ventures Responsive Styling & Media Queries
+   ========================================================================== */
+
+/* 1. Large Screen Adjustments (max-width: 1200px) */
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+/* 2. Desktop/Tablet Landscape (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+/* 3. Tablet Portrait & Mobile Landscape (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 5rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Hamburger Menu & Navigation Toggle */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 6rem 3rem;
+    gap: 2rem;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid var(--border-color);
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  /* Adjust mobile nav links text */
+  .nav-links a {
+    font-size: 1.25rem;
+    width: 100%;
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  /* Hamburger Active Animation */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: var(--primary-accent);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: var(--primary-accent);
+  }
+
+  /* Footer Layout Adjustments */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-info {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .footer-legal-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}
+
+/* 4. Small Mobile Screen Adjustments (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links {
+    width: 100%;
+    max-width: none;
+    padding: 5rem 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  /* Contact and Forms styling adjustments */
+  .glass-card {
+    padding: 1.75rem 1.25rem;
+  }
+}

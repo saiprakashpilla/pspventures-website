@@ -1,0 +1,276 @@
+/* ==========================================================================
+   PSP Ventures Custom Animations
+   ========================================================================== */
+
+/* Ambient Glowing Background Elements */
+.glow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.15;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.glow-1 {
+  width: 500px;
+  height: 500px;
+  background: var(--highlight-accent);
+  top: -10%;
+  right: -5%;
+  animation: float-glow-1 25s infinite alternate ease-in-out;
+}
+
+.glow-2 {
+  width: 600px;
+  height: 600px;
+  background: var(--secondary-accent);
+  bottom: 10%;
+  left: -10%;
+  animation: float-glow-2 30s infinite alternate ease-in-out;
+}
+
+.glow-3 {
+  width: 450px;
+  height: 450px;
+  background: var(--primary-accent);
+  top: 40%;
+  right: 15%;
+  animation: float-glow-3 22s infinite alternate ease-in-out;
+}
+
+@keyframes float-glow-1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translate(-100px, 80px) scale(1.1);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translate(50px, -50px) scale(0.9);
+    opacity: 0.15;
+  }
+}
+
+@keyframes float-glow-2 {
+  0% {
+    transform: translate(0, 0) scale(1.1);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translate(80px, -120px) scale(0.95);
+    opacity: 0.22;
+  }
+  100% {
+    transform: translate(-50px, 50px) scale(1.05);
+    opacity: 0.12;
+  }
+}
+
+@keyframes float-glow-3 {
+  0% {
+    transform: translate(0, 0) scale(0.9);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translate(-70px, -70px) scale(1.15);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(60px, 90px) scale(0.85);
+    opacity: 0.1;
+  }
+}
+
+/* ==========================================================================
+   Scroll Reveal Animations
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.reveal-left {
+  transform: translateX(-35px);
+}
+
+.reveal.reveal-right {
+  transform: translateX(35px);
+}
+
+.reveal.reveal-scale {
+  transform: scale(0.95);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* Scroll reveal delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* ==========================================================================
+   Pulse & Glow Interactions
+   ========================================================================== */
+
+/* Neon status badge pulsing animation */
+@keyframes status-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 245, 160, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(0, 245, 160, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 245, 160, 0);
+  }
+}
+
+.pulse-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(0, 245, 160, 0.1);
+  color: var(--primary-accent);
+  border: 1px solid rgba(0, 245, 160, 0.2);
+}
+
+.pulse-badge::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-accent);
+  animation: status-pulse 2s infinite;
+}
+
+/* Dev Status Badge (Blue) */
+.pulse-badge.dev-status {
+  background: rgba(0, 217, 255, 0.1);
+  color: var(--secondary-accent);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.pulse-badge.dev-status::before {
+  background: var(--secondary-accent);
+  animation: status-pulse-blue 2s infinite;
+}
+
+@keyframes status-pulse-blue {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 217, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(0, 217, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 217, 255, 0);
+  }
+}
+
+/* Coming Soon Badge (Purple) */
+.pulse-badge.soon-status {
+  background: rgba(123, 97, 255, 0.1);
+  color: var(--highlight-accent);
+  border: 1px solid rgba(123, 97, 255, 0.2);
+}
+
+.pulse-badge.soon-status::before {
+  background: var(--highlight-accent);
+  animation: status-pulse-purple 2s infinite;
+}
+
+@keyframes status-pulse-purple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(123, 97, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(123, 97, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(123, 97, 255, 0);
+  }
+}
+
+/* Futuristic Logo Glow effect */
+.logo-glow-effect {
+  position: relative;
+  transition: all var(--transition-speed) var(--ease-custom);
+}
+
+.logo-glow-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+  filter: blur(25px);
+  opacity: 0;
+  z-index: -1;
+  border-radius: 50%;
+  transition: opacity var(--transition-speed) var(--ease-custom);
+}
+
+.logo-glow-effect:hover::after {
+  opacity: 0.35;
+}
+
+/* Geometric Grid Background Overlay */
+.grid-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/grid-bg.svg');
+  background-repeat: repeat;
+  opacity: 0.6;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.1) 85%, rgba(0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.1) 85%, rgba(0, 0, 0, 0));
+}
+
+/* Floating Animation for Hero Elements */
+.float-element {
+  animation: float-slow 6s ease-in-out infinite alternate;
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
