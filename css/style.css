@@ -151,6 +151,14 @@ p {
   background-clip: text;
 }
 
+.hero-gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 15%, #7FFF00 55%, #00E5FF 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
 .gradient-text-alt {
   background: linear-gradient(135deg, var(--secondary-accent) 0%, var(--secondary-accent-alt) 100%);
   -webkit-background-clip: text;
@@ -286,10 +294,10 @@ p {
 
 .hero-featured-card {
   width: 100%;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(14, 14, 14, 0.65);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-radius: var(--border-radius-md);
   padding: 1.5rem;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 

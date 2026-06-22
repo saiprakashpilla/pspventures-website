@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveals();
   initStatsCounter();
   initBackgroundParticles();
+  initHologramParticles();
   initContactForm();
 });
 
@@ -173,7 +174,7 @@ function initBackgroundParticles() {
     let width = 0;
     let height = 0;
     const particles = [];
-    const maxParticles = container.id === 'hero' ? 120 : 60;
+    const maxParticles = container.id === 'hero' ? 240 : 60;
 
     function resize() {
       const rect = container.getBoundingClientRect();
@@ -358,4 +359,96 @@ function initContactForm() {
       }, 1500);
     }
   });
+}
+
+/* ==========================================================================
+   Hologram Projection Particle System
+   ========================================================================== */
+function initHologramParticles() {
+  const canvas = document.querySelector('.hologram-particles-canvas');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  let width = 0;
+  let height = 0;
+  const particles = [];
+  const maxParticles = 900; // Dense particle simulation representing hologram energy
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    width = rect.width;
+    height = rect.height;
+    canvas.width = width * window.devicePixelRatio;
+    canvas.height = height * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+
+  // Helper to create a particle
+  function createParticle(randomY = false) {
+    const radius = Math.random() * 1.0 + 0.35; // tiny particles
+    const centerX = width / 2;
+    const baseY = height * 0.82; // projection starts at platform level
+    
+    // Polar distribution for footprint
+    const angle = Math.random() * Math.PI * 2;
+    const distance = Math.pow(Math.random(), 1.5) * 110; // platform radius
+    
+    const x = centerX + Math.cos(angle) * distance;
+    const y = randomY ? (height * 0.15 + Math.random() * (baseY - height * 0.15)) : baseY;
+
+    return {
+      x: x,
+      y: y,
+      originX: centerX + Math.cos(angle) * distance,
+      vx: (Math.random() - 0.5) * 0.2,
+      vy: -(Math.random() * 0.75 + 0.35),
+      radius: radius,
+      alpha: Math.random() * 0.65 + 0.1,
+      fadeRate: Math.random() * 0.008 + 0.003,
+      waverSpeed: Math.random() * 0.03 + 0.01,
+      waverAmplitude: Math.random() * 1.5 + 0.5,
+      waverOffset: Math.random() * Math.PI * 2
+    };
+  }
+
+  // Initialize particle set
+  for (let i = 0; i < maxParticles; i++) {
+    particles.push(createParticle(true));
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.y += p.vy;
+      
+      // Waver slightly horizontally to simulate shimmering holographic beam
+      p.waverOffset += p.waverSpeed;
+      p.x = p.originX + Math.sin(p.waverOffset) * p.waverAmplitude;
+
+      // Calculate opacity based on height (fades out at bottom and top edges)
+      const progress = (p.y - height * 0.15) / (height * 0.67);
+      let alpha = p.alpha;
+      
+      if (progress < 0) {
+        particles[i] = createParticle(false);
+        continue;
+      } else if (progress < 0.25) {
+        alpha = p.alpha * (progress / 0.25);
+      }
+
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(127, 255, 0, ${alpha})`;
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
 }

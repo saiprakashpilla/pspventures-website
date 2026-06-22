@@ -88,6 +88,7 @@
       <div class="ambient-glow glow-1"></div>
       <div class="ambient-glow glow-2"></div>
       <div class="ambient-glow glow-3"></div>
+      <div class="hero-ambient-right"></div>
     </div>
 
     <!-- Tech Grid Background -->
@@ -99,9 +100,10 @@
         <!-- Left Side: Stacked Typography -->
         <div class="reveal reveal-left">
           <span class="section-subtitle" style="font-size: 0.95rem; margin-bottom: 1.5rem; color: var(--primary-accent); letter-spacing: 0.15em; font-weight: 700;">WELCOME TO</span>
-          <h1 style="line-height: 0.9; margin-bottom: 2rem; font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 900; letter-spacing: -0.03em;">
-            <span class="gradient-text">PSP</span><br>
-            <span class="gradient-text">VENTURES</span>
+          <h1 style="line-height: 0.95; margin-bottom: 2rem; font-size: clamp(3.5rem, 8vw, 6.5rem); font-weight: 900; letter-spacing: -0.02em; font-family: var(--font-display);">
+            <span class="hero-gradient-text">INNOVATE.</span><br>
+            <span class="hero-gradient-text">BUILD.</span><br>
+            <span class="hero-gradient-text">IMPACT.</span>
           </h1>
           <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2.5rem; max-width: 520px;">
             PSP Ventures is a technology company dedicated to building innovative mobile apps and web solutions that simplify everyday life and create meaningful impact.
@@ -119,22 +121,40 @@
         </div>
 
         <!-- Right Side: Orbits & Holographic floating elements -->
-        <div class="reveal reveal-right" style="position: relative; display: flex; align-items: center; justify-content: center; min-height: 500px;">
+        <div class="reveal reveal-right" style="position: relative; display: flex; align-items: center; justify-content: center; min-height: 550px;">
+          <!-- Giant Holographic Base Platform -->
+          <div class="hologram-platform-base">
+            <div class="platform-core-glow"></div>
+            <div class="platform-grid-overlay"></div>
+            <div class="platform-ring platform-ring-inner"></div>
+            <div class="platform-ring platform-ring-outer"></div>
+          </div>
+
           <div class="hologram-wrapper">
             <!-- Scanline scanner overlay -->
             <div class="hologram-scan"></div>
             
-            <!-- Concentric rings -->
+            <!-- Large radial green glow behind logo -->
+            <div class="hologram-glow-radial"></div>
+
+            <!-- Concentric rings (10 rings) -->
             <div class="orbit-ring ring-1"></div>
             <div class="orbit-ring ring-2"></div>
             <div class="orbit-ring ring-3"></div>
+            <div class="orbit-ring ring-4"></div>
+            <div class="orbit-ring ring-5"></div>
+            <div class="orbit-ring ring-6"></div>
+            <div class="orbit-ring ring-7"></div>
+            <div class="orbit-ring ring-8"></div>
+            <div class="orbit-ring ring-9"></div>
+            <div class="orbit-ring ring-10"></div>
 
             <!-- Orbit Elliptical Line -->
             <div class="orbit-line">
               <div class="orbit-node"></div>
             </div>
 
-            <!-- 3D Perspective Digital Floor Grid -->
+            <!-- 3D Perspective Grid Floor -->
             <div class="digital-floor"></div>
 
             <!-- Glowing Planet Sphere -->
@@ -143,17 +163,27 @@
             <!-- Vertical Energy Beam -->
             <div class="energy-beam"></div>
 
+            <!-- Pulsing Energy Waves -->
+            <div class="energy-portal">
+              <div class="energy-wave"></div>
+              <div class="energy-wave"></div>
+              <div class="energy-wave"></div>
+            </div>
+
+            <!-- Thousands of small green particles (Hologram projection) -->
+            <canvas class="hologram-particles-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 4;"></canvas>
+
             <!-- Holographic floating logo icon -->
             <img src="assets/images/logo-icon.png" alt="PSP Ventures Hologram Logo" class="holographic-logo" style="max-height: 170px; z-index: 5;">
 
-            <!-- Floating featured app card wrapper -->
-            <div class="hero-featured-card-wrapper">
+            <!-- Floating featured app card wrapper placed at top-right exactly like the reference -->
+            <div class="hero-featured-card-wrapper" style="position: absolute; top: -35px; right: -50px; left: auto; bottom: auto; width: 290px; z-index: 10; pointer-events: none; animation: float-card 6s ease-in-out infinite alternate; will-change: transform;">
               <div class="hero-featured-card">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
                   <span style="font-family: monospace; font-size: 0.75rem; color: var(--primary-accent); font-weight: bold; background: rgba(127, 255, 0, 0.1); padding: 2px 8px; border-radius: 20px;">★ 4.8 Rating</span>
                   <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--primary-accent); box-shadow: 0 0 8px var(--primary-accent);"></div>
                 </div>
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem;">My Savings Book</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem; font-family: var(--font-display);">My Savings Book</h4>
                 <p style="font-size: 0.8rem; line-height: 1.4; color: var(--text-secondary); margin-bottom: 0;">Personal Finance App</p>
               </div>
             </div>
