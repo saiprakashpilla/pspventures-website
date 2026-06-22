@@ -6,22 +6,28 @@
 
 :root {
   /* Colors */
-  --bg-primary: #050505;
-  --bg-secondary: #0A0A0A;
-  --bg-tertiary: #0E0E0E;
-  --card-bg: #0E0E0E;
-  --card-bg-hover: #141414;
+  --bg-primary: #030303;
+  --bg-secondary: #050505;
+  --bg-tertiary: #0A0A0A;
+  --card-bg: rgba(12, 12, 12, 0.65);
+  --card-bg-hover: rgba(12, 12, 12, 0.8);
   
-  --primary-accent: #7FFF00;      /* Neon Green primary */
-  --primary-accent-alt: #A8FF00;  /* Lime glow */
-  --secondary-accent: #4DFFB8;    /* Mint Green */
-  --secondary-accent-alt: #8A5CFF;/* Tech Purple/Indigo */
+  --primary-accent: #8CFF00;      /* Primary Neon Green */
+  --primary-accent-alt: #A6FF4D;  /* Secondary Lime */
+  --secondary-accent: #00D9FF;    /* Cyan */
+  --secondary-accent-alt: #00F0FF;/* Bright Cyan */
   
-  --text-primary: #FFFFFF;
-  --text-secondary: #B8C0CC;
-  --text-muted: #626C7A;
-  --border-color: rgba(127, 255, 0, 0.12);
-  --border-color-hover: rgba(127, 255, 0, 0.35);
+  --text-primary: #F8F8F8;        /* Crisp White */
+  --text-secondary: #A0A0A0;      /* Muted Text */
+  --text-muted: #555555;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-hover: rgba(140, 255, 0, 0.35);
+
+  /* Multilayer Cyber Glow System */
+  --glow-neon-green: 
+    0 0 20px rgba(140, 255, 0, 0.45),
+    0 0 60px rgba(140, 255, 0, 0.3),
+    0 0 120px rgba(0, 217, 255, 0.15);
   
   /* Fonts */
   --font-display: 'Orbitron', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -31,8 +37,8 @@
   --max-width: 1200px;
   --header-height: 90px;
   --border-radius-sm: 8px;
-  --border-radius-md: 16px;
-  --border-radius-lg: 24px;
+  --border-radius-md: 24px;       /* 24px Card Corners as requested */
+  --border-radius-lg: 32px;
   --transition-speed: 0.35s;
   --ease-custom: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -178,7 +184,7 @@ p {
 }
 
 .section {
-  padding: 9rem 0;
+  padding: 11rem 0; /* Increased whitespace to let sections breathe */
   position: relative;
   overflow: hidden;
 }
@@ -241,10 +247,10 @@ p {
 
 .glass-card {
   background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: var(--border-radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px); /* 24px blur as requested */
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 24px; /* 24px Card Corners as requested */
   padding: 2.5rem;
   transition: all var(--transition-speed) var(--ease-custom);
   position: relative;
@@ -266,25 +272,30 @@ p {
 
 .glass-card:hover {
   background: var(--card-bg-hover);
-  border-color: var(--border-color-hover);
+  border-color: rgba(140, 255, 0, 0.35);
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 
-              0 0 35px rgba(0, 229, 255, 0.06);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), var(--glow-neon-green);
 }
 
 /* Specific card accents */
 .glass-card.glow-green:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 35px rgba(124, 255, 0, 0.15);
-  border-color: rgba(124, 255, 0, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), var(--glow-neon-green);
+  border-color: rgba(140, 255, 0, 0.35);
 }
 
 .glass-card.glow-cyan:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 35px rgba(0, 229, 255, 0.15);
-  border-color: rgba(0, 229, 255, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 
+              0 0 20px rgba(0, 217, 255, 0.45),
+              0 0 60px rgba(0, 217, 255, 0.3),
+              0 0 120px rgba(140, 255, 0, 0.15);
+  border-color: rgba(0, 217, 255, 0.35);
 }
 
 .glass-card.glow-purple:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 35px rgba(138, 92, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 
+              0 0 20px rgba(138, 92, 255, 0.45),
+              0 0 60px rgba(138, 92, 255, 0.3),
+              0 0 120px rgba(0, 217, 255, 0.15);
   border-color: rgba(138, 92, 255, 0.35);
 }
 
@@ -294,14 +305,13 @@ p {
 
 .hero-featured-card {
   width: 100%;
-  background: rgba(15, 15, 15, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: var(--border-radius-md);
+  background: rgba(12, 12, 12, 0.65); /* background rgba(12,12,12,.65) as requested */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* border 1px solid rgba(255,255,255,.08) */
+  backdrop-filter: blur(24px); /* blur 24px as requested */
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 24px; /* corners 24px as requested */
   padding: 1.5rem;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 
-              0 0 30px rgba(124, 255, 0, 0.08);
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.15); /* box-shadow 0 0 40px rgba(0,217,255,.15) */
   pointer-events: auto;
   transition: transform 0.4s var(--ease-custom), 
               border-color 0.4s ease, 
@@ -337,9 +347,9 @@ p {
 
 .hero-featured-card:hover {
   transform: translateY(-12px) scale(1.02);
-  border-color: var(--primary-accent);
-  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7), 
-              0 0 50px rgba(124, 255, 0, 0.35);
+  border-color: rgba(140, 255, 0, 0.4);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 
+              0 0 40px rgba(0, 217, 255, 0.25);
 }
 
 /* ==========================================================================
@@ -352,9 +362,9 @@ p {
   justify-content: center;
   padding: 1.1rem 2.5rem;
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
-  border-radius: 50px; /* Capsule rounded buttons as requested */
+  border-radius: 18px; /* Border radius: 18px as requested */
   cursor: pointer;
   transition: all var(--transition-speed) var(--ease-custom);
   position: relative;
@@ -364,12 +374,15 @@ p {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-alt), var(--primary-accent));
-  background-size: 200% auto;
-  color: #000000;
+  background: linear-gradient(135deg, #8CFF00, #00F0FF); /* Gradient #8CFF00 -> #00F0FF */
+  color: #030303;
+  font-weight: 800;
+  box-shadow: 
+    0 0 15px rgba(140, 255, 0, 0.3),
+    0 0 30px rgba(0, 240, 255, 0.1);
   transition: transform var(--transition-speed) var(--ease-custom), 
               box-shadow var(--transition-speed) var(--ease-custom),
-              background-position 0.5s ease;
+              background 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -397,12 +410,11 @@ p {
 }
 
 .btn-primary:hover {
-  transform: scale(1.03) translateY(-2px);
-  background-position: right center;
-  box-shadow: 0 15px 40px rgba(124, 255, 0, 0.65), 
-              0 0 25px rgba(0, 229, 255, 0.5),
-              inset 0 0 10px rgba(255, 255, 255, 0.3);
-  animation: glow-pulse-primary 1.5s infinite;
+  transform: scale(1.03) translateY(-2px); /* Scale 1.03 as requested */
+  box-shadow: 
+    0 0 30px rgba(140, 255, 0, 0.55),
+    0 0 60px rgba(0, 240, 255, 0.25),
+    0 0 120px rgba(0, 240, 255, 0.15); /* 50% glow increase */
 }
 
 /* Social Media Glass Buttons */
@@ -422,21 +434,21 @@ p {
 }
 
 .social-glass-btn:nth-child(odd):hover {
-  background: rgba(124, 255, 0, 0.08);
+  background: rgba(140, 255, 0, 0.08);
   border-color: var(--primary-accent);
   color: var(--primary-accent);
   transform: scale(1.12);
-  box-shadow: 0 0 20px rgba(124, 255, 0, 0.35),
-              inset 0 0 8px rgba(124, 255, 0, 0.2);
+  box-shadow: 0 0 20px rgba(140, 255, 0, 0.35),
+              inset 0 0 8px rgba(140, 255, 0, 0.2);
 }
 
 .social-glass-btn:nth-child(even):hover {
-  background: rgba(0, 229, 255, 0.08);
+  background: rgba(0, 217, 255, 0.08);
   border-color: var(--secondary-accent-alt);
   color: var(--secondary-accent-alt);
   transform: scale(1.12);
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.35),
-              inset 0 0 8px rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.35),
+              inset 0 0 8px rgba(0, 217, 255, 0.2);
 }
 
 .btn-secondary {
@@ -450,11 +462,10 @@ p {
 }
 
 .btn-secondary:hover {
-  border-color: var(--primary-accent-alt);
-  background: rgba(0, 229, 255, 0.04);
+  border-color: var(--primary-accent);
+  background: rgba(0, 217, 255, 0.04);
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(0, 229, 255, 0.25);
-  animation: glow-pulse-secondary 1.5s infinite;
+  box-shadow: 0 12px 35px rgba(0, 217, 255, 0.25);
 }
 
 .btn-accent {
@@ -471,13 +482,13 @@ p {
   border: 1px solid var(--primary-accent);
   background: transparent;
   color: var(--primary-accent);
-  box-shadow: 0 0 10px rgba(127, 255, 0, 0.1);
-  text-shadow: 0 0 5px rgba(127, 255, 0, 0.2);
+  box-shadow: 0 0 10px rgba(140, 255, 0, 0.1);
+  text-shadow: 0 0 5px rgba(140, 255, 0, 0.2);
 }
 
 .btn-outlined-neon:hover {
   background: var(--primary-accent);
-  color: #000000;
+  color: #030303;
   box-shadow: 0 0 20px var(--primary-accent), 0 0 35px var(--primary-accent-alt);
   transform: translateY(-2px);
   text-shadow: none;
