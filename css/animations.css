@@ -261,28 +261,28 @@
   z-index: 5;
   filter: drop-shadow(0 0 35px rgba(127, 255, 0, 0.5)) drop-shadow(0 0 70px rgba(0, 229, 255, 0.35));
   animation: hologram-float 6s ease-in-out infinite alternate;
-  width: 190px; /* Target desktop size: 180px–200px */
+  width: 240px; /* Target desktop size: 240px (increased 25-30%) */
   height: auto;
   will-change: transform;
 }
 
 @media screen and (max-width: 1024px) {
   .holographic-logo {
-    width: 155px; /* Target tablet size */
+    width: 195px; /* Target tablet size */
   }
 }
 
 @media screen and (max-width: 768px) {
   .holographic-logo {
-    width: 125px; /* Target mobile size */
+    width: 160px; /* Target mobile size */
   }
 }
 
-/* Parallax logo wrapper centered exactly at shared Y-coordinate with 20px horizontal and 10px vertical shifts */
+/* Parallax logo wrapper centered exactly at shared Y-coordinate */
 .holographic-logo-parallax-wrapper {
   position: absolute;
-  left: calc(var(--center-x) + 20px);
-  top: calc(var(--center-y) + 10px);
+  left: var(--center-x);
+  top: var(--center-y);
   transform: translate(-50%, -50%);
   z-index: 5;
   will-change: transform;
