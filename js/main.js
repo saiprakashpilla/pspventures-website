@@ -386,31 +386,27 @@ function initHologramParticles() {
   resize();
   window.addEventListener('resize', resize);
 
-  // Helper to create a particle
-  function createParticle(randomY = false) {
-    const radius = Math.random() * 1.0 + 0.35; // tiny particles
+  // Helper to create a particle centered around the logo
+  function createParticle(randomInit = false) {
+    const radius = Math.random() * 1.2 + 0.35; // tiny particles
     const centerX = width / 2;
-    const baseY = height * 0.82; // projection starts at platform level
+    const centerY = height * 0.45; // centered around logo vertical float height
     
-    // Polar distribution for footprint
+    // Polar coordinates centered around the logo
     const angle = Math.random() * Math.PI * 2;
-    const distance = Math.pow(Math.random(), 1.5) * 110; // platform radius
+    // We want the particles clustered closely around the logo, max distance 150px
+    const distance = randomInit ? (Math.pow(Math.random(), 1.2) * 160) : (Math.random() * 20 + 5); 
     
-    const x = centerX + Math.cos(angle) * distance;
-    const y = randomY ? (height * 0.15 + Math.random() * (baseY - height * 0.15)) : baseY;
-
     return {
-      x: x,
-      y: y,
-      originX: centerX + Math.cos(angle) * distance,
-      vx: (Math.random() - 0.5) * 0.2,
-      vy: -(Math.random() * 0.75 + 0.35),
+      centerX: centerX,
+      centerY: centerY,
+      angle: angle,
+      distance: distance,
+      speed: (Math.random() * 0.012 + 0.003) * (Math.random() > 0.5 ? 1 : -1), // orbit speed
+      radialSpeed: Math.random() * 0.45 + 0.15, // speed drifting outwards
       radius: radius,
       alpha: Math.random() * 0.65 + 0.1,
-      fadeRate: Math.random() * 0.008 + 0.003,
-      waverSpeed: Math.random() * 0.03 + 0.01,
-      waverAmplitude: Math.random() * 1.5 + 0.5,
-      waverOffset: Math.random() * Math.PI * 2
+      fadeRate: Math.random() * 0.006 + 0.002
     };
   }
 
@@ -424,26 +420,29 @@ function initHologramParticles() {
 
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
-      p.y += p.vy;
       
-      // Waver slightly horizontally to simulate shimmering holographic beam
-      p.waverOffset += p.waverSpeed;
-      p.x = p.originX + Math.sin(p.waverOffset) * p.waverAmplitude;
-
-      // Calculate opacity based on height (fades out at bottom and top edges)
-      const progress = (p.y - height * 0.15) / (height * 0.67);
+      // Update coordinates (orbiting and expanding outwards)
+      p.angle += p.speed;
+      p.distance += p.radialSpeed;
+      
+      // Fade out as it expands further from the logo
       let alpha = p.alpha;
-      
-      if (progress < 0) {
+      if (p.distance > 160) {
+        alpha = p.alpha * Math.max(0, (180 - p.distance) / 20);
+      }
+
+      // If particle drifts too far, recycle it close to the logo
+      if (p.distance > 180) {
         particles[i] = createParticle(false);
         continue;
-      } else if (progress < 0.25) {
-        alpha = p.alpha * (progress / 0.25);
       }
+
+      const x = p.centerX + Math.cos(p.angle) * p.distance;
+      const y = p.centerY + Math.sin(p.angle) * p.distance;
 
       ctx.beginPath();
       ctx.fillStyle = `rgba(127, 255, 0, ${alpha})`;
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.arc(x, y, p.radius, 0, Math.PI * 2);
       ctx.fill();
     }
 

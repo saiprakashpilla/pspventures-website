@@ -186,7 +186,7 @@
 .hologram-wrapper {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 700px;
   aspect-ratio: 1/1;
   margin: 0 auto;
   display: flex;
@@ -198,95 +198,50 @@
 .holographic-logo {
   position: relative;
   z-index: 5;
-  filter: drop-shadow(0 0 30px rgba(127, 255, 0, 0.45)) drop-shadow(0 0 60px rgba(168, 255, 0, 0.2));
-  animation: hologram-float 6s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 35px rgba(127, 255, 0, 0.5)) drop-shadow(0 0 70px rgba(0, 229, 255, 0.35));
+  animation: hologram-float 4.5s ease-in-out infinite alternate;
 }
 
 @keyframes hologram-float {
   0% {
-    transform: translateY(10px) rotate(0deg);
+    transform: translateY(12px) rotate(-0.5deg);
   }
   100% {
-    transform: translateY(-15px) rotate(1deg);
+    transform: translateY(-18px) rotate(0.5deg);
   }
 }
 
-/* 3D Perspective Digital Floor Grid */
+/* 3D Perspective Digital Floor Grid - Hidden or replaced by .hologram-platform-base */
 .digital-floor {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) rotateX(65deg);
-  transform-origin: bottom center;
-  width: 550px;
-  height: 250px;
-  background-image: 
-    linear-gradient(rgba(127, 255, 0, 0.2) 1.5px, transparent 1.5px),
-    linear-gradient(90deg, rgba(127, 255, 0, 0.2) 1.5px, transparent 1.5px);
-  background-size: 30px 30px;
-  background-position: center bottom;
-  opacity: 0.7;
-  pointer-events: none;
-  mask-image: linear-gradient(to top, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 90%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 90%);
-  z-index: 2;
-  animation: grid-scroll 12s linear infinite;
+  display: none;
 }
 
-@keyframes grid-scroll {
-  0% { background-position: center bottom 0px; }
-  100% { background-position: center bottom 300px; }
-}
-
-/* Glowing Planet Sphere */
+/* Glowing Planet Sphere - Deleted entirely */
 .planet-sphere {
+  display: none;
+}
+
+/* Vertical Cyan Energy Beam */
+.energy-beam {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, rgba(127, 255, 0, 0.75) 0%, rgba(14, 14, 14, 0.95) 60%, #000000 100%);
-  box-shadow: 
-    0 0 50px rgba(127, 255, 0, 0.25),
-    0 0 100px rgba(127, 255, 0, 0.15),
-    inset 10px 10px 30px rgba(255, 255, 255, 0.08),
-    inset -10px -10px 30px rgba(0, 0, 0, 0.9);
-  z-index: 3;
-  pointer-events: none;
-  animation: planet-float 6s ease-in-out infinite alternate;
-}
-
-@keyframes planet-float {
-  0% {
-    transform: translate(-50%, -50%) scale(0.98);
-    box-shadow: 0 0 50px rgba(127, 255, 0, 0.2), 0 0 90px rgba(127, 255, 0, 0.1);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.02);
-    box-shadow: 0 0 70px rgba(127, 255, 0, 0.35), 0 0 130px rgba(127, 255, 0, 0.25);
-  }
-}
-
-/* Vertical Energy Beam */
-.energy-beam {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
   transform: translateX(-50%);
-  width: 4px;
-  height: 180px;
-  background: linear-gradient(to top, rgba(127, 255, 0, 0.75) 0%, rgba(168, 255, 0, 0.2) 60%, rgba(168, 255, 0, 0) 100%);
-  box-shadow: 0 0 8px rgba(127, 255, 0, 0.6), 0 0 15px rgba(127, 255, 0, 0.3);
+  width: 5px;
+  height: 280px;
+  background: linear-gradient(to bottom, rgba(0, 229, 255, 0.9) 0%, rgba(127, 255, 0, 0.3) 70%, rgba(127, 255, 0, 0) 100%);
+  box-shadow: 
+    0 0 15px rgba(0, 229, 255, 0.8),
+    0 0 30px rgba(0, 229, 255, 0.3),
+    0 0 8px rgba(127, 255, 0, 0.4);
   z-index: 2;
   pointer-events: none;
-  animation: beam-pulse 3s ease-in-out infinite alternate;
+  animation: beam-pulse 2s ease-in-out infinite alternate;
 }
 
 @keyframes beam-pulse {
-  0% { opacity: 0.5; width: 3px; }
-  100% { opacity: 0.9; width: 6px; }
+  0% { opacity: 0.6; width: 4px; filter: brightness(0.95); }
+  100% { opacity: 1.0; width: 7px; filter: brightness(1.25); }
 }
 
 /* Concentric Rings (10 Rings) */
@@ -376,39 +331,45 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 340px;
-  height: 340px;
+  width: 780px;
+  height: 780px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(124, 255, 0, 0.25) 0%, rgba(0, 229, 255, 0.08) 50%, rgba(0, 0, 0, 0) 70%);
-  filter: blur(35px);
+  background: radial-gradient(circle, rgba(124, 255, 0, 0.38) 0%, rgba(0, 229, 255, 0.1) 50%, rgba(0, 0, 0, 0) 75%);
+  filter: blur(55px);
   z-index: 1;
   pointer-events: none;
-  animation: hologram-radial-pulse 5s ease-in-out infinite alternate;
+  animation: hologram-radial-pulse 6s ease-in-out infinite alternate;
 }
 
 @keyframes hologram-radial-pulse {
-  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
-  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.95; }
+  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
 }
 
 /* Holographic Platform Base (at the bottom of hologram section) */
 .hologram-platform-base {
   position: absolute;
-  bottom: -40px;
+  bottom: -110px;
   left: 50%;
-  transform: translateX(-50%) rotateX(75deg);
-  width: 480px;
-  height: 480px;
+  transform: translateX(-50%) rotateX(80deg);
+  width: 1100px;
+  height: 1100px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.28) 0%, rgba(127, 255, 0, 0.06) 45%, rgba(0, 0, 0, 0) 70%);
-  border: 2.5px solid rgba(127, 255, 0, 0.35);
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.35) 0%, rgba(127, 255, 0, 0.06) 45%, rgba(0, 0, 0, 0) 70%);
+  border: 3.5px solid rgba(127, 255, 0, 0.45);
   box-shadow: 
-    0 0 60px rgba(0, 229, 255, 0.35),
-    0 0 120px rgba(127, 255, 0, 0.2),
-    inset 0 0 45px rgba(0, 229, 255, 0.25);
+    0 0 90px rgba(0, 229, 255, 0.4),
+    0 0 180px rgba(127, 255, 0, 0.25),
+    inset 0 0 70px rgba(0, 229, 255, 0.3);
   z-index: 1;
   pointer-events: none;
+  animation: platform-pulse 5s ease-in-out infinite alternate;
   will-change: transform;
+}
+
+@keyframes platform-pulse {
+  0% { transform: translateX(-50%) rotateX(80deg) scale(0.95); opacity: 0.85; }
+  100% { transform: translateX(-50%) rotateX(80deg) scale(1.05); opacity: 1; }
 }
 
 .platform-core-glow {
@@ -416,11 +377,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 140px;
-  height: 140px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(0, 229, 255, 0.95) 0%, rgba(127, 255, 0, 0.45) 50%, rgba(0,0,0,0) 80%);
-  filter: blur(10px);
+  filter: blur(25px);
   animation: platform-glow-pulse 4s ease-in-out infinite alternate;
 }
 
@@ -439,7 +400,7 @@
   background-image: 
     linear-gradient(rgba(127, 255, 0, 0.25) 1.5px, transparent 1.5px),
     linear-gradient(90deg, rgba(127, 255, 0, 0.25) 1.5px, transparent 1.5px);
-  background-size: 25px 25px;
+  background-size: 40px 40px;
   background-position: center;
   mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%);
   -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%);
@@ -455,16 +416,16 @@
 }
 
 .platform-ring-inner {
-  width: 220px;
-  height: 220px;
-  border: 1.5px dashed rgba(0, 229, 255, 0.6);
+  width: 480px;
+  height: 480px;
+  border: 2px dashed rgba(0, 229, 255, 0.65);
   animation: rotate-clockwise 20s linear infinite;
 }
 
 .platform-ring-outer {
-  width: 340px;
-  height: 340px;
-  border: 2px solid rgba(127, 255, 0, 0.4);
+  width: 800px;
+  height: 800px;
+  border: 3px solid rgba(127, 255, 0, 0.45);
   border-left-color: transparent;
   border-right-color: transparent;
   animation: rotate-counter-clockwise 25s linear infinite;
@@ -474,12 +435,12 @@
 .hero-ambient-right {
   position: absolute;
   top: 50%;
-  right: -250px;
+  right: -280px;
   transform: translateY(-50%);
-  width: 700px;
-  height: 700px;
+  width: 750px;
+  height: 750px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(124, 255, 0, 0.2) 0%, rgba(0, 229, 255, 0.05) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(124, 255, 0, 0.22) 0%, rgba(0, 229, 255, 0.06) 50%, transparent 70%);
   filter: blur(120px);
   pointer-events: none;
   z-index: 0;
