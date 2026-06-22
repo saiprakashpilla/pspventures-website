@@ -387,7 +387,7 @@ function initHologramParticles() {
   let width = 0;
   let height = 0;
   const particles = [];
-  const maxParticles = 900; // Dense particle simulation representing hologram energy
+  const maxParticles = 720; // Reduced density by 20% to keep logo as primary focus
 
   function resize() {
     const rect = canvas.getBoundingClientRect();
@@ -405,13 +405,17 @@ function initHologramParticles() {
   function createParticle(randomInit = false) {
     const radius = Math.random() * 1.2 + 0.35; // tiny particles
     const centerX = width / 2;
-    const centerY = height * 0.45; // centered around logo vertical float height
+    const centerY = height * 0.5 + 60; // Centered exactly at the shifted logo position
     
     // Polar coordinates centered around the logo
     const angle = Math.random() * Math.PI * 2;
-    // We want the particles clustered closely around the logo, max distance 150px
+    // We want the particles clustered closely around the logo, max distance 160px
     const distance = randomInit ? (Math.pow(Math.random(), 1.2) * 160) : (Math.random() * 20 + 5); 
     
+    // Twinkling rates for random durations between 2s and 6s
+    const twinklePhase = Math.random() * Math.PI * 2;
+    const twinkleSpeed = Math.random() * 0.035 + 0.017; // speed per frame at 60fps
+
     return {
       centerX: centerX,
       centerY: centerY,
@@ -420,8 +424,9 @@ function initHologramParticles() {
       speed: (Math.random() * 0.012 + 0.003) * (Math.random() > 0.5 ? 1 : -1), // orbit speed
       radialSpeed: Math.random() * 0.45 + 0.15, // speed drifting outwards
       radius: radius,
-      alpha: Math.random() * 0.65 + 0.1,
-      fadeRate: Math.random() * 0.006 + 0.002
+      alpha: Math.random() * 0.6 + 0.2,
+      twinklePhase: twinklePhase,
+      twinkleSpeed: twinkleSpeed
     };
   }
 
@@ -436,14 +441,18 @@ function initHologramParticles() {
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
       
-      // Update coordinates (orbiting and expanding outwards)
+      // Update coordinates (orbiting, expanding, and twinkling)
       p.angle += p.speed;
       p.distance += p.radialSpeed;
-      
+      p.twinklePhase += p.twinkleSpeed;
+
+      // Twinkling effect: smooth sinusoidal scaling between 0.3 and 1.0 opacity
+      const twinkle = 0.65 + Math.sin(p.twinklePhase) * 0.35;
+      let alpha = p.alpha * twinkle;
+
       // Fade out as it expands further from the logo
-      let alpha = p.alpha;
       if (p.distance > 160) {
-        alpha = p.alpha * Math.max(0, (180 - p.distance) / 20);
+        alpha = (p.alpha * twinkle) * Math.max(0, (180 - p.distance) / 20);
       }
 
       // If particle drifts too far, recycle it close to the logo
