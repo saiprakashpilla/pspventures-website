@@ -401,33 +401,62 @@ function initHologramParticles() {
   resize();
   window.addEventListener('resize', resize);
 
-  // Helper to create a particle centered around the logo
-  function createParticle(randomInit = false) {
+  // Helper to create a particle centered around the logo or rising from the platform
+  function createParticle(randomInit = false, forceType = null) {
+    const type = forceType || (Math.random() < 0.35 ? 'rise' : 'orbit');
     const radius = Math.random() * 1.2 + 0.35; // tiny particles
     const centerX = width / 2;
-    const centerY = height * 0.5 + 60; // Centered exactly at the shifted logo position
-    
-    // Polar coordinates centered around the logo
-    const angle = Math.random() * Math.PI * 2;
-    // We want the particles clustered closely around the logo, max distance 160px
-    const distance = randomInit ? (Math.pow(Math.random(), 1.2) * 160) : (Math.random() * 20 + 5); 
-    
-    // Twinkling rates for random durations between 2s and 6s
-    const twinklePhase = Math.random() * Math.PI * 2;
-    const twinkleSpeed = Math.random() * 0.035 + 0.017; // speed per frame at 60fps
+    const centerY = height * 0.5 + 40; // Centered exactly at the shifted logo position
 
-    return {
-      centerX: centerX,
-      centerY: centerY,
-      angle: angle,
-      distance: distance,
-      speed: (Math.random() * 0.012 + 0.003) * (Math.random() > 0.5 ? 1 : -1), // orbit speed
-      radialSpeed: Math.random() * 0.45 + 0.15, // speed drifting outwards
-      radius: radius,
-      alpha: Math.random() * 0.6 + 0.2,
-      twinklePhase: twinklePhase,
-      twinkleSpeed: twinkleSpeed
-    };
+    if (type === 'orbit') {
+      // Polar coordinates centered around the logo
+      const angle = Math.random() * Math.PI * 2;
+      // We want the particles clustered closely around the logo, max distance 160px
+      const distance = randomInit ? (Math.pow(Math.random(), 1.2) * 160) : (Math.random() * 20 + 5); 
+      
+      // Twinkling rates for random durations between 2s and 6s
+      const twinklePhase = Math.random() * Math.PI * 2;
+      const twinkleSpeed = Math.random() * 0.035 + 0.017; // speed per frame at 60fps
+
+      return {
+        type: 'orbit',
+        centerX: centerX,
+        centerY: centerY,
+        angle: angle,
+        distance: distance,
+        speed: (Math.random() * 0.012 + 0.003) * (Math.random() > 0.5 ? 1 : -1), // orbit speed
+        radialSpeed: Math.random() * 0.45 + 0.15, // speed drifting outwards
+        radius: radius,
+        alpha: Math.random() * 0.6 + 0.2,
+        twinklePhase: twinklePhase,
+        twinkleSpeed: twinkleSpeed
+      };
+    } else {
+      // Rising particles emerging from the platform base and heading towards the logo
+      const platformOffsetY = 180; // Distance between logo and platform centers
+      const pX = centerX + (Math.random() - 0.5) * 60; // emerging from platform center
+      const pY = randomInit ? (centerY + Math.random() * platformOffsetY) : (centerY + platformOffsetY - Math.random() * 10);
+      
+      const speedY = -(Math.random() * 1.0 + 0.4); // rising upwards
+      const speedX = (Math.random() - 0.5) * 0.25; // slight horizontal drift
+      
+      const twinklePhase = Math.random() * Math.PI * 2;
+      const twinkleSpeed = Math.random() * 0.035 + 0.017;
+
+      return {
+        type: 'rise',
+        x: pX,
+        y: pY,
+        speedX: speedX,
+        speedY: speedY,
+        radius: radius + 0.15, // slightly larger for vertical beam glow look
+        alpha: Math.random() * 0.55 + 0.25,
+        twinklePhase: twinklePhase,
+        twinkleSpeed: twinkleSpeed,
+        startY: centerY + platformOffsetY,
+        endY: centerY
+      };
+    }
   }
 
   // Initialize particle set
@@ -441,33 +470,64 @@ function initHologramParticles() {
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
       
-      // Update coordinates (orbiting, expanding, and twinkling)
-      p.angle += p.speed;
-      p.distance += p.radialSpeed;
-      p.twinklePhase += p.twinkleSpeed;
+      if (p.type === 'orbit') {
+        // Update coordinates (orbiting, expanding, and twinkling)
+        p.angle += p.speed;
+        p.distance += p.radialSpeed;
+        p.twinklePhase += p.twinkleSpeed;
 
-      // Twinkling effect: smooth sinusoidal scaling between 0.3 and 1.0 opacity
-      const twinkle = 0.65 + Math.sin(p.twinklePhase) * 0.35;
-      let alpha = p.alpha * twinkle;
+        // Twinkling effect: smooth sinusoidal scaling between 0.3 and 1.0 opacity
+        const twinkle = 0.65 + Math.sin(p.twinklePhase) * 0.35;
+        let alpha = p.alpha * twinkle;
 
-      // Fade out as it expands further from the logo
-      if (p.distance > 160) {
-        alpha = (p.alpha * twinkle) * Math.max(0, (180 - p.distance) / 20);
+        // Fade out as it expands further from the logo
+        if (p.distance > 160) {
+          alpha = (p.alpha * twinkle) * Math.max(0, (180 - p.distance) / 20);
+        }
+
+        // If particle drifts too far, recycle it close to the logo
+        if (p.distance > 180) {
+          particles[i] = createParticle(false, 'orbit');
+          continue;
+        }
+
+        const x = p.centerX + Math.cos(p.angle) * p.distance;
+        const y = p.centerY + Math.sin(p.angle) * p.distance;
+
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(127, 255, 0, ${alpha})`;
+        ctx.arc(x, y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+      } else {
+        // Rising particles
+        p.x += p.speedX;
+        p.y += p.speedY;
+        p.twinklePhase += p.twinkleSpeed;
+
+        const twinkle = 0.65 + Math.sin(p.twinklePhase) * 0.35;
+        
+        // Alpha fades out as it approaches endY (logo center)
+        const totalDist = p.startY - p.endY;
+        const currentDist = p.startY - p.y;
+        let alpha = p.alpha * twinkle;
+        
+        if (currentDist > totalDist - 40) {
+          // fading out close to the logo
+          alpha = alpha * Math.max(0, (totalDist - currentDist) / 40);
+        }
+        
+        // If particle reaches the logo level or goes above start, recycle it
+        if (p.y <= p.endY || p.y > p.startY + 20) {
+          particles[i] = createParticle(false, 'rise');
+          continue;
+        }
+
+        ctx.beginPath();
+        // Alternating color spectrum matches primary cyan and secondary green themes
+        ctx.fillStyle = (i % 2 === 0) ? `rgba(0, 229, 255, ${alpha})` : `rgba(127, 255, 0, ${alpha})`;
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
       }
-
-      // If particle drifts too far, recycle it close to the logo
-      if (p.distance > 180) {
-        particles[i] = createParticle(false);
-        continue;
-      }
-
-      const x = p.centerX + Math.cos(p.angle) * p.distance;
-      const y = p.centerY + Math.sin(p.angle) * p.distance;
-
-      ctx.beginPath();
-      ctx.fillStyle = `rgba(127, 255, 0, ${alpha})`;
-      ctx.arc(x, y, p.radius, 0, Math.PI * 2);
-      ctx.fill();
     }
 
     requestAnimationFrame(animate);
@@ -506,7 +566,7 @@ function initHeroParallax() {
     currentParallaxY += (targetParallaxY - currentParallaxY) * 0.08;
 
     if (logoWrapper) {
-      logoWrapper.style.transform = `translate(${currentParallaxX}px, ${currentParallaxY}px)`;
+      logoWrapper.style.transform = `translate(calc(-50% + ${currentParallaxX}px), calc(-50% + ${currentParallaxY}px))`;
     }
 
     requestAnimationFrame(updateParallax);

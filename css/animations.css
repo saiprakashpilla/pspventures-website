@@ -193,6 +193,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* Centralized shared coordinates for perfect symmetry */
+  --center-x: 50%;
+  --center-y: calc(50% + 40px); /* Shifted up by 20px from 50% + 60px */
+  --platform-offset-y: 180px;   /* Distance between logo center and platform center */
+}
+
+/* DEBUG ALIGNMENT GUIDES - Temporarily enabled during development */
+.hologram-wrapper.debug-mode::before {
+  content: '';
+  position: absolute;
+  left: var(--center-x);
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 0, 0, 0.8);
+  z-index: 9999;
+}
+.hologram-wrapper.debug-mode::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: var(--center-y);
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 0, 0, 0.8);
+  z-index: 9999;
+}
+.hologram-wrapper.debug-mode .holographic-logo-parallax-wrapper {
+  outline: 1px dashed red !important;
+}
+.hologram-wrapper.debug-mode .orbit-ring {
+  outline: 1px dashed rgba(0, 229, 255, 0.5) !important;
+}
+.hologram-wrapper.debug-mode .hologram-platform-base {
+  outline: 1px dashed rgba(127, 255, 0, 0.6) !important;
 }
 
 /* Hologram HUD Grid Overlay */
@@ -223,27 +259,31 @@
   z-index: 5;
   filter: drop-shadow(0 0 35px rgba(127, 255, 0, 0.5)) drop-shadow(0 0 70px rgba(0, 229, 255, 0.35));
   animation: hologram-float 6s ease-in-out infinite alternate;
-  width: 300px; /* Target desktop size: 280px - 320px */
+  width: 240px; /* Target desktop size: 220px-240px */
   height: auto;
   will-change: transform;
 }
 
 @media screen and (max-width: 1024px) {
   .holographic-logo {
-    width: 200px; /* Target tablet size */
+    width: 180px; /* Target tablet size */
   }
 }
 
 @media screen and (max-width: 768px) {
   .holographic-logo {
-    width: 160px; /* Target mobile size */
+    width: 140px; /* Target mobile size */
   }
 }
 
-/* Parallax logo wrapper top shift down by 60px */
+/* Parallax logo wrapper centered exactly at shared Y-coordinate */
 .holographic-logo-parallax-wrapper {
-  top: 60px;
-  position: relative;
+  position: absolute;
+  left: var(--center-x);
+  top: var(--center-y);
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  will-change: transform;
 }
 
 @keyframes hologram-float {
@@ -274,34 +314,44 @@
   display: none;
 }
 
-/* Vertical Cyan Energy Beam */
+/* Soft Volumetric Neon Energy Glow */
 .energy-beam {
   position: absolute;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 5px;
-  height: 33.4%; /* Dynamically spans from platform center (8%) to shifted logo center (41.4%) */
-  background: linear-gradient(to top, rgba(0, 229, 255, 0.95) 0%, rgba(127, 255, 0, 0.3) 70%, rgba(127, 255, 0, 0) 100%);
-  box-shadow: 
-    0 0 15px rgba(0, 229, 255, 0.8),
-    0 0 30px rgba(0, 229, 255, 0.3),
-    0 0 8px rgba(127, 255, 0, 0.4);
+  left: var(--center-x);
+  top: calc(var(--center-y) + var(--platform-offset-y) / 2);
+  width: 120px;
+  height: var(--platform-offset-y);
+  transform: translate(-50%, -50%);
+  /* Soft volumetric vertical gradient */
+  background: linear-gradient(to top, 
+    rgba(0, 229, 255, 0.45) 0%, 
+    rgba(127, 255, 0, 0.15) 50%, 
+    rgba(127, 255, 0, 0) 100%
+  );
+  filter: blur(20px);
   z-index: 2;
   pointer-events: none;
-  animation: beam-pulse 2s ease-in-out infinite alternate;
+  animation: volumetric-glow-pulse 4s ease-in-out infinite alternate;
 }
 
-@keyframes beam-pulse {
-  0% { opacity: 0.6; width: 4px; filter: brightness(0.95); }
-  100% { opacity: 1.0; width: 7px; filter: brightness(1.25); }
+@keyframes volumetric-glow-pulse {
+  0% {
+    opacity: 0.6;
+    width: 100px;
+    filter: blur(18px);
+  }
+  100% {
+    opacity: 1.0;
+    width: 140px;
+    filter: blur(24px);
+  }
 }
 
 /* Concentric Rings (6 Rings) */
 .orbit-ring {
   position: absolute;
-  top: calc(50% + 60px); /* Shifted down with the logo */
-  left: 50%;
+  left: var(--center-x);
+  top: var(--center-y);
   transform: translate(-50%, -50%);
   border-radius: 50%;
   pointer-events: none;
@@ -353,8 +403,8 @@
 /* Ambient Neon Glow behind the logo */
 .hologram-glow-radial {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  left: var(--center-x);
+  top: var(--center-y);
   transform: translate(-50%, -50%);
   width: 780px;
   height: 780px;
@@ -374,9 +424,9 @@
 /* Holographic Platform Base (at the bottom of hologram section) */
 .hologram-platform-base {
   position: absolute;
-  bottom: calc(8% - 275px); /* Positioned visually at bottom 8% */
-  left: 50%;
-  transform: translateX(-50%) rotateX(80deg);
+  left: var(--center-x);
+  top: calc(var(--center-y) + var(--platform-offset-y));
+  transform: translate(-50%, -50%) rotateX(80deg);
   width: 550px; /* Centered with width around 550px */
   height: 550px;
   border-radius: 50%;
@@ -393,8 +443,8 @@
 }
 
 @keyframes platform-pulse {
-  0% { transform: translateX(-50%) rotateX(80deg) scale(0.94); opacity: 0.8; }
-  100% { transform: translateX(-50%) rotateX(80deg) scale(1.06); opacity: 1; }
+  0% { transform: translate(-50%, -50%) rotateX(80deg) scale(0.94); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) rotateX(80deg) scale(1.06); opacity: 1; }
 }
 
 .platform-core-glow {
@@ -481,8 +531,8 @@
 /* Energy Portal Background Pulsing Glow & Waves */
 .energy-portal {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  left: var(--center-x);
+  top: var(--center-y);
   transform: translate(-50%, -50%);
   width: 260px;
   height: 260px;
@@ -581,8 +631,8 @@
 /* Orbit Line (Elliptical) */
 .orbit-line {
   position: absolute;
-  top: calc(50% + 60px); /* Shifted down with the logo */
-  left: 50%;
+  left: var(--center-x);
+  top: var(--center-y);
   width: 500px;
   height: 200px;
   border: 1px solid rgba(255, 255, 255, 0.02);
