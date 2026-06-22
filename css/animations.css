@@ -261,20 +261,20 @@
   z-index: 5;
   filter: drop-shadow(0 0 35px rgba(127, 255, 0, 0.5)) drop-shadow(0 0 70px rgba(0, 229, 255, 0.35));
   animation: hologram-float 6s ease-in-out infinite alternate;
-  width: 900px; /* Target desktop size: 900px (increased 1.5x from 600px) */
+  width: 1350px; /* Target desktop size: 1350px (increased 50% from 900px) */
   height: auto;
   will-change: transform;
 }
 
 @media screen and (max-width: 1024px) {
   .holographic-logo {
-    width: 675px; /* Target tablet size (increased 1.5x from 450px) */
+    width: 1012px; /* Target tablet size (increased 50% from 675px) */
   }
 }
 
 @media screen and (max-width: 768px) {
   .holographic-logo {
-    width: 540px; /* Target mobile size (increased 1.5x from 360px) */
+    width: 810px; /* Target mobile size (increased 50% from 540px) */
   }
 }
 
