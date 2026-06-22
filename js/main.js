@@ -4,12 +4,19 @@
  * Core interactive scripts: navigation, scroll reveals, stats animation, background particles, form validation
  */
 
+// Parallax coordinates shared globally
+let targetParallaxX = 0;
+let targetParallaxY = 0;
+let currentParallaxX = 0;
+let currentParallaxY = 0;
+
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollReveals();
   initStatsCounter();
   initBackgroundParticles();
   initHologramParticles();
+  initHeroParallax();
   initContactForm();
 });
 
@@ -225,16 +232,24 @@ function initBackgroundParticles() {
         }
         p.alpha += (p.targetAlpha - p.alpha) * p.fadeSpeed;
 
+        // Calculate dynamic rendering coordinates with mouse parallax offset
+        let renderX = p.x;
+        let renderY = p.y;
+        if (container.id === 'hero') {
+          renderX -= currentParallaxX * 0.35;
+          renderY -= currentParallaxY * 0.35;
+        }
+
         // Draw particle core
         ctx.beginPath();
         ctx.fillStyle = p.color + p.alpha + ')';
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.arc(renderX, renderY, p.radius, 0, Math.PI * 2);
         ctx.fill();
 
         // Draw outer soft glow
         ctx.beginPath();
         ctx.fillStyle = p.color + (p.alpha * 0.25) + ')';
-        ctx.arc(p.x, p.y, p.radius * 3.5, 0, Math.PI * 2);
+        ctx.arc(renderX, renderY, p.radius * 3.5, 0, Math.PI * 2);
         ctx.fill();
       });
 
@@ -450,4 +465,43 @@ function initHologramParticles() {
   }
 
   animate();
+}
+
+/* ==========================================================================
+   Hero Mouse Parallax System
+   ========================================================================== */
+function initHeroParallax() {
+  const hero = document.getElementById('hero');
+  const logoWrapper = document.querySelector('.holographic-logo-parallax-wrapper');
+  if (!hero) return;
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    // Normalize coordinates: -0.5 to 0.5
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    
+    // Max movement 15px
+    targetParallaxX = x * 30; // -15px to 15px
+    targetParallaxY = y * 30; // -15px to 15px
+  });
+
+  hero.addEventListener('mouseleave', () => {
+    targetParallaxX = 0;
+    targetParallaxY = 0;
+  });
+
+  // Smooth easing loop
+  function updateParallax() {
+    currentParallaxX += (targetParallaxX - currentParallaxX) * 0.08;
+    currentParallaxY += (targetParallaxY - currentParallaxY) * 0.08;
+
+    if (logoWrapper) {
+      logoWrapper.style.transform = `translate(${currentParallaxX}px, ${currentParallaxY}px)`;
+    }
+
+    requestAnimationFrame(updateParallax);
+  }
+  
+  updateParallax();
 }
