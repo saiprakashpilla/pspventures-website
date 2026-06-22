@@ -278,11 +278,11 @@
   }
 }
 
-/* Parallax logo wrapper centered exactly at shared Y-coordinate */
+/* Parallax logo wrapper centered exactly at shared Y-coordinate with 20px horizontal and 10px vertical shifts */
 .holographic-logo-parallax-wrapper {
   position: absolute;
-  left: var(--center-x);
-  top: var(--center-y);
+  left: calc(var(--center-x) + 20px);
+  top: calc(var(--center-y) + 10px);
   transform: translate(-50%, -50%);
   z-index: 5;
   will-change: transform;
