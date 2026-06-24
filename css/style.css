@@ -1354,10 +1354,16 @@ footer {
   transition: all 0.3s ease;
 }
 
-.product-icon-box img,
 .product-icon-box svg {
   width: 28px;
   height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.product-icon-box img {
+  width: 85%;
+  height: 85%;
   object-fit: contain;
   display: block;
 }
