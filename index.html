@@ -344,97 +344,136 @@
   </section>
 
   <!-- Products Section -->
-  <section class="section" id="featured-products">
-    <div class="container">
+  <section class="section products-section" id="featured-products">
+    <!-- Subtle Grid Background & Ambient Radial Glow Behind Section -->
+    <div class="products-grid-bg"></div>
+    <div class="products-ambient-glow"></div>
+
+    <div class="container" style="position: relative; z-index: 2;">
       <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;" class="reveal">
         <div>
           <span class="section-subtitle">OUR PRODUCTS</span>
-          <h2 style="margin-bottom: 0; font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 800; line-height: 1.1;">
+          <h2 style="margin-bottom: 0; font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em;">
             APPS & WEBSITES<br>
             <span class="gradient-text">WE'VE BUILT</span>
           </h2>
         </div>
-        <a href="products.html" class="btn btn-secondary">VIEW ALL PRODUCTS</a>
+        <a href="products.html" class="btn btn-outlined-neon">
+          VIEW ALL PRODUCTS
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
       </div>
 
       <div class="grid-4 reveal delay-1">
         
         <!-- Card 1: My Savings Book -->
-        <div class="glass-card glow-green" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div class="product-card glow-green">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
-              <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); background: rgba(127, 255, 0, 0.15); border: 1px solid rgba(127, 255, 0, 0.25); display: flex; align-items: center; justify-content: center; color: var(--primary-accent);">
+            <div class="product-card-top">
+              <div class="product-icon-box">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M12 18V6M6 12h12"></path>
                 </svg>
               </div>
-              <span class="pulse-badge">Live</span>
+              <span class="product-badge-live">LIVE</span>
             </div>
-            <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem;">My Savings Book</h3>
-            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem; color: var(--text-secondary);">
-              A secure expense management tool helping users catalog daily costs, savings metrics, and monthly budgets privately.
-            </p>
+            <div class="product-card-body">
+              <h3 class="product-title">My Savings Book</h3>
+              <span class="product-category category-green">PERSONAL FINANCE APP</span>
+              <p class="product-description">
+                A secure expense management tool helping users catalog daily costs, savings metrics, and monthly budgets privately.
+              </p>
+            </div>
           </div>
-          <a href="product-mysavingsbook.html" class="btn btn-secondary" style="font-size: 0.85rem; width: 100%;">Learn More</a>
+          <div class="product-card-footer">
+            <a href="product-mysavingsbook.html" class="btn btn-secondary">
+              LEARN MORE
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
         </div>
 
         <!-- Card 2: PSP Portfolio -->
-        <div class="glass-card glow-green" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div class="product-card glow-green-cyan">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
-              <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); background: rgba(127, 255, 0, 0.15); border: 1px solid rgba(127, 255, 0, 0.25); display: flex; align-items: center; justify-content: center; color: var(--primary-accent);">
+            <div class="product-card-top">
+              <div class="product-icon-box">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
                 </svg>
               </div>
-              <span class="pulse-badge">Live</span>
+              <span class="product-badge-live">LIVE</span>
             </div>
-            <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem;">PSP Portfolio</h3>
-            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem; color: var(--text-secondary);">
-              An interactive visual portfolio showcasing all ventures, websites, and mobile applications developed by PSP Ventures.
-            </p>
+            <div class="product-card-body">
+              <h3 class="product-title">PSP Portfolio</h3>
+              <span class="product-category category-green-cyan">COMPANY WEBSITE</span>
+              <p class="product-description">
+                An interactive visual portfolio showcasing all ventures, websites, and mobile applications developed by PSP Ventures.
+              </p>
+            </div>
           </div>
-          <a href="products.html" class="btn btn-secondary" style="font-size: 0.85rem; width: 100%;">Learn More</a>
+          <div class="product-card-footer">
+            <a href="products.html" class="btn btn-secondary">
+              LEARN MORE
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
         </div>
 
         <!-- Card 3: Expense Manager -->
-        <div class="glass-card glow-green" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div class="product-card glow-cyan">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
-              <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); background: rgba(127, 255, 0, 0.15); border: 1px solid rgba(127, 255, 0, 0.25); display: flex; align-items: center; justify-content: center; color: var(--primary-accent);">
+            <div class="product-card-top">
+              <div class="product-icon-box">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="12" y1="1" x2="12" y2="23"></line>
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                 </svg>
               </div>
-              <span class="pulse-badge dev-status">In Development</span>
+              <span class="product-badge-coming">COMING SOON</span>
             </div>
-            <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem;">Expense Manager</h3>
-            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem; color: var(--text-secondary);">
-              A minimal, keyboard-first budget planner built for fast entry, expense categories, and monthly limits check.
-            </p>
+            <div class="product-card-body">
+              <h3 class="product-title">Expense Manager</h3>
+              <span class="product-category category-cyan">UPCOMING APP</span>
+              <p class="product-description">
+                A minimal, keyboard-first budget planner built for fast entry, expense categories, and monthly limits check.
+              </p>
+            </div>
           </div>
-          <a href="product-taskify.html" class="btn btn-secondary" style="font-size: 0.85rem; width: 100%;">Learn More</a>
+          <div class="product-card-footer">
+            <a href="product-taskify.html" class="btn btn-secondary">
+              NOTIFY ME
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
         </div>
 
         <!-- Card 4: AI Assistant -->
-        <div class="glass-card glow-green" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div class="product-card glow-purple">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
-              <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); background: rgba(127, 255, 0, 0.15); border: 1px solid rgba(127, 255, 0, 0.25); display: flex; align-items: center; justify-content: center; color: var(--primary-accent);">
+            <div class="product-card-top">
+              <div class="product-icon-box">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                 </svg>
               </div>
-              <span class="pulse-badge soon-status">Coming Soon</span>
+              <span class="product-badge-future">COMING SOON</span>
             </div>
-            <h3 style="margin-bottom: 0.75rem; font-size: 1.25rem;">AI Assistant</h3>
-            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem; color: var(--text-secondary);">
-              A localized language helper built to summarize documents, transcript voice logs, and answer questions privately.
-            </p>
+            <div class="product-card-body">
+              <h3 class="product-title">AI Assistant</h3>
+              <span class="product-category category-purple">FUTURE APP</span>
+              <p class="product-description">
+                A localized language helper built to summarize documents, transcript voice logs, and answer questions privately.
+              </p>
+            </div>
           </div>
-          <a href="product-scribeai.html" class="btn btn-secondary" style="font-size: 0.85rem; width: 100%;">Learn More</a>
+          <div class="product-card-footer">
+            <a href="product-scribeai.html" class="btn btn-secondary">
+              NOTIFY ME
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
         </div>
 
       </div>

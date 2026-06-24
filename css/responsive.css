@@ -41,7 +41,7 @@
     margin-bottom: 3rem;
   }
 
-  .grid-2, .grid-3, .feature-grid-2x2 {
+  .grid-2, .grid-3, .grid-4, .feature-grid-2x2 {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
