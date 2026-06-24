@@ -589,14 +589,43 @@ header.scrolled .nav-container {
   list-style: none;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1025px) {
   .nav-container {
     position: relative;
   }
   .nav-container nav {
     position: absolute;
-    left: 50%;
+    left: calc(50% + 30px);
     transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 901px) {
+  .nav-container {
+    position: relative;
+  }
+  .nav-container nav {
+    position: absolute;
+    left: calc(50% + 25px);
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 769px) {
+  .nav-container {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+  }
+  .nav-container nav {
+    position: absolute;
+    left: calc(50% + 15px);
+    transform: translateX(-50%);
+  }
+  .logo-text {
+    font-size: 1rem;
+  }
+  .nav-links {
+    gap: 1.25rem;
   }
 }
 
