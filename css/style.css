@@ -832,7 +832,7 @@ footer {
   padding: 0 2.5rem;
   display: flex;
   justify-content: center;
-  margin-top: 60px; /* Top margin of 60px below the hero section */
+  margin-top: 15px; /* Moved 45px upward to reduce empty space below Hero */
   margin-bottom: 20px;
   position: relative;
   z-index: 10;
