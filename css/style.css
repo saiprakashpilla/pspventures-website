@@ -584,8 +584,19 @@ header.scrolled .nav-container {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   list-style: none;
+}
+
+@media screen and (min-width: 769px) {
+  .nav-container {
+    position: relative;
+  }
+  .nav-container nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .nav-links a {
