@@ -1005,17 +1005,21 @@ footer {
 
 /* About Card Glassmorphism Redesign */
 .about-card {
-  background: rgba(10, 10, 10, 0.6) !important; /* Background: rgba(10,10,10,0.6) */
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  backdrop-filter: blur(20px) !important; /* Backdrop blur: 20px */
-  -webkit-backdrop-filter: blur(20px) !important;
-  border-radius: 28px !important; /* Increased border radius (from 24px) */
-  padding: 2.5rem 2rem !important; /* Increased size by 10-15% */
+  height: 100% !important; /* Forces all cards in a grid row to stretch to identical heights */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%), rgba(10, 10, 10, 0.6) !important; /* Glass light reflection gradient overlay */
+  border: 1.5px solid rgba(255, 255, 255, 0.08) !important; /* Slightly thicker border for sharp glass edges */
+  backdrop-filter: blur(30px) !important; /* Increased backdrop blur from 20px to 30px */
+  -webkit-backdrop-filter: blur(30px) !important;
+  border-radius: 28px !important;
+  padding: 2.5rem 2rem !important;
   position: relative;
   overflow: hidden;
   z-index: 2;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
-              inset 0 1px 0 rgba(255, 255, 255, 0.05); /* Layered shadow + soft inner reflection */
+              inset 0 1px 0 rgba(255, 255, 255, 0.05); /* Layered shadow + reflection */
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
@@ -1113,4 +1117,68 @@ footer {
   line-height: 1.7; /* Increased spacing between text lines */
   color: var(--text-secondary);
   margin-bottom: 0;
+}
+
+/* ==========================================================================
+   About Section Layout Spacing, Card Float & Spacing Refinements
+   ========================================================================== */
+
+/* Increased spacing between left content and right card grid */
+.about-grid {
+  gap: 7rem !important; /* Increased spacing by 50px */
+}
+
+@media screen and (max-width: 1024px) {
+  .about-grid {
+    gap: 3.5rem !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-grid {
+    gap: 2rem !important;
+  }
+}
+
+/* Ambient glow centered directly behind the grid card composition */
+.grid-ambient-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.12) 0%, rgba(140, 255, 0, 0.08) 45%, transparent 75%);
+  filter: blur(80px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Card floating wrapper animations (independent from hover state) */
+.card-float-wrapper {
+  height: 100%;
+}
+
+.card-float-wrapper.float-1 {
+  animation: about-float-1 7s ease-in-out infinite alternate;
+}
+
+.card-float-wrapper.float-2 {
+  animation: about-float-2 7s ease-in-out infinite alternate;
+}
+
+@keyframes about-float-1 {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+@keyframes about-float-2 {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); }
+}
+
+/* Learn More button size increase (10-15%) */
+.btn-about-more {
+  padding: 1.25rem 2.85rem !important; /* ~12.5% increase */
+  font-size: 1.05rem !important;
 }
