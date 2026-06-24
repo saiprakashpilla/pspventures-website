@@ -188,14 +188,14 @@
 /* Outer Hologram Wrapper */
 .hologram-wrapper {
   position: relative;
-  width: 1400px;
-  max-width: 1400px;
+  width: min(45vw, 650px); /* Responsive sizing: scales with viewport width on desktop */
+  max-width: min(45vw, 650px);
   aspect-ratio: 1/1;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateX(180px); /* Shift right to prevent text overlap on desktop */
+  transform: none; /* No hardcoded translation needed as it fits grid columns */
 
   /* Centralized shared coordinates for perfect symmetry */
   --center-x: 50%;
@@ -205,20 +205,32 @@
 
 @media screen and (max-width: 1024px) {
   .hologram-wrapper {
-    width: 900px;
-    max-width: 900px;
-    transform: translateX(0);
-    --platform-offset-y: 28.8%; /* 260px / 900px */
+    width: min(70vw, 500px); /* Responsive sizing on tablet stack */
+    max-width: min(70vw, 500px);
+    transform: none;
+    --platform-offset-y: 25.7%;
+  }
+
+  /* Reset vertical offset and min-height constraints to prevent text overlap */
+  #hero .reveal-right {
+    min-height: auto !important;
+    top: 0 !important;
+    margin-top: 2.5rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .hologram-wrapper {
-    width: 100%;
-    max-width: 100%;
-    transform: translateX(0);
-    --platform-offset-y: 35%; /* Responsive vertical alignment on mobile */
+    width: min(85vw, 350px); /* Responsive sizing on mobile stack */
+    max-width: min(85vw, 350px);
+    transform: none;
+    --platform-offset-y: 25.7%;
   }
+}
+
+/* Prevent horizontal overflow scroll from floating particles */
+#hero {
+  overflow: hidden;
 }
 
 /* DEBUG ALIGNMENT GUIDES - Temporarily enabled during development */
