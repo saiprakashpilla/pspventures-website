@@ -816,3 +816,137 @@ footer {
 .footer-legal-links a:hover {
   color: var(--text-secondary);
 }
+
+/* ==========================================================================
+   Premium Feature Highlights Bar Section
+   ========================================================================== */
+
+.highlights-section {
+  width: 100%;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px; /* Top margin of 60px below the hero section */
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.highlights-container {
+  width: 100%;
+  max-width: 1200px;
+  height: 75px;
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 150, 0.15);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+              0 0 20px rgba(0, 255, 150, 0.05); /* Soft neon glow */
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.highlights-container:hover {
+  border-color: rgba(0, 255, 150, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+              0 0 30px rgba(0, 255, 150, 0.15); /* Soft neon glow on hover */
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.highlight-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(139, 255, 0, 0.1);
+  border: 1.5px solid #8BFF00; /* Accent color: Neon Green #8BFF00 */
+  color: #8BFF00;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 8px rgba(139, 255, 0, 0.2);
+}
+
+.highlight-icon svg {
+  width: 10px;
+  height: 10px;
+  stroke: #8BFF00;
+}
+
+.highlight-text {
+  font-family: var(--font-display); /* Futuristic typography */
+  font-size: 14.5px; /* Font size: 14px-15px */
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #E5E7EB; /* Text color: #E5E7EB */
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.highlight-item:hover .highlight-text {
+  color: #FFFFFF;
+  text-shadow: 0 0 8px rgba(139, 255, 0, 0.5); /* Brighten text and add neon glow */
+}
+
+.highlight-item:hover .highlight-icon {
+  background: rgba(139, 255, 0, 0.2);
+  box-shadow: 0 0 12px rgba(139, 255, 0, 0.5); /* Brighten icon and add neon glow */
+  transform: scale(1.05);
+}
+
+.highlight-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.08); /* Thin vertical divider line */
+}
+
+@media screen and (max-width: 1024px) {
+  .highlights-section {
+    padding: 0 1.5rem;
+  }
+  .highlights-container {
+    padding: 0 1.25rem;
+  }
+  .highlight-text {
+    font-size: 13px; /* Reduce spacing proportionally */
+    letter-spacing: 0.12em;
+  }
+  .highlight-item {
+    gap: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .highlights-container {
+    height: auto;
+    padding: 1.5rem 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .highlight-divider {
+    display: none; /* Stack items into multiple rows */
+  }
+  .highlight-item {
+    width: calc(50% - 1rem); /* Side-by-side or stacked centered */
+    min-width: 180px;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .highlight-item {
+    width: 100%; /* Fully stacked on mobile portrait */
+  }
+}
