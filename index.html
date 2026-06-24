@@ -344,12 +344,12 @@
   </section>
 
   <!-- Products Section -->
-  <section class="section products-section" id="featured-products">
+  <section class="section products-showcase-section" id="featured-products">
     <!-- Subtle Grid Background & Ambient Radial Glow Behind Section -->
     <div class="products-grid-bg"></div>
     <div class="products-ambient-glow"></div>
 
-    <div class="container products-container" style="position: relative; z-index: 2;">
+    <div class="container products-showcase-container" style="position: relative; z-index: 2;">
       <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;" class="reveal">
         <div>
           <span class="section-subtitle">OUR PRODUCTS</span>
@@ -364,11 +364,10 @@
         </a>
       </div>
 
-      <div class="grid-4 reveal delay-1">
-        
-        <!-- Card 1: PSP Portfolio -->
-        <div class="product-card glow-green-cyan">
-          <div class="product-card-body-wrapper">
+      <!-- Featured Card: PSP Portfolio -->
+      <div class="featured-product-card product-card glow-green-cyan reveal delay-1">
+        <div class="featured-product-details">
+          <div>
             <div class="product-card-top">
               <div class="product-icon-box">
                 <img src="assets/images/logo-icon.png" alt="PSP Ventures Logo">
@@ -381,17 +380,54 @@
               <p class="product-description">
                 An interactive visual portfolio showcasing all ventures, websites, and mobile applications developed by PSP Ventures.
               </p>
+              
+              <!-- Tech Stack Chips -->
+              <div class="tech-chips-container">
+                <span class="tech-chip">HTML5</span>
+                <span class="tech-chip">CSS3</span>
+                <span class="tech-chip">VANILLA JS</span>
+                <span class="tech-chip">THREE.JS</span>
+              </div>
             </div>
           </div>
           <div class="product-card-footer">
             <a href="products.html" class="btn btn-secondary">
-              LEARN MORE
+              EXPLORE PRODUCT
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
           </div>
         </div>
+        
+        <div class="featured-mockup-preview">
+          <!-- Glassmorphic Mockup Web Browser -->
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="mockup-address-bar">pspventures.in</div>
+          </div>
+          <div class="mockup-content">
+            <!-- Simulated portfolio preview content inside the browser -->
+            <div class="mockup-hero">
+              <span class="mockup-logo-symbol">PSP</span>
+              <div class="mockup-text-line short"></div>
+              <div class="mockup-text-line long"></div>
+              <div class="mockup-grid">
+                <div class="mockup-grid-item"></div>
+                <div class="mockup-grid-item"></div>
+                <div class="mockup-grid-item"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <!-- Card 2: My Savings Book -->
+      <!-- 3-Column Grid below Featured Card -->
+      <div class="products-grid-3 reveal delay-2">
+        
+        <!-- Card 1: My Savings Book -->
         <div class="product-card glow-green">
           <div class="product-card-body-wrapper">
             <div class="product-card-top">
@@ -410,18 +446,25 @@
               <p class="product-description">
                 A secure expense management tool helping users catalog daily costs, savings metrics, and monthly budgets privately.
               </p>
+              
+              <!-- Tech Stack Chips -->
+              <div class="tech-chips-container">
+                <span class="tech-chip">ANDROID</span>
+                <span class="tech-chip">SQLITE</span>
+                <span class="tech-chip">ENCRYPTION</span>
+              </div>
             </div>
           </div>
           <div class="product-card-footer">
             <a href="product-mysavingsbook.html" class="btn btn-secondary">
-              LEARN MORE
+              EXPLORE PRODUCT
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
           </div>
         </div>
 
-        <!-- Card 3: Expense Manager -->
-        <div class="product-card glow-cyan">
+        <!-- Card 2: Expense Manager -->
+        <div class="product-card glow-cyan card-muted">
           <div class="product-card-body-wrapper">
             <div class="product-card-top">
               <div class="product-icon-box">
@@ -439,6 +482,13 @@
               <p class="product-description">
                 A minimal, keyboard-first budget planner built for fast entry, expense categories, and monthly limits check.
               </p>
+              
+              <!-- Tech Stack Chips -->
+              <div class="tech-chips-container">
+                <span class="tech-chip">REACT NATIVE</span>
+                <span class="tech-chip">FINANCE</span>
+                <span class="tech-chip">ANALYTICS</span>
+              </div>
             </div>
           </div>
           <div class="product-card-footer">
@@ -449,8 +499,8 @@
           </div>
         </div>
 
-        <!-- Card 4: AI Assistant -->
-        <div class="product-card glow-purple">
+        <!-- Card 3: AI Assistant -->
+        <div class="product-card glow-purple card-muted">
           <div class="product-card-body-wrapper">
             <div class="product-card-top">
               <div class="product-icon-box">
@@ -468,6 +518,13 @@
               <p class="product-description">
                 A localized language helper built to summarize documents, transcript voice logs, and answer questions privately.
               </p>
+              
+              <!-- Tech Stack Chips -->
+              <div class="tech-chips-container">
+                <span class="tech-chip">LOCAL AI</span>
+                <span class="tech-chip">LLAMA</span>
+                <span class="tech-chip">PRIVACY</span>
+              </div>
             </div>
           </div>
           <div class="product-card-footer">

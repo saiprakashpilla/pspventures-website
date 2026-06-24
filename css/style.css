@@ -1187,11 +1187,12 @@ footer {
    Featured Products Section Premium Redesign
    ========================================================================== */
 
-.products-section {
+.products-showcase-section {
   position: relative;
   overflow: hidden;
-  background: var(--bg-primary);
+  background: #050505 !important;
   z-index: 1;
+  padding: 8rem 0;
 }
 
 .products-grid-bg {
@@ -1214,17 +1215,23 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
-  background: radial-gradient(circle, rgba(0, 217, 255, 0.08) 0%, rgba(140, 255, 0, 0.05) 50%, transparent 80%);
+  width: 90%;
+  height: 90%;
+  background: radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 80% 70%, rgba(138, 92, 255, 0.15) 0%, transparent 45%),
+              radial-gradient(circle at 50% 50%, rgba(140, 255, 0, 0.1) 0%, transparent 50%);
   filter: blur(120px);
   pointer-events: none;
   z-index: 0;
 }
 
 /* Expanded Grid Container Width (10-15% wider cards) */
-.products-container {
+.products-showcase-container {
   max-width: 1340px !important;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 /* Premium Product Cards (15% height reduction via padding & margin shifts) */
@@ -1233,11 +1240,11 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.02) 100%), rgba(10, 10, 10, 0.7) !important; /* Stronger glassmorphism background */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.02) 100%), rgba(10, 10, 10, 0.7) !important;
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
   border-radius: 24px !important;
-  padding: 1.5rem 1.5rem !important; /* Reduced padding from 1.85rem 1.75rem to shrink card height */
+  padding: 1.5rem 1.5rem !important; /* Reduced padding to shrink card height */
   position: relative;
   overflow: hidden;
   z-index: 2;
@@ -1281,68 +1288,68 @@ footer {
 }
 
 .product-card:hover {
-  transform: translateY(-8px) scale(1.03) !important; /* Elevate & scale to 1.03 */
+  transform: translateY(-8px) scale(1.03) !important;
   background: rgba(10, 10, 10, 0.8) !important;
 }
 
 /* Card Accents: Green (My Savings Book) */
 .product-card.glow-green {
-  border: 1.2px solid rgba(140, 255, 0, 0.22) !important; /* Increased neon border visibility */
+  border: 1.2px solid rgba(140, 255, 0, 0.22) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
-              0 0 15px rgba(140, 255, 0, 0.05), /* Ambient radial glow */
+              0 0 15px rgba(140, 255, 0, 0.05),
               inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .product-card.glow-green:hover {
-  border-color: rgba(140, 255, 0, 0.65) !important; /* Brighter border */
+  border-color: rgba(140, 255, 0, 0.65) !important;
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 
-              0 0 45px rgba(140, 255, 0, 0.45), /* Stronger background/glow sheens */
+              0 0 45px rgba(140, 255, 0, 0.45),
               inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 /* Card Accents: Green/Cyan (PSP Portfolio) */
 .product-card.glow-green-cyan {
-  border: 1.2px solid rgba(0, 240, 255, 0.22) !important; /* Increased neon border visibility */
+  border: 1.2px solid rgba(0, 240, 255, 0.22) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
-              0 0 15px rgba(0, 240, 255, 0.05), /* Ambient radial glow */
+              0 0 15px rgba(0, 240, 255, 0.05),
               inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .product-card.glow-green-cyan:hover {
-  border-color: rgba(0, 240, 255, 0.65) !important; /* Brighter border */
+  border-color: rgba(0, 240, 255, 0.65) !important;
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 
               0 0 25px rgba(140, 255, 0, 0.22),
-              0 0 45px rgba(0, 240, 255, 0.36), /* Stronger background/glow sheens */
+              0 0 45px rgba(0, 240, 255, 0.36),
               inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 /* Card Accents: Cyan (Expense Manager) */
 .product-card.glow-cyan {
-  border: 1.2px solid rgba(0, 217, 255, 0.22) !important; /* Increased neon border visibility */
+  border: 1.2px solid rgba(0, 217, 255, 0.22) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
-              0 0 15px rgba(0, 217, 255, 0.05), /* Ambient radial glow */
+              0 0 15px rgba(0, 217, 255, 0.05),
               inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .product-card.glow-cyan:hover {
-  border-color: rgba(0, 217, 255, 0.65) !important; /* Brighter border */
+  border-color: rgba(0, 217, 255, 0.65) !important;
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 
-              0 0 45px rgba(0, 217, 255, 0.45), /* Stronger background/glow sheens */
+              0 0 45px rgba(0, 217, 255, 0.45),
               inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 /* Card Accents: Purple (AI Assistant) */
 .product-card.glow-purple {
-  border: 1.2px solid rgba(138, 92, 255, 0.22) !important; /* Increased neon border visibility */
+  border: 1.2px solid rgba(138, 92, 255, 0.22) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
-              0 0 15px rgba(138, 92, 255, 0.05), /* Ambient radial glow */
+              0 0 15px rgba(138, 92, 255, 0.05),
               inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .product-card.glow-purple:hover {
-  border-color: rgba(138, 92, 255, 0.65) !important; /* Brighter border */
+  border-color: rgba(138, 92, 255, 0.65) !important;
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 
-              0 0 45px rgba(138, 92, 255, 0.45), /* Stronger background/glow sheens */
+              0 0 45px rgba(138, 92, 255, 0.45),
               inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
@@ -1351,7 +1358,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.25rem; /* Reduced from 1.5rem to shrink card height */
+  margin-bottom: 1.25rem;
   position: relative;
   z-index: 2;
 }
@@ -1387,7 +1394,7 @@ footer {
   background: rgba(140, 255, 0, 0.08);
   border: 1px solid rgba(140, 255, 0, 0.25);
   color: var(--primary-accent);
-  box-shadow: 0 0 20px rgba(140, 255, 0, 0.25); /* Stronger neon glow */
+  box-shadow: 0 0 20px rgba(140, 255, 0, 0.25);
 }
 
 .glow-green:hover .product-icon-box {
@@ -1399,7 +1406,7 @@ footer {
   background: linear-gradient(135deg, rgba(140, 255, 0, 0.05) 0%, rgba(0, 217, 255, 0.05) 100%);
   border: 1px solid rgba(0, 240, 255, 0.25);
   color: #00F0FF;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.25); /* Stronger neon glow */
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
 }
 
 .glow-green-cyan:hover .product-icon-box {
@@ -1411,7 +1418,7 @@ footer {
   background: rgba(0, 217, 255, 0.08);
   border: 1px solid rgba(0, 217, 255, 0.25);
   color: var(--secondary-accent-alt);
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.25); /* Stronger neon glow */
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.25);
 }
 
 .glow-cyan:hover .product-icon-box {
@@ -1423,7 +1430,7 @@ footer {
   background: rgba(138, 92, 255, 0.08);
   border: 1px solid rgba(138, 92, 255, 0.25);
   color: #8A5CFF;
-  box-shadow: 0 0 20px rgba(138, 92, 255, 0.25); /* Stronger neon glow */
+  box-shadow: 0 0 20px rgba(138, 92, 255, 0.25);
 }
 
 .glow-purple:hover .product-icon-box {
@@ -1498,9 +1505,27 @@ footer {
   animation: status-pulse-purple 2s infinite;
 }
 
+@keyframes status-pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(140, 255, 0, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(140, 255, 0, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(140, 255, 0, 0); }
+}
+
+@keyframes status-pulse-cyan {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(0, 240, 255, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 240, 255, 0); }
+}
+
+@keyframes status-pulse-purple {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(138, 92, 255, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(138, 92, 255, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(138, 92, 255, 0); }
+}
+
 /* Card Body & Typography */
 .product-card-body {
-  margin-bottom: 1.25rem; /* Reduced from 1.5rem to shrink card height */
+  margin-bottom: 1.25rem;
   position: relative;
   z-index: 2;
 }
@@ -1510,7 +1535,7 @@ footer {
   font-size: 1.35rem;
   font-weight: 800;
   color: var(--text-primary);
-  margin-bottom: 0.5rem; /* Increased spacing */
+  margin-bottom: 0.5rem;
   letter-spacing: -0.01em;
 }
 
@@ -1520,7 +1545,7 @@ footer {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 1.5rem; /* Increased spacing */
+  margin-bottom: 1rem;
   display: block;
 }
 
@@ -1548,7 +1573,6 @@ footer {
   line-height: 1.6;
   color: var(--text-secondary);
   margin-bottom: 0;
-  /* Enforce 2-3 lines clamp on description */
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -1564,7 +1588,7 @@ footer {
 
 /* Dedicated Footer Section Separated by Divider Line */
 .product-card-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.08); /* Subtle divider line */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 1.25rem;
   margin-top: 1.25rem;
   width: 100%;
@@ -1581,6 +1605,15 @@ footer {
   gap: 0.5rem;
   border-color: rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card .btn-secondary svg {
+  transition: transform 0.3s ease;
+}
+
+.product-card .btn-secondary:hover svg {
+  transform: translateX(4px);
 }
 
 /* Prominent button hover glows */
@@ -1606,4 +1639,256 @@ footer {
   border-color: #8A5CFF;
   background: rgba(138, 92, 255, 0.04);
   box-shadow: 0 15px 40px rgba(138, 92, 255, 0.35);
+}
+
+/* Featured Card Layout (PSP Portfolio) */
+.featured-product-card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 3.5rem;
+  padding: 3rem !important;
+  margin-bottom: 3.5rem;
+  align-items: stretch;
+}
+
+.featured-product-details {
+  flex: 0 0 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featured-mockup-preview {
+  flex: 0 0 45%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.featured-product-card:hover .featured-mockup-preview {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 25px 50px rgba(0, 240, 255, 0.15), 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.mockup-header {
+  height: 36px;
+  background: rgba(10, 10, 10, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.mockup-dots {
+  display: flex;
+  gap: 6px;
+  position: absolute;
+  left: 1rem;
+}
+
+.mockup-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #FF5F56; }
+.dot-yellow { background: #FFBD2E; }
+.dot-green { background: #27C93F; }
+
+.mockup-address-bar {
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.2rem 2.5rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  letter-spacing: 0.03em;
+}
+
+.mockup-content {
+  flex-grow: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.2) 0%, rgba(5, 5, 5, 0.6) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.mockup-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+}
+
+.mockup-logo-symbol {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent-alt));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.mockup-text-line {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.mockup-text-line.short {
+  width: 45%;
+  background: linear-gradient(90deg, rgba(0, 240, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+}
+
+.mockup-text-line.long {
+  width: 85%;
+}
+
+.mockup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.mockup-grid-item {
+  height: 60px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mockup-grid-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-accent), transparent);
+  opacity: 0.5;
+}
+
+.mockup-grid-item:nth-child(2)::before {
+  background: linear-gradient(90deg, var(--secondary-accent-alt), transparent);
+}
+
+.mockup-grid-item:nth-child(3)::before {
+  background: linear-gradient(90deg, #8A5CFF, transparent);
+}
+
+/* Tech Stack Chips */
+.tech-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.tech-chip {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.featured-product-card:hover .tech-chip {
+  border-color: rgba(0, 240, 255, 0.25);
+  color: var(--text-primary);
+}
+
+.product-card.glow-green:hover .tech-chip {
+  border-color: rgba(140, 255, 0, 0.25);
+  color: var(--text-primary);
+}
+
+.product-card.glow-cyan:hover .tech-chip {
+  border-color: rgba(0, 217, 255, 0.25);
+  color: var(--text-primary);
+}
+
+.product-card.glow-purple:hover .tech-chip {
+  border-color: rgba(138, 92, 255, 0.25);
+  color: var(--text-primary);
+}
+
+/* Coming Soon Muted Visual Hierarchy */
+.card-muted {
+  opacity: 0.65;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card-muted:hover {
+  opacity: 1 !important;
+}
+
+/* 3-Column Layout Grid */
+.products-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+/* Responsive Media Queries for Products Showcase */
+@media screen and (max-width: 1024px) {
+  .featured-product-card {
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 2rem !important;
+  }
+  .featured-product-details {
+    flex: 1;
+  }
+  .featured-mockup-preview {
+    flex: 1;
+    min-height: 280px;
+  }
+  .products-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .products-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .featured-product-card {
+    padding: 1.5rem !important;
+  }
+  .mockup-address-bar {
+    padding: 0.2rem 1.5rem;
+  }
 }
