@@ -233,7 +233,7 @@ p {
 
 @media screen and (min-width: 1025px) {
   .hero-hologram-col {
-    margin-left: 50px; /* Shift hologram 50px to the right for premium spacious feel */
+    left: -70px; /* Shift hologram 120px left from previous +50px state */
   }
 }
 
