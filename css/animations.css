@@ -199,7 +199,7 @@
 
   /* Centralized shared coordinates for perfect symmetry */
   --center-x: 50%;
-  --center-y: calc(50% - 5px); /* Shifted 20px upward to align logo vertically with heading block center */
+  --center-y: calc(50% - 20px); /* Shifted 15px upward to achieve perfect vertical alignment with left content block */
   --platform-offset-y: 25.7%; /* 360px / 1400px */
 }
 
