@@ -544,8 +544,8 @@ header.scrolled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90%;
-  max-width: 1150px; /* Explicit max-width in 1100px-1200px range */
+  width: 95%; /* Adjusted width for clean responsive layouts */
+  max-width: 900px; /* Reduced by ~22% for a compact, balanced look */
   margin: 0 auto;
   padding: 0.75rem 2.25rem;
   background: rgba(5, 5, 5, 0.45);
@@ -585,7 +585,7 @@ header.scrolled .nav-container {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
   list-style: none;
 }
 
