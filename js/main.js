@@ -389,6 +389,9 @@ function initHologramParticles() {
   const particles = [];
   const maxParticles = 720; // Reduced density by 20% to keep logo as primary focus
 
+  let platformOffsetY = 360;
+  let maxOrbitDistance = 530;
+
   function resize() {
     const rect = canvas.getBoundingClientRect();
     width = rect.width;
@@ -396,6 +399,19 @@ function initHologramParticles() {
     canvas.width = width * window.devicePixelRatio;
     canvas.height = height * window.devicePixelRatio;
     ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+
+    // Read dynamic CSS variables
+    const wrapper = canvas.closest('.hologram-wrapper');
+    if (wrapper) {
+      const wrapperStyles = window.getComputedStyle(wrapper);
+      const rawOffset = wrapperStyles.getPropertyValue('--platform-offset-y');
+      if (rawOffset.includes('%')) {
+        platformOffsetY = (parseFloat(rawOffset) / 100) * height;
+      } else {
+        platformOffsetY = parseFloat(rawOffset) || 360;
+      }
+      maxOrbitDistance = width * 0.38; // cluster orbiting particles within 38% of canvas width
+    }
   }
 
   resize();
@@ -411,8 +427,8 @@ function initHologramParticles() {
     if (type === 'orbit') {
       // Polar coordinates centered around the logo
       const angle = Math.random() * Math.PI * 2;
-      // We want the particles clustered closely around the logo, max distance 160px
-      const distance = randomInit ? (Math.pow(Math.random(), 1.2) * 160) : (Math.random() * 20 + 5); 
+      // We want the particles clustered closely around the logo boundaries
+      const distance = randomInit ? (Math.pow(Math.random(), 1.2) * maxOrbitDistance) : (Math.random() * (maxOrbitDistance * 0.2) + (maxOrbitDistance * 0.05)); 
       
       // Twinkling rates for random durations between 2s and 6s
       const twinklePhase = Math.random() * Math.PI * 2;
@@ -433,8 +449,7 @@ function initHologramParticles() {
       };
     } else {
       // Rising particles emerging from the platform base and heading towards the logo
-      const platformOffsetY = 180; // Distance between logo and platform centers
-      const pX = centerX + (Math.random() - 0.5) * 60; // emerging from platform center
+      const pX = centerX + (Math.random() - 0.5) * (width * 0.15); // emerging from platform center
       const pY = randomInit ? (centerY + Math.random() * platformOffsetY) : (centerY + platformOffsetY - Math.random() * 10);
       
       const speedY = -(Math.random() * 1.0 + 0.4); // rising upwards
@@ -481,12 +496,12 @@ function initHologramParticles() {
         let alpha = p.alpha * twinkle;
 
         // Fade out as it expands further from the logo
-        if (p.distance > 160) {
-          alpha = (p.alpha * twinkle) * Math.max(0, (180 - p.distance) / 20);
+        if (p.distance > maxOrbitDistance) {
+          alpha = (p.alpha * twinkle) * Math.max(0, ((maxOrbitDistance * 1.1) - p.distance) / (maxOrbitDistance * 0.1));
         }
 
         // If particle drifts too far, recycle it close to the logo
-        if (p.distance > 180) {
+        if (p.distance > maxOrbitDistance * 1.1) {
           particles[i] = createParticle(false, 'orbit');
           continue;
         }
