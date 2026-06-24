@@ -956,3 +956,161 @@ footer {
     width: 100%; /* Fully stacked on mobile portrait */
   }
 }
+
+/* ==========================================================================
+   About Us Redesigned Section Styling
+   ========================================================================== */
+
+/* Ambient glow container */
+.about-glow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.about-glow {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  filter: blur(130px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.about-glow-green {
+  background: radial-gradient(circle, #8CFF00 0%, transparent 70%);
+  top: 15%;
+  right: 18%;
+}
+
+.about-glow-cyan {
+  background: radial-gradient(circle, #00F0FF 0%, transparent 70%);
+  bottom: 15%;
+  right: -2%;
+}
+
+/* Feature Grid 2x2 */
+.feature-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.25rem; /* Increased spacing between cards */
+  width: 100%;
+}
+
+/* About Card Glassmorphism Redesign */
+.about-card {
+  background: rgba(10, 10, 10, 0.6) !important; /* Background: rgba(10,10,10,0.6) */
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(20px) !important; /* Backdrop blur: 20px */
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-radius: 28px !important; /* Increased border radius (from 24px) */
+  padding: 2.5rem 2rem !important; /* Increased size by 10-15% */
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05); /* Layered shadow + soft inner reflection */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Soft hover glow and elevation */
+.about-card:hover {
+  transform: translateY(-8px) scale(1.03) !important; /* Elevate card on hover */
+  background: rgba(10, 10, 10, 0.85) !important;
+}
+
+.about-card.glow-green:hover {
+  border-color: rgba(140, 255, 0, 0.35) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 
+              0 0 20px rgba(140, 255, 0, 0.22),
+              inset 0 1px 0 rgba(255, 255, 255, 0.08); /* Soft hover glow + reflection */
+}
+
+.about-card.glow-cyan:hover {
+  border-color: rgba(0, 240, 255, 0.35) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 
+              0 0 20px rgba(0, 240, 255, 0.22),
+              inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Enhanced Icons */
+.about-card-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px; /* Increased icon box size */
+  height: 58px;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Neon Green Icon Wrapper styling */
+.about-card-icon-wrapper.icon-green {
+  background: rgba(140, 255, 0, 0.08);
+  border: 1px solid rgba(140, 255, 0, 0.2);
+  color: #8CFF00; /* Lime green */
+  box-shadow: 0 0 15px rgba(140, 255, 0, 0.08); /* Subtle glow */
+}
+
+.about-card-icon-wrapper.icon-green svg {
+  stroke: #8CFF00 !important;
+  filter: drop-shadow(0 0 6px rgba(140, 255, 0, 0.6)); /* Neon glow around icon */
+}
+
+/* Cyan Icon Wrapper styling */
+.about-card-icon-wrapper.icon-cyan {
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  color: #00F0FF; /* Bright cyan */
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.08);
+}
+
+.about-card-icon-wrapper.icon-cyan svg {
+  stroke: #00F0FF !important;
+  filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.6)); /* Neon glow around icon */
+}
+
+/* Icon hover states */
+.about-card:hover .about-card-icon-wrapper.icon-green {
+  background: rgba(140, 255, 0, 0.15);
+  border-color: rgba(140, 255, 0, 0.4);
+  box-shadow: 0 0 20px rgba(140, 255, 0, 0.25);
+  transform: rotate(5deg) scale(1.05);
+}
+
+.about-card:hover .about-card-icon-wrapper.icon-cyan {
+  background: rgba(0, 240, 255, 0.15);
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+  transform: rotate(5deg) scale(1.05);
+}
+
+.about-card-icon-wrapper svg {
+  width: 28px !important; /* Increased icon size by 25% */
+  height: 28px !important;
+}
+
+/* Typography Refinements for About Card */
+.about-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem; /* Increased heading size */
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.85rem;
+  color: var(--text-primary);
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  line-height: 1.7; /* Increased spacing between text lines */
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}

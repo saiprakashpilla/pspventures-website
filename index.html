@@ -254,18 +254,24 @@
   </section>
 
   <!-- About Section -->
-  <section class="section" id="about" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-    <div class="container">
+  <section class="section particle-target" id="about" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); position: relative; z-index: 2;">
+    <!-- Ambient Neon Background Lighting -->
+    <div class="about-glow-container">
+      <div class="about-glow about-glow-green"></div>
+      <div class="about-glow about-glow-cyan"></div>
+    </div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
       <div class="grid-2" style="align-items: center; gap: 4rem;">
         
         <!-- Left Side: Header Content -->
         <div class="reveal reveal-left">
           <span class="section-subtitle">ABOUT US</span>
-          <h2 style="font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 800; line-height: 1.1; margin-bottom: 2rem;">
+          <h2 style="font-size: clamp(2.25rem, 4.5vw, 3.5rem); font-weight: 900; line-height: 1.2; margin-bottom: 2rem; letter-spacing: -0.02em; text-shadow: 0 0 20px rgba(140, 255, 0, 0.08);">
             BUILDING DIGITAL<br>
             <span class="gradient-text">PRODUCTS THAT MATTER</span>
           </h2>
-          <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2.5rem;">
+          <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 2.5rem;">
             PSP Ventures is a technology company dedicated to building innovative mobile apps and web solutions that simplify everyday life and create meaningful impact. We focus on continuous innovation, peak performance, and absolute user privacy to establish digital products that scale globally.
           </p>
           <a href="about.html" class="btn btn-secondary">LEARN MORE</a>
@@ -276,45 +282,45 @@
           <div class="feature-grid-2x2">
             
             <!-- Card 1: Innovation -->
-            <div class="glass-card glow-green" style="padding: 2rem 1.75rem;">
-              <div style="color: var(--primary-accent); margin-bottom: 1.25rem;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path><path d="M12 16V12"></path><path d="M12 8H12.01"></path></svg>
+            <div class="glass-card about-card glow-green reveal reveal-scale" style="transition-delay: 0.05s;">
+              <div class="about-card-icon-wrapper icon-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path><path d="M12 16V12"></path><path d="M12 8H12.01"></path></svg>
               </div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Innovation</h3>
-              <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
+              <h3>Innovation</h3>
+              <p>
                 Building next-generation technologies, interactive client dashboards, and responsive visual states.
               </p>
             </div>
 
             <!-- Card 2: Focus -->
-            <div class="glass-card glow-green" style="padding: 2rem 1.75rem;">
-              <div style="color: var(--primary-accent); margin-bottom: 1.25rem;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            <div class="glass-card about-card glow-cyan reveal reveal-scale" style="transition-delay: 0.15s;">
+              <div class="about-card-icon-wrapper icon-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
               </div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Focus</h3>
-              <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
+              <h3>Focus</h3>
+              <p>
                 Stripping away complex pipeline delays to deliver clean utility focus and keyboard-navigable structures.
               </p>
             </div>
 
             <!-- Card 3: Performance -->
-            <div class="glass-card glow-green" style="padding: 2rem 1.75rem;">
-              <div style="color: var(--primary-accent); margin-bottom: 1.25rem;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <div class="glass-card about-card glow-cyan reveal reveal-scale" style="transition-delay: 0.25s;">
+              <div class="about-card-icon-wrapper icon-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Performance</h3>
-              <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
+              <h3>Performance</h3>
+              <p>
                 Hitting peak scores, instant initial paints, and highly optimized edge network translations.
               </p>
             </div>
 
             <!-- Card 4: Trust -->
-            <div class="glass-card glow-green" style="padding: 2rem 1.75rem;">
-              <div style="color: var(--primary-accent); margin-bottom: 1.25rem;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <div class="glass-card about-card glow-green reveal reveal-scale" style="transition-delay: 0.35s;">
+              <div class="about-card-icon-wrapper icon-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Trust</h3>
-              <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
+              <h3>Trust</h3>
+              <p>
                 Absolute local device privacy configurations, encrypted client storage layers, and zero tracking elements.
               </p>
             </div>
