@@ -545,7 +545,7 @@ header.scrolled {
   align-items: center;
   justify-content: space-between;
   width: 95%; /* Adjusted width for clean responsive layouts */
-  max-width: 900px; /* Reduced by ~22% for a compact, balanced look */
+  max-width: 1000px; /* Increased to 1000px for a spacious, premium look */
   margin: 0 auto;
   padding: 0.75rem 2.25rem;
   background: rgba(5, 5, 5, 0.45);
@@ -566,7 +566,7 @@ header.scrolled .nav-container {
 .logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.85rem; /* Increased gap to separate icon and text by ~30px (16-20px increase) */
 }
 
 .logo-img {
@@ -585,7 +585,7 @@ header.scrolled .nav-container {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.75rem; /* Increased gap to ~44px (40-50px range) for clear separation */
   list-style: none;
 }
 
@@ -595,7 +595,7 @@ header.scrolled .nav-container {
   }
   .nav-container nav {
     position: absolute;
-    left: calc(50% + 30px);
+    left: calc(50% + 90px); /* Shifted navigation group 90px to the right */
     transform: translateX(-50%);
   }
 }
@@ -603,11 +603,15 @@ header.scrolled .nav-container {
 @media screen and (max-width: 1024px) and (min-width: 901px) {
   .nav-container {
     position: relative;
+    max-width: 900px;
   }
   .nav-container nav {
     position: absolute;
-    left: calc(50% + 25px);
+    left: calc(50% + 50px);
     transform: translateX(-50%);
+  }
+  .nav-links {
+    gap: 2rem; /* Reduced gap to prevent overlap on smaller screens */
   }
 }
 
@@ -618,14 +622,14 @@ header.scrolled .nav-container {
   }
   .nav-container nav {
     position: absolute;
-    left: calc(50% + 15px);
+    left: calc(50% + 25px);
     transform: translateX(-50%);
   }
   .logo-text {
     font-size: 1rem;
   }
   .nav-links {
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
 }
 
