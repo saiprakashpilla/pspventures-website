@@ -189,7 +189,7 @@
 .hologram-wrapper {
   position: relative;
   width: min(45vw, 650px); /* Responsive sizing: scales with viewport width on desktop */
-  max-width: min(45vw, 650px);
+  max-width: 100%; /* Ensure it never overflows its 45% grid column, maintaining perfect zoom/aspect balance */
   aspect-ratio: 1/1;
   margin: 0 auto;
   display: flex;
@@ -290,9 +290,9 @@
 .holographic-logo {
   position: relative;
   z-index: 5;
-  filter: drop-shadow(0 0 35px rgba(127, 255, 0, 0.5)) drop-shadow(0 0 70px rgba(0, 229, 255, 0.35));
+  filter: drop-shadow(0 0 30px rgba(127, 255, 0, 0.42)) drop-shadow(0 0 60px rgba(0, 229, 255, 0.3)); /* Scaled down glow by 15% */
   animation: hologram-float 6s ease-in-out infinite alternate;
-  width: 350px; /* Target desktop size: exactly 350px */
+  width: 438px; /* Increased by 25% from 350px */
   height: auto;
   max-width: none !important;
   max-height: none !important;
@@ -301,13 +301,13 @@
 
 @media screen and (max-width: 1024px) {
   .holographic-logo {
-    width: 260px;
+    width: 325px; /* Increased by 25% from 260px */
   }
 }
 
 @media screen and (max-width: 768px) {
   .holographic-logo {
-    width: 200px;
+    width: 250px; /* Increased by 25% from 200px */
   }
 }
 
@@ -323,10 +323,10 @@
 
 @keyframes hologram-float {
   0% {
-    transform: translateY(-18px);
+    transform: translateY(-8px); /* Subtle floating travel: 16px total travel */
   }
   100% {
-    transform: translateY(18px);
+    transform: translateY(8px);
   }
 }
 
@@ -444,7 +444,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(140, 255, 0, 0.45) 0%, rgba(0, 217, 255, 0.18) 40%, rgba(3, 3, 3, 0) 70%); /* Fades smoothly outward */
+  background: radial-gradient(circle, rgba(140, 255, 0, 0.38) 0%, rgba(0, 217, 255, 0.15) 40%, rgba(3, 3, 3, 0) 70%); /* Reduced intensity by ~15% */
   filter: blur(55px);
   z-index: 1;
   pointer-events: none;
@@ -452,8 +452,8 @@
 }
 
 @keyframes hologram-radial-pulse {
-  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
-  100% { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }
+  0% { transform: translate(-50%, -50%) scale(0.76); opacity: 0.65; } /* Scaled down pulse sizes */
+  100% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.85; }
 }
 
 /* Holographic Platform Base (at the bottom of hologram section) */
@@ -462,16 +462,16 @@
   left: var(--center-x);
   top: calc(var(--center-y) + var(--platform-offset-y));
   transform: translate(-50%, -50%) rotateX(80deg);
-  width: 78.6%; /* 1100px / 1400px */
-  height: 78.6%;
+  width: 68%; /* Reduced size from 78.6% */
+  height: 68%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 217, 255, 0.35) 0%, rgba(140, 255, 0, 0.12) 40%, rgba(140, 255, 0, 0.02) 65%, rgba(0, 0, 0, 0) 80%);
-  border: 3px solid rgba(140, 255, 0, 0.35);
+  background: radial-gradient(circle, rgba(0, 217, 255, 0.28) 0%, rgba(140, 255, 0, 0.08) 40%, rgba(140, 255, 0, 0.01) 65%, rgba(0, 0, 0, 0) 80%);
+  border: 2px solid rgba(140, 255, 0, 0.45); /* Thinner (2px) and higher opacity border for sharpness */
   box-shadow: 
-    0 0 20px rgba(140, 255, 0, 0.45),
-    0 0 60px rgba(140, 255, 0, 0.3),
-    0 0 120px rgba(0, 217, 255, 0.15),
-    inset 0 0 50px rgba(0, 217, 255, 0.25); /* Coordinated with the multi-layer glow */
+    0 0 15px rgba(140, 255, 0, 0.4),
+    0 0 45px rgba(140, 255, 0, 0.25),
+    0 0 90px rgba(0, 217, 255, 0.12),
+    inset 0 0 40px rgba(0, 217, 255, 0.25); /* Scaled down blurs and glows */
   z-index: 1;
   pointer-events: none;
   animation: platform-pulse 4s ease-in-out infinite alternate; /* 4s radial pulse */
@@ -558,7 +558,7 @@
   width: 750px;
   height: 750px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(140, 255, 0, 0.22) 0%, rgba(0, 217, 255, 0.08) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(140, 255, 0, 0.18) 0%, rgba(0, 217, 255, 0.06) 50%, transparent 70%); /* Reduced intensity by 20% */
   filter: blur(120px);
   pointer-events: none;
   z-index: 0;
@@ -566,8 +566,8 @@
 }
 
 @keyframes ambient-float {
-  0% { transform: translateY(-50%) scale(0.95); opacity: 0.8; }
-  100% { transform: translateY(-46%) scale(1.05); opacity: 1; }
+  0% { transform: translateY(-50%) scale(0.95); opacity: 0.65; } /* Reduced opacity for softer glow */
+  100% { transform: translateY(-46%) scale(1.05); opacity: 0.8; }
 }
 
 /* Energy Portal Background Pulsing Glow & Waves */

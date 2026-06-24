@@ -220,7 +220,7 @@ p {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 55% 45%; /* Text content 55%, Hologram 45% */
   gap: clamp(2rem, 5vw, 6rem);
   align-items: center;
 }
