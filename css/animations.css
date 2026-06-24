@@ -199,7 +199,7 @@
 
   /* Centralized shared coordinates for perfect symmetry */
   --center-x: 50%;
-  --center-y: calc(50% + 15px); /* Shifted 25px upward from calc(50% + 40px) */
+  --center-y: calc(50% - 5px); /* Shifted 20px upward to align logo vertically with heading block center */
   --platform-offset-y: 25.7%; /* 360px / 1400px */
 }
 
@@ -292,7 +292,7 @@
   z-index: 5;
   filter: drop-shadow(0 0 30px rgba(127, 255, 0, 0.42)) drop-shadow(0 0 60px rgba(0, 229, 255, 0.3)); /* Scaled down glow by 15% */
   animation: hologram-float 6s ease-in-out infinite alternate;
-  width: 525px; /* Increased by 7% from 490px */
+  width: 550px; /* Increased by 5% from 525px */
   height: auto;
   max-width: none !important;
   max-height: none !important;
@@ -301,13 +301,13 @@
 
 @media screen and (max-width: 1024px) {
   .holographic-logo {
-    width: 390px; /* Increased by 7% from 364px */
+    width: 410px; /* Increased by 5% from 390px */
   }
 }
 
 @media screen and (max-width: 768px) {
   .holographic-logo {
-    width: 300px; /* Increased by 7% from 280px */
+    width: 315px; /* Increased by 5% from 300px */
   }
 }
 
