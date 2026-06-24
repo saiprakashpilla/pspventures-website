@@ -530,6 +530,7 @@ header {
   z-index: 1000;
   display: flex;
   align-items: center;
+  justify-content: center; /* Center nav-container horizontally */
   transition: all var(--transition-speed) var(--ease-custom);
   padding: 1.5rem 0;
 }
@@ -544,7 +545,7 @@ header.scrolled {
   align-items: center;
   justify-content: space-between;
   width: 90%;
-  max-width: var(--max-width);
+  max-width: 1150px; /* Explicit max-width in 1100px-1200px range */
   margin: 0 auto;
   padding: 0.75rem 2.25rem;
   background: rgba(5, 5, 5, 0.45);
