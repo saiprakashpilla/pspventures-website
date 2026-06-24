@@ -221,13 +221,19 @@ p {
 .hero-grid {
   display: grid;
   grid-template-columns: 55% 45%; /* Text content 55%, Hologram 45% */
-  gap: clamp(2rem, 5vw, 6rem);
+  gap: clamp(3.5rem, 6.5vw, 7.5rem); /* Increased gap by ~30px */
   align-items: center;
 }
 
 @media screen and (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hero-hologram-col {
+    margin-left: 50px; /* Shift hologram 50px to the right for premium spacious feel */
   }
 }
 
