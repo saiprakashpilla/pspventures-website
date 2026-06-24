@@ -280,11 +280,23 @@
   z-index: 5;
   filter: drop-shadow(0 0 35px rgba(127, 255, 0, 0.5)) drop-shadow(0 0 70px rgba(0, 229, 255, 0.35));
   animation: hologram-float 6s ease-in-out infinite alternate;
-  width: 77.1%; /* 1080px / 1400px - occupies 55-60% of the entire hologram area */
+  width: 350px; /* Target desktop size: exactly 350px */
   height: auto;
   max-width: none !important;
   max-height: none !important;
   will-change: transform;
+}
+
+@media screen and (max-width: 1024px) {
+  .holographic-logo {
+    width: 260px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .holographic-logo {
+    width: 200px;
+  }
 }
 
 /* Parallax logo wrapper centered exactly at shared Y-coordinate */
