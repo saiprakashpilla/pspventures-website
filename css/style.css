@@ -18,7 +18,7 @@
   --secondary-accent-alt: #00F0FF;/* Bright Cyan */
   
   --text-primary: #F8F8F8;        /* Crisp White */
-  --text-secondary: #A0A0A0;      /* Muted Text */
+  --text-secondary: #C0C0C0;      /* Muted Text (Increased brightness by ~12.5% for readability) */
   --text-muted: #555555;
   --border-color: rgba(255, 255, 255, 0.08);
   --border-color-hover: rgba(140, 255, 0, 0.35);
