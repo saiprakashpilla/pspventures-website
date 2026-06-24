@@ -1222,17 +1222,22 @@ footer {
   z-index: 0;
 }
 
-/* Premium Product Cards */
+/* Expanded Grid Container Width (10-15% wider cards) */
+.products-container {
+  max-width: 1340px !important;
+}
+
+/* Premium Product Cards (15% height reduction via padding & margin shifts) */
 .product-card {
   height: 100% !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.01) 100%), rgba(10, 10, 10, 0.6) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.02) 100%), rgba(10, 10, 10, 0.7) !important; /* Stronger glassmorphism background */
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
   border-radius: 24px !important;
-  padding: 1.85rem 1.75rem !important; /* Reduced padding from 2.5rem 2.25rem to shrink card height */
+  padding: 1.5rem 1.5rem !important; /* Reduced padding from 1.85rem 1.75rem to shrink card height */
   position: relative;
   overflow: hidden;
   z-index: 2;
@@ -1276,61 +1281,69 @@ footer {
 }
 
 .product-card:hover {
-  transform: translateY(-8px) scale(1.02) !important;
+  transform: translateY(-8px) scale(1.03) !important; /* Elevate & scale to 1.03 */
   background: rgba(10, 10, 10, 0.8) !important;
 }
 
-/* Card Accents: Green */
+/* Card Accents: Green (My Savings Book) */
 .product-card.glow-green {
-  border: 1.2px solid rgba(140, 255, 0, 0.15) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1.2px solid rgba(140, 255, 0, 0.22) !important; /* Increased neon border visibility */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
+              0 0 15px rgba(140, 255, 0, 0.05), /* Ambient radial glow */
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .product-card.glow-green:hover {
-  border-color: rgba(140, 255, 0, 0.55) !important; /* Brighter border */
+  border-color: rgba(140, 255, 0, 0.65) !important; /* Brighter border */
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 
-              0 0 35px rgba(140, 255, 0, 0.35), /* 30% stronger glow */
-              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+              0 0 45px rgba(140, 255, 0, 0.45), /* Stronger background/glow sheens */
+              inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
-/* Card Accents: Green/Cyan */
+/* Card Accents: Green/Cyan (PSP Portfolio) */
 .product-card.glow-green-cyan {
-  border: 1.2px solid rgba(0, 240, 255, 0.15) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1.2px solid rgba(0, 240, 255, 0.22) !important; /* Increased neon border visibility */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
+              0 0 15px rgba(0, 240, 255, 0.05), /* Ambient radial glow */
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .product-card.glow-green-cyan:hover {
-  border-color: rgba(0, 240, 255, 0.55) !important; /* Brighter border */
+  border-color: rgba(0, 240, 255, 0.65) !important; /* Brighter border */
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 
-              0 0 20px rgba(140, 255, 0, 0.22),
-              0 0 35px rgba(0, 240, 255, 0.28), /* 30% stronger glow */
-              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+              0 0 25px rgba(140, 255, 0, 0.22),
+              0 0 45px rgba(0, 240, 255, 0.36), /* Stronger background/glow sheens */
+              inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
-/* Card Accents: Cyan */
+/* Card Accents: Cyan (Expense Manager) */
 .product-card.glow-cyan {
-  border: 1.2px solid rgba(0, 217, 255, 0.15) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1.2px solid rgba(0, 217, 255, 0.22) !important; /* Increased neon border visibility */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
+              0 0 15px rgba(0, 217, 255, 0.05), /* Ambient radial glow */
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .product-card.glow-cyan:hover {
-  border-color: rgba(0, 217, 255, 0.55) !important; /* Brighter border */
+  border-color: rgba(0, 217, 255, 0.65) !important; /* Brighter border */
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 
-              0 0 35px rgba(0, 217, 255, 0.35), /* 30% stronger glow */
-              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+              0 0 45px rgba(0, 217, 255, 0.45), /* Stronger background/glow sheens */
+              inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
-/* Card Accents: Purple */
+/* Card Accents: Purple (AI Assistant) */
 .product-card.glow-purple {
-  border: 1.2px solid rgba(138, 92, 255, 0.15) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1.2px solid rgba(138, 92, 255, 0.22) !important; /* Increased neon border visibility */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
+              0 0 15px rgba(138, 92, 255, 0.05), /* Ambient radial glow */
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .product-card.glow-purple:hover {
-  border-color: rgba(138, 92, 255, 0.55) !important; /* Brighter border */
+  border-color: rgba(138, 92, 255, 0.65) !important; /* Brighter border */
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 
-              0 0 35px rgba(138, 92, 255, 0.35), /* 30% stronger glow */
-              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+              0 0 45px rgba(138, 92, 255, 0.45), /* Stronger background/glow sheens */
+              inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 /* Top Area Layout */
@@ -1338,32 +1351,34 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem; /* Reduced from 2.25rem */
+  margin-bottom: 1.25rem; /* Reduced from 1.5rem to shrink card height */
   position: relative;
   z-index: 2;
 }
 
-/* Glowing Icon Square */
+/* Glowing Icon Square (Increased by 20%: 64px x 64px) */
 .product-icon-box {
-  width: 54px;
-  height: 54px;
-  border-radius: 12px;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
 }
 
+/* SVGs occupy 76% of icon container space */
 .product-icon-box svg {
-  width: 28px;
-  height: 28px;
+  width: 76%;
+  height: 76%;
   object-fit: contain;
   display: block;
 }
 
+/* PSP Portfolio logo image fills 80% of icon box */
 .product-icon-box img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   object-fit: contain;
   display: block;
 }
@@ -1372,48 +1387,48 @@ footer {
   background: rgba(140, 255, 0, 0.08);
   border: 1px solid rgba(140, 255, 0, 0.25);
   color: var(--primary-accent);
-  box-shadow: 0 0 15px rgba(140, 255, 0, 0.15);
+  box-shadow: 0 0 20px rgba(140, 255, 0, 0.25); /* Stronger neon glow */
 }
 
 .glow-green:hover .product-icon-box {
   background: rgba(140, 255, 0, 0.15);
-  box-shadow: 0 0 20px rgba(140, 255, 0, 0.3);
+  box-shadow: 0 0 25px rgba(140, 255, 0, 0.4);
 }
 
 .glow-green-cyan .product-icon-box {
   background: linear-gradient(135deg, rgba(140, 255, 0, 0.05) 0%, rgba(0, 217, 255, 0.05) 100%);
   border: 1px solid rgba(0, 240, 255, 0.25);
   color: #00F0FF;
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.25); /* Stronger neon glow */
 }
 
 .glow-green-cyan:hover .product-icon-box {
   background: linear-gradient(135deg, rgba(140, 255, 0, 0.1) 0%, rgba(0, 217, 255, 0.1) 100%);
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
 }
 
 .glow-cyan .product-icon-box {
   background: rgba(0, 217, 255, 0.08);
   border: 1px solid rgba(0, 217, 255, 0.25);
   color: var(--secondary-accent-alt);
-  box-shadow: 0 0 15px rgba(0, 217, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.25); /* Stronger neon glow */
 }
 
 .glow-cyan:hover .product-icon-box {
   background: rgba(0, 217, 255, 0.15);
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
 }
 
 .glow-purple .product-icon-box {
   background: rgba(138, 92, 255, 0.08);
   border: 1px solid rgba(138, 92, 255, 0.25);
   color: #8A5CFF;
-  box-shadow: 0 0 15px rgba(138, 92, 255, 0.15);
+  box-shadow: 0 0 20px rgba(138, 92, 255, 0.25); /* Stronger neon glow */
 }
 
 .glow-purple:hover .product-icon-box {
   background: rgba(138, 92, 255, 0.15);
-  box-shadow: 0 0 20px rgba(138, 92, 255, 0.3);
+  box-shadow: 0 0 25px rgba(138, 92, 255, 0.4);
 }
 
 /* Status Badges with Pulse Dots */
@@ -1485,7 +1500,7 @@ footer {
 
 /* Card Body & Typography */
 .product-card-body {
-  margin-bottom: 1.5rem; /* Reduced from 2rem to shrink card height */
+  margin-bottom: 1.25rem; /* Reduced from 1.5rem to shrink card height */
   position: relative;
   z-index: 2;
 }
@@ -1495,7 +1510,7 @@ footer {
   font-size: 1.35rem;
   font-weight: 800;
   color: var(--text-primary);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.5rem; /* Increased spacing */
   letter-spacing: -0.01em;
 }
 
@@ -1505,7 +1520,7 @@ footer {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem; /* Increased spacing */
   display: block;
 }
 
@@ -1533,10 +1548,26 @@ footer {
   line-height: 1.6;
   color: var(--text-secondary);
   margin-bottom: 0;
+  /* Enforce 2-3 lines clamp on description */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Bottom CTA Area inside Cards */
+.product-card-body-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dedicated Footer Section Separated by Divider Line */
 .product-card-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08); /* Subtle divider line */
+  padding-top: 1.25rem;
+  margin-top: 1.25rem;
+  width: 100%;
   position: relative;
   z-index: 2;
 }
@@ -1552,26 +1583,27 @@ footer {
   background: rgba(255, 255, 255, 0.02);
 }
 
+/* Prominent button hover glows */
 .product-card.glow-green .btn-secondary:hover {
   border-color: var(--primary-accent);
   background: rgba(140, 255, 0, 0.04);
-  box-shadow: 0 12px 35px rgba(140, 255, 0, 0.2);
+  box-shadow: 0 15px 40px rgba(140, 255, 0, 0.35);
 }
 
 .product-card.glow-green-cyan .btn-secondary:hover {
   border-color: var(--secondary-accent-alt);
   background: rgba(0, 240, 255, 0.04);
-  box-shadow: 0 12px 35px rgba(0, 240, 255, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 240, 255, 0.35);
 }
 
 .product-card.glow-cyan .btn-secondary:hover {
   border-color: var(--secondary-accent-alt);
   background: rgba(0, 240, 255, 0.04);
-  box-shadow: 0 12px 35px rgba(0, 240, 255, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 240, 255, 0.35);
 }
 
 .product-card.glow-purple .btn-secondary:hover {
   border-color: #8A5CFF;
   background: rgba(138, 92, 255, 0.04);
-  box-shadow: 0 12px 35px rgba(138, 92, 255, 0.2);
+  box-shadow: 0 15px 40px rgba(138, 92, 255, 0.35);
 }
