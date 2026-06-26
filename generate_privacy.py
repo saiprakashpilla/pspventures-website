@@ -1,4 +1,18 @@
-<!DOCTYPE html>
+import re
+
+with open('index.html', 'r') as f:
+    index_content = f.read()
+
+header_match = re.search(r'(<header>.*?</header>)', index_content, re.DOTALL)
+header = header_match.group(1) if header_match else ''
+
+footer_match = re.search(r'(<footer>.*?</footer>)', index_content, re.DOTALL)
+footer = footer_match.group(1) if footer_match else ''
+
+scripts_match = re.search(r'(<!-- Scripts -->.*?</body>)', index_content, re.DOTALL)
+scripts = scripts_match.group(1) if scripts_match else '  <script src="js/main.js"></script>\n</body>'
+
+privacy_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -17,37 +31,37 @@
   <!-- Internal styles for white premium theme -->
   <style>
     /* Privacy Policy Specific Styles */
-    body {
+    body {{
       background-color: #050505;
-    }
-    .privacy-section {
+    }}
+    .privacy-section {{
       background: linear-gradient(135deg, #ffffff 0%, #f7f9fa 100%);
       color: #1a1a1a;
       padding: calc(var(--header-height) + 5rem) 2rem 5rem 2rem;
       position: relative;
-    }
-    .privacy-header {
+    }}
+    .privacy-header {{
       text-align: center;
       margin-bottom: 4rem;
-    }
-    .privacy-header h1 {
+    }}
+    .privacy-header h1 {{
       color: #050505;
       font-size: clamp(2.5rem, 5vw, 3.5rem);
       margin-bottom: 1rem;
       font-weight: 800;
       letter-spacing: -1px;
-    }
-    .privacy-header p {
+    }}
+    .privacy-header p {{
       color: #555;
       font-size: 1.1rem;
       max-width: 600px;
       margin: 0 auto;
-    }
-    .privacy-content {
+    }}
+    .privacy-content {{
       max-width: 800px;
       margin: 0 auto;
-    }
-    .privacy-card {
+    }}
+    .privacy-card {{
       background: #ffffff;
       border-radius: 20px;
       padding: 2.5rem;
@@ -56,13 +70,13 @@
       border: 1px solid rgba(0,0,0,0.04);
       transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
       position: relative;
-    }
-    .privacy-card:hover {
+    }}
+    .privacy-card:hover {{
       transform: translateY(-8px);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
       border-color: rgba(124, 255, 0, 0.3);
-    }
-    .privacy-card-icon {
+    }}
+    .privacy-card-icon {{
       width: 54px;
       height: 54px;
       background: rgba(124, 255, 0, 0.15);
@@ -72,8 +86,8 @@
       justify-content: center;
       margin-bottom: 1.5rem;
       color: #000;
-    }
-    .privacy-card-icon svg {
+    }}
+    .privacy-card-icon svg {{
       width: 26px;
       height: 26px;
       stroke: #050505;
@@ -81,70 +95,42 @@
       stroke-linecap: round;
       stroke-linejoin: round;
       fill: none;
-    }
-    .privacy-card h2 {
+    }}
+    .privacy-card h2 {{
       font-size: 1.4rem;
       color: #050505;
       margin-bottom: 1rem;
       font-weight: 700;
-    }
-    .privacy-card p, .privacy-card ul {
+    }}
+    .privacy-card p, .privacy-card ul {{
       color: #4a4a4a;
       font-size: 1.05rem;
       line-height: 1.7;
-    }
-    .privacy-card ul {
+    }}
+    .privacy-card ul {{
       padding-left: 1.5rem;
       margin-top: 1rem;
-    }
-    .privacy-card li {
+    }}
+    .privacy-card li {{
       margin-bottom: 0.5rem;
-    }
-    .privacy-card a {
+    }}
+    .privacy-card a {{
       color: #050505;
       text-decoration: underline;
       font-weight: 600;
       transition: color 0.3s ease;
-    }
-    .privacy-card a:hover {
+    }}
+    .privacy-card a:hover {{
       color: #7CFF00;
-    }
-    html {
+    }}
+    html {{
       scroll-behavior: smooth;
-    }
+    }}
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="nav-container">
-      <a href="index.html" class="logo-wrapper logo-glow-effect">
-        <img src="assets/images/logo-icon.png" alt="PSP Ventures Icon" class="logo-img">
-        <span class="logo-text">PSP VENTURES</span>
-      </a>
-
-      <!-- Navigation Links -->
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">HOME</a></li>
-          <li><a href="about.html">ABOUT US</a></li>
-          <li><a href="products.html">PRODUCTS</a></li>
-          <li><a href="privacy-policy.html">PRIVACY POLICY</a></li>
-        </ul>
-      </nav>
-
-      <!-- Header CTA -->
-      <div class="nav-cta">
-        <a href="contact.html" class="btn btn-outlined-neon" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; border-radius: 50px;">GET IN TOUCH</a>
-        <!-- Hamburger Menu -->
-        <button class="hamburger" aria-label="Toggle Navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
+  {header}
 
   <section class="privacy-section">
     <div class="privacy-header reveal">
@@ -291,75 +277,10 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-info">
-          <a href="index.html" class="logo-wrapper logo-glow-effect" style="display: inline-flex; margin-bottom: 1.5rem;">
-            <img src="assets/images/logo-icon.png" alt="PSP Ventures Logo Icon" class="logo-img">
-            <span class="logo-text">PSP VENTURES</span>
-          </a>
-          <p class="footer-description">
-            Building innovative digital products for a better tomorrow.
-          </p>
-          <div class="footer-socials">
-            <a href="https://github.com" class="social-icon" aria-label="GitHub">
-              <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-            </a>
-            <a href="https://twitter.com" class="social-icon" aria-label="Twitter">
-              <svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-            </a>
-          </div>
-        </div>
+  {footer}
 
-        <div class="footer-column">
-          <h4>Company</h4>
-          <ul class="footer-links">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="about.html">Our Mission</a></li>
-            <li><a href="contact.html">Careers</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
+{scripts}
+"""
 
-        <div class="footer-column">
-          <h4>Products</h4>
-          <ul class="footer-links">
-            <li><a href="products.html">All Products</a></li>
-            <li><a href="product-mysavingsbook.html">Mobile Apps</a></li>
-            <li><a href="products.html">Websites</a></li>
-            <li><a href="index.html#statistics">Future Apps</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4>Legal</h4>
-          <ul class="footer-links">
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
-            <li><a href="privacy-policy.html">Refund Policy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4>Get In Touch</h4>
-          <ul class="footer-links">
-            <li style="font-size: 0.95rem; color: var(--text-secondary); word-break: break-all;">
-              <a href="mailto:hello@pspventures.in" style="color: var(--primary-accent);">hello@pspventures.in</a>
-            </li>
-            <li style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 0.5rem;">
-              India
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span class="copyright">&copy; 2025 PSP Ventures. All rights reserved.</span>
-      </div>
-    </div>
-  </footer>
-
-<!-- Scripts -->
-  <script src="js/main.js"></script>
-</body>
+with open('privacy-policy.html', 'w') as f:
+    f.write(privacy_html)
