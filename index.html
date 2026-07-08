@@ -365,11 +365,13 @@
 
       <!-- Featured Card: PSP Portfolio -->
       <div class="featured-product-card product-card glow-green-cyan reveal delay-1">
+        <div class="featured-bg-layer"></div>
         <div class="featured-product-details" style="display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem;">
           <div>
-            <div class="product-card-top">
-              <div class="product-icon-box" style="width: 60px; height: 60px;">
-                <img src="assets/images/logo-icon.png" alt="PSP Ventures Logo" style="transform: scale(0.82);">
+            <div class="product-card-top" style="align-items: flex-start;">
+              <div style="position: relative; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
+                <div style="position: absolute; width: 80px; height: 80px; background: rgba(140, 255, 0, 0.15); filter: blur(20px); border-radius: 50%;"></div>
+                <img src="assets/images/logo-full.png" alt="PSP Ventures Logo" class="logo-psp" style="position: relative; z-index: 1;">
               </div>
               <span class="product-badge-live">LIVE</span>
             </div>
@@ -414,11 +416,8 @@
             <div style="position: absolute; bottom: -20px; right: -10px; width: 100px; height: 100px; background: rgba(140, 255, 0, 0.08); filter: blur(25px); border-radius: 50%;"></div>
             
             <!-- Miniature Navbar -->
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; z-index: 1;">
-              <div style="display: flex; align-items: center; gap: 6px;">
-                <img src="assets/images/logo-icon.png" alt="Logo" style="width: 12px; height: 12px; object-fit: contain;">
-                <div style="width: 24px; height: 4px; background: rgba(255, 255, 255, 0.85); border-radius: 2px;"></div>
-              </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; z-index: 1;">
+              <img src="assets/images/logo-full.png" alt="Logo" style="height: 12px; object-fit: contain;">
               <div style="display: flex; gap: 4px; align-items: center;">
                 <div style="width: 14px; height: 2px; background: rgba(255, 255, 255, 0.3); border-radius: 1px;"></div>
                 <div style="width: 14px; height: 2px; background: rgba(255, 255, 255, 0.3); border-radius: 1px;"></div>
@@ -427,10 +426,11 @@
             </div>
             
             <!-- Miniature Hero -->
-            <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; z-index: 1; margin-top: 10px;">
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; z-index: 1; margin-top: 10px; padding-left: 8px;">
               <!-- Headline treatment -->
-              <div style="width: 65%; height: 6px; background: #fff; border-radius: 3px; margin-bottom: 6px;"></div>
-              <div style="width: 90%; height: 6px; background: linear-gradient(90deg, #8cff00, #00d9ff); border-radius: 3px; margin-bottom: 12px; box-shadow: 0 0 8px rgba(140, 255, 0, 0.2);"></div>
+              <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 2px;">INNOVATE.</div>
+              <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 2px;">BUILD.</div>
+              <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; line-height: 1.1; letter-spacing: -0.02em; background: linear-gradient(90deg, #8cff00, #00d9ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 16px;">IMPACT.</div>
               
               <div style="width: 45%; height: 4px; background: rgba(255, 255, 255, 0.4); border-radius: 2px; margin-bottom: 4px;"></div>
               <div style="width: 35%; height: 4px; background: rgba(255, 255, 255, 0.4); border-radius: 2px; margin-bottom: 16px;"></div>
@@ -453,14 +453,17 @@
       <div class="products-grid-3 reveal delay-2">
         
         <!-- Card 1: My Savings Book -->
-        <div class="product-card glow-green">
-          <div class="product-card-body-wrapper">
+        <div class="product-card glow-green" style="position: relative; overflow: hidden;">
+          <div class="top-glow-savings"></div>
+          <div class="motif-savings"></div>
+          <div class="product-card-body-wrapper" style="position: relative; z-index: 1;">
             <div class="product-card-top">
-              <div class="product-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform: scale(0.90);">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                  <path d="M12 6v6M14 7.5h-3a1.5 1.5 0 0 0 0 3h3a1.5 1.5 0 0 1 0 3h-3"></path>
+              <div class="logo-savings">
+                <svg viewBox="0 0 64 64" fill="none" style="width: 100%; height: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                  <rect width="64" height="64" fill="#0A1128" rx="12"></rect>
+                  <circle cx="32" cy="32" r="22" stroke="rgba(255, 255, 255, 0.05)" stroke-width="2"></circle>
+                  <path d="M24 22H40M24 28H34C37.3137 28 40 30.6863 40 34C40 37.3137 37.3137 40 34 40H22L36 54" stroke="#FFD700" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M29 16V46" stroke="rgba(255, 215, 0, 0.3)" stroke-width="2" stroke-linecap="round"></path>
                 </svg>
               </div>
               <span class="product-badge-review">IN REVIEW</span>
@@ -489,14 +492,17 @@
         </div>
 
         <!-- Card 2: Trend Bull -->
-        <div class="product-card glow-cyan">
-          <div class="product-card-body-wrapper">
+        <div class="product-card glow-cyan" style="position: relative; overflow: hidden;">
+          <div class="top-glow-trendbull"></div>
+          <div class="motif-trendbull"></div>
+          <div class="product-card-body-wrapper" style="position: relative; z-index: 1;">
             <div class="product-card-top">
-              <div class="product-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform: scale(0.86);">
-                  <path d="M3 3v18h18"></path>
-                  <polyline points="21 9 15 15 11 11 3 19"></polyline>
-                  <polyline points="21 3 21 9 15 9"></polyline>
+              <div class="logo-trendbull">
+                <svg viewBox="0 0 64 64" fill="none" style="width: 100%; height: 100%;">
+                  <path d="M12 40C12 40 18 30 28 32C38 34 44 24 44 24" stroke="#FF3333" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M44 24L36 22M44 24L42 32" stroke="#FF3333" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M16 52L24 28L32 36L48 16" stroke="rgba(0, 240, 255, 0.8)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <circle cx="48" cy="16" r="4" fill="#00F0FF"></circle>
                 </svg>
               </div>
               <span class="product-badge-live">LIVE</span>
@@ -525,37 +531,44 @@
         </div>
 
         <!-- Card 3: AI Trading Bot -->
-        <div class="product-card glow-purple card-muted">
-          <div class="product-card-body-wrapper">
+        <div class="product-card glow-purple card-muted" style="position: relative; overflow: hidden;">
+          <div class="top-glow-aitrading"></div>
+          <div class="motif-aitrading"></div>
+          <div class="product-card-body-wrapper" style="position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1;">
             <div class="product-card-top">
-              <div class="product-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: scale(0.76);">
-                  <rect x="4" y="4" width="16" height="16" rx="3"></rect>
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                  <circle cx="15" cy="21" r="1.5"></circle>
-                  <circle cx="9" cy="3" r="1.5"></circle>
-                  <circle cx="18" cy="12" r="1.5"></circle>
+              <div class="logo-ai-trading">
+                <svg viewBox="0 0 64 64" fill="none" style="width: 100%; height: 100%;">
+                  <rect x="18" y="18" width="28" height="28" rx="6" fill="rgba(138, 92, 255, 0.15)" stroke="#8A5CFF" stroke-width="3"></rect>
+                  <path d="M18 26H12M18 38H12M46 26H52M46 38H52M26 18V12M38 18V12M26 46V52M38 46V52" stroke="#8A5CFF" stroke-width="3" stroke-linecap="round"></path>
+                  <path d="M24 38L32 28L40 34" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <circle cx="40" cy="34" r="3" fill="#00F0FF"></circle>
+                  <circle cx="32" cy="28" r="3" fill="#00F0FF"></circle>
+                  <circle cx="24" cy="38" r="3" fill="#00F0FF"></circle>
                 </svg>
               </div>
               <span class="product-badge-future">IN DEVELOPMENT</span>
             </div>
-            <div class="product-card-body">
+            <div class="product-card-body" style="flex: 1; display: flex; flex-direction: column;">
               <h3 class="product-title">AI Trading Bot</h3>
               <span class="product-category category-purple">ALGORITHMIC TRADING BOT</span>
-              <p class="product-description" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
+              <p class="product-description">
                 An AI-powered algorithmic trading bot being developed to analyze markets, identify opportunities, and support automated trading workflows.
               </p>
               
               <!-- Tech Stack Chips -->
-              <div class="tech-chips-container">
+              <div class="tech-chips-container" style="margin-bottom: 1rem;">
                 <span class="tech-chip">AI</span>
                 <span class="tech-chip">ALGO TRADING</span>
                 <span class="tech-chip">DATA ANALYSIS</span>
               </div>
+              
+              <!-- Development Footer -->
+              <div class="development-footer">
+                <div class="pulse-dot"></div>
+                <span>DEVELOPMENT IN PROGRESS</span>
+                <div class="progress-line"></div>
+              </div>
             </div>
-          </div>
-          <div class="product-card-footer">
-            <!-- Informational card, no CTA -->
           </div>
         </div>
 
