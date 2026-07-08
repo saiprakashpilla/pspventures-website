@@ -999,7 +999,7 @@ footer {
 .feature-grid-2x2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2.25rem; /* Increased spacing between cards */
+  gap: 1.75rem; /* Reduced spacing to allow slightly wider cards */
   width: 100%;
 }
 
@@ -1014,7 +1014,7 @@ footer {
   backdrop-filter: blur(30px) !important; /* Increased backdrop blur from 20px to 30px */
   -webkit-backdrop-filter: blur(30px) !important;
   border-radius: 28px !important;
-  padding: 2.5rem 2rem !important;
+  padding: 1.85rem 1.65rem !important; /* Reduced internal padding to make cards shorter */
   position: relative;
   overflow: hidden;
   z-index: 2;
@@ -1181,6 +1181,13 @@ footer {
 .btn-about-more {
   padding: 1.25rem 2.85rem !important; /* ~12.5% increase */
   font-size: 1.05rem !important;
+  border: 1px solid rgba(140, 255, 0, 0.3) !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.btn-about-more:hover {
+  box-shadow: 0 0 15px rgba(140, 255, 0, 0.2), inset 0 0 10px rgba(140, 255, 0, 0.1) !important;
+  border-color: rgba(140, 255, 0, 0.6) !important;
 }
 
 /* ==========================================================================
