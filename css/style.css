@@ -833,7 +833,7 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: 15px; /* Moved 45px upward to reduce empty space below Hero */
-  margin-bottom: 0; /* Reduced by 20px to tighten transition to About section */
+  margin-bottom: 20px; /* Restored gap above the horizontal divider */
   position: relative;
   z-index: 10;
 }
@@ -934,9 +934,6 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  .highlights-section {
-    margin-bottom: 20px; /* Restore spacing on mobile */
-  }
   .highlights-container {
     height: auto;
     padding: 1.5rem 1rem;
