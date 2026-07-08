@@ -369,9 +369,9 @@
         <div class="featured-product-details" style="display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem;">
           <div>
             <div class="product-card-top" style="align-items: flex-start;">
-              <div style="position: relative; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
-                <div style="position: absolute; width: 80px; height: 80px; background: rgba(140, 255, 0, 0.15); filter: blur(20px); border-radius: 50%;"></div>
-                <img src="assets/images/logo-icon.png" alt="PSP Ventures Logo" class="logo-psp" style="position: relative; z-index: 1;">
+              <div style="width: 150px; height: 52px; display: flex; align-items: center; margin-bottom: 0.5rem; position: relative;">
+                <div style="position: absolute; width: 80px; height: 80px; background: rgba(140, 255, 0, 0.15); filter: blur(20px); border-radius: 50%; left: -20px;"></div>
+                <img src="assets/product-logos/psp-ventures.png" alt="PSP Ventures Logo" onerror="this.style.display='none'" style="width: 100%; height: 100%; object-fit: contain; object-position: left center; position: relative; z-index: 1;">
               </div>
               <span class="product-badge-live">LIVE</span>
             </div>
@@ -426,19 +426,29 @@
             </div>
             
             <!-- Miniature Hero -->
-            <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; z-index: 1; margin-top: 10px; padding-left: 8px;">
-              <!-- Headline treatment -->
-              <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 2px;">INNOVATE.</div>
-              <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 2px;">BUILD.</div>
-              <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; line-height: 1.1; letter-spacing: -0.02em; background: linear-gradient(90deg, #8cff00, #00d9ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 16px;">IMPACT.</div>
+            <div style="flex: 1; display: flex; flex-direction: row; justify-content: space-between; align-items: center; z-index: 1; margin-top: 10px; padding: 0 10px;">
               
-              <div style="width: 45%; height: 4px; background: rgba(255, 255, 255, 0.4); border-radius: 2px; margin-bottom: 4px;"></div>
-              <div style="width: 35%; height: 4px; background: rgba(255, 255, 255, 0.4); border-radius: 2px; margin-bottom: 16px;"></div>
+              <!-- Left: Headline treatment -->
+              <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.45rem; line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 2px;">INNOVATE.</div>
+                <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.45rem; line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 2px;">BUILD.</div>
+                <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.45rem; line-height: 1.1; letter-spacing: -0.02em; background: linear-gradient(90deg, #8cff00, #00d9ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px;">IMPACT.</div>
+                
+                <div style="width: 55%; height: 4px; background: rgba(255, 255, 255, 0.4); border-radius: 2px; margin-bottom: 4px;"></div>
+                <div style="width: 45%; height: 4px; background: rgba(255, 255, 255, 0.4); border-radius: 2px; margin-bottom: 16px;"></div>
+                
+                <!-- Miniature CTA buttons -->
+                <div style="display: flex; gap: 8px;">
+                  <div style="width: 40px; height: 10px; background: #8cff00; border-radius: 5px; box-shadow: 0 0 6px rgba(140, 255, 0, 0.3);"></div>
+                  <div style="width: 40px; height: 10px; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 5px;"></div>
+                </div>
+              </div>
               
-              <!-- Miniature CTA buttons -->
-              <div style="display: flex; gap: 8px;">
-                <div style="width: 32px; height: 8px; background: #8cff00; border-radius: 4px; box-shadow: 0 0 6px rgba(140, 255, 0, 0.3);"></div>
-                <div style="width: 32px; height: 8px; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 4px;"></div>
+              <!-- Right: Holographic Logo -->
+              <div style="width: 90px; height: 90px; display: flex; align-items: center; justify-content: center; position: relative;">
+                <div style="position: absolute; width: 70px; height: 70px; background: rgba(0, 240, 255, 0.2); filter: blur(15px); border-radius: 50%;"></div>
+                <div style="position: absolute; bottom: 15px; width: 50px; height: 4px; background: rgba(140, 255, 0, 0.5); filter: blur(2px); border-radius: 50%;"></div>
+                <img src="assets/images/logo-icon.png" alt="Hologram" style="width: 36px; height: 36px; object-fit: contain; position: relative; z-index: 1; filter: drop-shadow(0 0 6px rgba(140, 255, 0, 0.6));">
               </div>
             </div>
             
@@ -458,7 +468,7 @@
           <div class="motif-savings"></div>
           <div class="product-card-body-wrapper" style="position: relative; z-index: 1;">
             <div class="product-card-top">
-              <img src="assets/images/logo-mysavingsbook.png" alt="My Savings Book Logo" class="logo-savings" style="box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+              <img src="assets/product-logos/my-savings-book.png" alt="My Savings Book Logo" onerror="this.style.display='none'" style="width: 56px; height: 56px; object-fit: contain; object-position: center; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
               <span class="product-badge-review">IN REVIEW</span>
             </div>
             <div class="product-card-body">
@@ -490,9 +500,7 @@
           <div class="motif-trendbull"></div>
           <div class="product-card-body-wrapper" style="position: relative; z-index: 1;">
             <div class="product-card-top">
-              <div class="logo-trendbull" style="display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); border-radius: 12px;">
-                <span style="font-size: 0.65rem; color: rgba(255,255,255,0.5); text-align: center; line-height: 1.2; padding: 4px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.05em;">Original asset not resolved</span>
-              </div>
+              <img src="assets/product-logos/trend-bull.png" alt="Trend Bull Logo" onerror="this.style.display='none'" style="width: 64px; height: 64px; object-fit: contain; object-position: left center;">
               <span class="product-badge-live">LIVE</span>
             </div>
             <div class="product-card-body">
@@ -524,9 +532,7 @@
           <div class="motif-aitrading"></div>
           <div class="product-card-body-wrapper" style="position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1;">
             <div class="product-card-top">
-              <div class="logo-ai-trading" style="display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); border-radius: 12px;">
-                <span style="font-size: 0.65rem; color: rgba(255,255,255,0.5); text-align: center; line-height: 1.2; padding: 4px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.05em;">Logo pending</span>
-              </div>
+              <img src="assets/product-logos/ai-trading-bot.png" alt="AI Trading Bot Logo" onerror="this.style.display='none'" style="width: 58px; height: 58px; object-fit: contain; object-position: center; border-radius: 8px; box-shadow: 0 0 15px rgba(138, 92, 255, 0.3);">
               <span class="product-badge-future">IN DEVELOPMENT</span>
             </div>
             <div class="product-card-body" style="flex: 1; display: flex; flex-direction: column;">
