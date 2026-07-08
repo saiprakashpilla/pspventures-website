@@ -1448,7 +1448,8 @@ footer {
 /* Status Badges with Pulse Dots */
 .product-badge-live,
 .product-badge-coming,
-.product-badge-future {
+.product-badge-future,
+.product-badge-review {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -1510,6 +1511,21 @@ footer {
   background: #8A5CFF;
   box-shadow: 0 0 6px #8A5CFF;
   animation: status-pulse-purple 2s infinite;
+}
+
+.product-badge-review {
+  background: rgba(255, 179, 0, 0.08);
+  color: #FFB300;
+  border: 1px solid rgba(255, 179, 0, 0.2);
+}
+
+.product-badge-review::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFB300;
 }
 
 @keyframes status-pulse-green {
