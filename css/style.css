@@ -2246,3 +2246,63 @@ body footer, body footer.section-masked {
     background: transparent !important;
     background-color: transparent !important;
 }
+
+/* === PREMIUM LOCALIZED GLOWS (INSIDE MASKED SECTIONS) === */
+
+.section-glow-layer {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  display: block !important;
+  opacity: 1 !important;
+  background: transparent !important;
+}
+
+/* ABOUT SECTION SPECIFIC GLOWS */
+.about-glows::before {
+  content: "" !important;
+  position: absolute !important;
+  width: 520px !important;
+  height: 520px !important;
+  left: 12% !important;
+  top: 28% !important;
+  background: radial-gradient(circle, rgba(123, 255, 40, 0.11) 0%, rgba(123, 255, 40, 0.045) 38%, transparent 72%) !important;
+  filter: blur(35px) !important;
+  pointer-events: none !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.about-glows::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 620px !important;
+  height: 520px !important;
+  right: 10% !important;
+  top: 20% !important;
+  background: radial-gradient(circle at 35% 35%, rgba(0, 220, 255, 0.08), transparent 58%), radial-gradient(circle at 70% 65%, rgba(123, 255, 40, 0.07), transparent 58%) !important;
+  filter: blur(40px) !important;
+  pointer-events: none !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+/* CARD ICON RESTORED GLOWS */
+.icon-green {
+  box-shadow: 0 0 18px rgba(123, 255, 40, 0.18), 0 0 40px rgba(123, 255, 40, 0.07) !important;
+}
+.icon-cyan {
+  box-shadow: 0 0 18px rgba(0, 220, 255, 0.16), 0 0 40px rgba(0, 220, 255, 0.06) !important;
+}
+
+/* DESKTOP HOVER AMBIENT GLOW FOR CARDS */
+@media (min-width: 992px) {
+  .about-card.glow-green:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.30), 0 0 35px rgba(123,255,40,0.07) !important;
+  }
+  .about-card.glow-cyan:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.30), 0 0 35px rgba(0,220,255,0.06) !important;
+  }
+}
