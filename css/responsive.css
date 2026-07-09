@@ -216,26 +216,25 @@ section#featured-products::before {
 
 
 
-/* === SIMPLE SECTION DIVIDERS === */
-.section, .products-showcase-section, footer, .footer, section[id] {
-    border-top: 1px solid rgba(255, 255, 255, 0.04) !important;
-    position: relative;
-    box-shadow: none !important; /* Revert inner shadow */
+
+/* === FINAL ALTERNATING SECTION OVERLAYS === */
+.section-masked {
+    position: relative !important;
+    z-index: 1 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.035) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.025) !important;
 }
 
-#hero {
-    border-top: none !important;
+.section-masked::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(4, 7, 8, 0.78) !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
 }
 
-/* Ensure no gradient pseudo lines */
-.section::before, .products-showcase-section::before, footer::before, section[id]::before {
-    display: none !important;
-}
-
-.section-atmospheric {
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+/* Ensure open sections stay completely transparent and untouched */
+.section-open {
+    /* Kept exactly as is - no background applied */
 }
