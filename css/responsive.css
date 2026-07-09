@@ -198,20 +198,7 @@ section[id]::before, section[id]::after {
     border-top: none !important;
 }
 
-/* === SUBTLE LOCALIZED ATMOSPHERE === */
-/* Very subtle local radial glow for About */
-section#about::before {
-    content: "" !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    pointer-events: none !important;
-    z-index: -1 !important;
-    background: radial-gradient(circle at 68% 48%, rgba(70, 255, 90, 0.035), transparent 38%) !important;
-    opacity: 1 !important;
-}
+
 
 /* Very subtle local cyan/purple atmosphere for Products */
 section#featured-products::before {
