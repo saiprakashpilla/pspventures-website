@@ -2158,6 +2158,7 @@ section#featured-products::before {
 
 
 
+
 /* === FINAL ALTERNATING SECTION OVERLAYS === */
 .section-masked {
     position: relative !important;
@@ -2166,13 +2167,18 @@ section#featured-products::before {
     border-bottom: 1px solid rgba(255, 255, 255, 0.025) !important;
 }
 
-.section-masked::before {
+section.section-masked[id]::before, footer.section-masked::before, .section-masked::before {
     content: "" !important;
     position: absolute !important;
     inset: 0 !important;
     background: #000000 !important;
+    background-color: #000000 !important;
+    background-image: none !important;
     pointer-events: none !important;
     z-index: -1 !important;
+    opacity: 1 !important;
+    display: block !important;
+    box-shadow: none !important;
 }
 
 /* Ensure open sections stay completely transparent and untouched */
