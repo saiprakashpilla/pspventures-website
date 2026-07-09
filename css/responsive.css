@@ -285,3 +285,9 @@ section[id]::after, footer::after, .section-masked::after, .section-open::after 
 #hero::after {
     display: none !important;
 }
+
+/* === FOOTER PURE BLACK OVERRIDE === */
+footer.section-masked::before, footer::before {
+    background: #000000 !important;
+    background-color: #000000 !important;
+}
