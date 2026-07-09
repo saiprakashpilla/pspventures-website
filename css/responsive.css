@@ -185,3 +185,25 @@ section[id]::before, section[id]::after {
     background: none !important;
 }
 
+
+/* STEP 2: Alternating Masked Sections */
+section.masked-section, footer.masked-section, .masked-section {
+    background: rgba(4, 7, 8, 0.72) !important;
+    background-color: rgba(4, 7, 8, 0.72) !important;
+    backdrop-filter: blur(1.5px) !important;
+    -webkit-backdrop-filter: blur(1.5px) !important;
+    border-top: 1px solid rgba(120, 255, 80, 0.045) !important;
+    border-bottom: 1px solid rgba(120, 255, 80, 0.045) !important;
+}
+
+
+/* ENSURE HIGHEST SPECIFICITY FOR MASKED SECTIONS */
+section.masked-section[id], footer.masked-section, .masked-section {
+    background: rgba(4, 7, 8, 0.72) !important;
+    background-color: rgba(4, 7, 8, 0.72) !important;
+    backdrop-filter: blur(1.5px) !important;
+    -webkit-backdrop-filter: blur(1.5px) !important;
+    border-top: 1px solid rgba(120, 255, 80, 0.045) !important;
+    border-bottom: 1px solid rgba(120, 255, 80, 0.045) !important;
+}
+
