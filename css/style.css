@@ -2128,21 +2128,42 @@ section[id]::before, section[id]::after {
 
 
 
-/* === RESTORE SECTION DIVIDERS === */
+
+/* === FINAL SECTION DIVIDERS === */
 .section, .products-showcase-section, footer, .footer, section[id] {
-    border-top: 1px solid rgba(255, 255, 255, 0.055) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.045) !important;
 }
 
-/* Hero should probably not have a top border, as it's the top of the page */
+/* Hero should not have a top border */
 #hero {
     border-top: none !important;
 }
 
-/* === REVISED STEP 2: ALTERNATING MASKED SECTIONS === */
-section.masked-section[id], footer.masked-section, .masked-section {
-    background: rgba(10, 16, 17, 0.94) !important;
-    background-color: rgba(10, 16, 17, 0.94) !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background-image: none !important;
+/* === SUBTLE LOCALIZED ATMOSPHERE === */
+/* Very subtle local radial glow for About */
+section#about::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+    background: radial-gradient(circle at 68% 48%, rgba(70, 255, 90, 0.035), transparent 38%) !important;
+    opacity: 1 !important;
+}
+
+/* Very subtle local cyan/purple atmosphere for Products */
+section#featured-products::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+    background: radial-gradient(circle at 50% 55%, rgba(40, 210, 220, 0.025), transparent 42%) !important;
+    opacity: 1 !important;
 }
