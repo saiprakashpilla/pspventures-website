@@ -2159,14 +2159,20 @@ section#featured-products::before {
 
 
 
+
 /* === FINAL ALTERNATING SECTION OVERLAYS === */
-.section-masked {
+.section-masked, .section-open {
     position: relative !important;
     z-index: 1 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.035) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.025) !important;
 }
 
+/* Remove old flat borders, we will use a premium gradient divider */
+.section-masked {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+/* The dark background for masked sections */
 section.section-masked[id]::before, footer.section-masked::before, .section-masked::before {
     content: "" !important;
     position: absolute !important;
@@ -2178,10 +2184,45 @@ section.section-masked[id]::before, footer.section-masked::before, .section-mask
     z-index: -1 !important;
     opacity: 1 !important;
     display: block !important;
+    /* Subtle inner shadow for elevation */
+    box-shadow: inset 0 20px 40px -20px rgba(0,0,0,0.8), inset 0 -20px 40px -20px rgba(0,0,0,0.8) !important;
+}
+
+/* Add inner shadow to open sections as well to separate them from masked ones */
+section.section-open[id]::before, .section-open::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+    opacity: 1 !important;
+    display: block !important;
+    box-shadow: inset 0 20px 40px -20px rgba(0,0,0,0.8), inset 0 -20px 40px -20px rgba(0,0,0,0.8) !important;
+}
+
+#hero::before {
+    display: none !important;
+}
+
+/* === PROFESSIONAL SECTION SEPARATORS === */
+/* Gradient divider line at the top of every section (except Hero) */
+section[id]::after, footer::after, .section-masked::after, .section-open::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 10% !important;
+    width: 80% !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent) !important;
+    background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent) !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+    opacity: 1 !important;
+    display: block !important;
     box-shadow: none !important;
 }
 
-/* Ensure open sections stay completely transparent and untouched */
-.section-open {
-    /* Kept exactly as is - no background applied */
+/* No top divider for hero */
+#hero::after {
+    display: none !important;
 }
