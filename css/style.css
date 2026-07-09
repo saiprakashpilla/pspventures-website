@@ -2156,41 +2156,21 @@ section#featured-products::before {
 }
 
 
-/* === PROFESSIONAL SECTION SEPARATORS === */
+
+/* === SIMPLE SECTION DIVIDERS === */
 .section, .products-showcase-section, footer, .footer, section[id] {
-    border-top: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.04) !important;
     position: relative;
-    /* Subtle depth */
-    box-shadow: inset 0 20px 40px -20px rgba(0, 0, 0, 0.4) !important;
+    box-shadow: none !important; /* Revert inner shadow */
 }
 
 #hero {
-    box-shadow: none !important;
+    border-top: none !important;
 }
 
-/* Premium gradient divider line */
+/* Ensure no gradient pseudo lines */
 .section::before, .products-showcase-section::before, footer::before, section[id]::before {
-    content: "" !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 15% !important;
-    width: 70% !important;
-    height: 1px !important;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent) !important;
-    z-index: 5 !important;
-    pointer-events: none !important;
-    opacity: 1 !important;
-}
-
-/* Override previous pseudo-element hide rules */
-section#about::before, section#featured-products::before, section#statistics::before, section#contact-cta::before, footer::before {
-    opacity: 1 !important;
-    background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent) !important;
-}
-
-#hero::before {
     display: none !important;
-    opacity: 0 !important;
 }
 
 .section-atmospheric {
