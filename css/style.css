@@ -2093,3 +2093,36 @@ footer {
   position: relative;
   z-index: 2;
 }
+
+/* === GLOBAL SECTION TRANSPARENCY OVERRIDES === */
+.section, .products-showcase-section, .highlights-section, footer, .footer,
+section[id], footer {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+.section::before, .section::after,
+.products-showcase-section::before, .products-showcase-section::after,
+.highlights-section::before, .highlights-section::after,
+footer::before, footer::after,
+section[id]::before, section[id]::after {
+    background: none !important;
+    background-image: none !important;
+    opacity: 0 !important;
+    box-shadow: none !important;
+}
+
+.glow-container,
+.ambient-glow,
+.about-glow-container,
+.about-glow,
+.grid-ambient-glow,
+.products-ambient-glow,
+.section-glow,
+.radial-field {
+    display: none !important;
+    opacity: 0 !important;
+    background: none !important;
+}
+
