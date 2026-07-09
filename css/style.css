@@ -2227,8 +2227,22 @@ section[id]::after, footer::after, .section-masked::after, .section-open::after 
     display: none !important;
 }
 
+
 /* === FOOTER PURE BLACK OVERRIDE === */
-footer.section-masked::before, footer::before {
+body footer.section-masked::before, body footer::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
     background: #000000 !important;
     background-color: #000000 !important;
+    background-image: none !important;
+    opacity: 1 !important;
+    display: block !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+}
+
+body footer, body footer.section-masked {
+    background: transparent !important;
+    background-color: transparent !important;
 }
