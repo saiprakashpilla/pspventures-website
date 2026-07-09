@@ -157,121 +157,99 @@ function initStatsCounter() {
    Dynamic Floating Particles Generator
    ========================================================================== */
 function initBackgroundParticles() {
-  const targetContainers = document.querySelectorAll('.particle-target');
-  if (targetContainers.length === 0) return;
+  const canvas = document.createElement('canvas');
+  canvas.className = 'global-particles-canvas';
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.width = '100vw';
+  canvas.style.height = '100vh';
+  canvas.style.pointerEvents = 'none';
+  canvas.style.zIndex = '0';
+  document.body.prepend(canvas);
 
-  targetContainers.forEach(container => {
-    // Remove existing DOM overlay if present
-    const oldOverlay = container.querySelector('.particles-overlay-container');
-    if (oldOverlay) oldOverlay.remove();
+  const ctx = canvas.getContext('2d');
+  let animationFrameId = null;
+  let width = 0;
+  let height = 0;
+  const particles = [];
+  const maxParticles = 250;
 
-    const canvas = document.createElement('canvas');
-    canvas.className = 'particles-canvas';
-    canvas.style.position = 'absolute';
-    canvas.style.top = '0';
-    canvas.style.left = '0';
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-    canvas.style.pointerEvents = 'none';
-    canvas.style.zIndex = '1';
-    container.appendChild(canvas);
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width * window.devicePixelRatio;
+    canvas.height = height * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
 
-    const ctx = canvas.getContext('2d');
-    let animationFrameId = null;
-    let width = 0;
-    let height = 0;
-    const particles = [];
-    const maxParticles = container.id === 'hero' ? 240 : 60;
+  resize();
+  window.addEventListener('resize', resize);
 
-    function resize() {
-      const rect = container.getBoundingClientRect();
-      width = rect.width;
-      height = rect.height;
-      canvas.width = width * window.devicePixelRatio;
-      canvas.height = height * window.devicePixelRatio;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-    }
+  // Create particles
+  for (let i = 0; i < maxParticles; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: -(Math.random() * 0.5 + 0.15), // upward drift
+      radius: Math.random() * 1.5 + 0.75, // 0.75px to 2.25px
+      alpha: Math.random() * 0.4 + 0.1,
+      targetAlpha: Math.random() * 0.4 + 0.1,
+      fadeSpeed: Math.random() * 0.005 + 0.002,
+      color: Math.random() > 0.5 ? 'rgba(124, 255, 0, ' : 'rgba(0, 229, 255, ' // Neon Green / Cyan
+    });
+  }
 
-    resize();
-    window.addEventListener('resize', resize);
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
 
-    // Create particles
-    for (let i = 0; i < maxParticles; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: -(Math.random() * 0.5 + 0.15), // upward drift
-        radius: Math.random() * 1.5 + 0.75, // 0.75px to 2.25px
-        alpha: Math.random() * 0.4 + 0.1,
-        targetAlpha: Math.random() * 0.4 + 0.1,
-        fadeSpeed: Math.random() * 0.005 + 0.002,
-        color: Math.random() > 0.5 ? 'rgba(124, 255, 0, ' : 'rgba(0, 229, 255, ' // Neon Green / Cyan
-      });
-    }
+    particles.forEach(p => {
+      // Update physics
+      p.x += p.vx;
+      p.y += p.vy;
 
-    function animate() {
-      ctx.clearRect(0, 0, width, height);
+      // Wrap around boundaries
+      if (p.x < 0) p.x = width;
+      if (p.x > width) p.x = 0;
+      if (p.y < 0) {
+        p.y = height;
+        p.x = Math.random() * width;
+      }
 
-      particles.forEach(p => {
-        // Update physics
-        p.x += p.vx;
-        p.y += p.vy;
+      // Random fade calculation
+      if (Math.abs(p.alpha - p.targetAlpha) < 0.02) {
+        p.targetAlpha = Math.random() * 0.45 + 0.05;
+      }
+      p.alpha += (p.targetAlpha - p.alpha) * p.fadeSpeed;
 
-        // Wrap around boundaries
-        if (p.x < 0) p.x = width;
-        if (p.x > width) p.x = 0;
-        if (p.y < 0) {
-          p.y = height;
-          p.x = Math.random() * width;
-        }
+      // Calculate dynamic rendering coordinates with mouse parallax offset
+      let renderX = p.x;
+      let renderY = p.y;
+      
+      // Global parallax
+      if (typeof currentParallaxX !== 'undefined' && typeof currentParallaxY !== 'undefined') {
+        renderX -= currentParallaxX * 0.35;
+        renderY -= currentParallaxY * 0.35;
+      }
 
-        // Random fade calculation
-        if (Math.abs(p.alpha - p.targetAlpha) < 0.02) {
-          p.targetAlpha = Math.random() * 0.45 + 0.05;
-        }
-        p.alpha += (p.targetAlpha - p.alpha) * p.fadeSpeed;
+      // Draw particle core
+      ctx.beginPath();
+      ctx.fillStyle = p.color + p.alpha + ')';
+      ctx.arc(renderX, renderY, p.radius, 0, Math.PI * 2);
+      ctx.fill();
 
-        // Calculate dynamic rendering coordinates with mouse parallax offset
-        let renderX = p.x;
-        let renderY = p.y;
-        if (container.id === 'hero') {
-          renderX -= currentParallaxX * 0.35;
-          renderY -= currentParallaxY * 0.35;
-        }
+      // Draw outer soft glow
+      ctx.beginPath();
+      ctx.fillStyle = p.color + (p.alpha * 0.25) + ')';
+      ctx.arc(renderX, renderY, p.radius * 3.5, 0, Math.PI * 2);
+      ctx.fill();
+    });
 
-        // Draw particle core
-        ctx.beginPath();
-        ctx.fillStyle = p.color + p.alpha + ')';
-        ctx.arc(renderX, renderY, p.radius, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Draw outer soft glow
-        ctx.beginPath();
-        ctx.fillStyle = p.color + (p.alpha * 0.25) + ')';
-        ctx.arc(renderX, renderY, p.radius * 3.5, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      animationFrameId = requestAnimationFrame(animate);
-    }
-
-    // Performance optimization: only draw when inside the viewport
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (!animationFrameId) animate();
-        } else {
-          if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
-            animationFrameId = null;
-          }
-        }
-      });
-    }, { threshold: 0.01 });
-
-    observer.observe(container);
-  });
+    animationFrameId = requestAnimationFrame(animate);
+  }
+  
+  animate();
 }
 
 /* ==========================================================================
