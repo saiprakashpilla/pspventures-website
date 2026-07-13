@@ -2478,7 +2478,6 @@ body footer, body footer.section-masked {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: float-frame 8s ease-in-out infinite;
   min-height: auto;
   margin-right: -30px;
 }
