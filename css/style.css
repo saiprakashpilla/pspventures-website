@@ -2529,17 +2529,27 @@ body footer, body footer.section-masked {
   animation: pulse-core 2s infinite alternate;
 }
 
-.scanline {
+.hologram-projection {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 10px;
-  background: linear-gradient(to bottom, transparent, rgba(0, 220, 255, 0.4), transparent);
-  box-shadow: 0 0 10px rgba(0, 220, 255, 0.5);
-  animation: scan-vertical 4s linear infinite;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 220, 255, 0.2) 0%, transparent 80%);
+  mask-image: linear-gradient(to top, black 0%, transparent 60%);
+  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 60%);
   z-index: 3;
   pointer-events: none;
+}
+.hologram-projection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: linear-gradient(to top, rgba(0,220,255,0.6), transparent);
+  animation: scan-vertical 4s linear infinite;
 }
 
 .platform-particles {
@@ -2566,10 +2576,8 @@ body footer, body footer.section-masked {
 }
 
 @keyframes scan-vertical {
-  0% { top: 60%; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-300px); opacity: 0; }
 }
 
 @keyframes pulse-ring {
@@ -2858,4 +2866,110 @@ body footer, body footer.section-masked {
 .social-hover-glow.facebook:hover {
   filter: drop-shadow(0 0 12px rgba(24, 119, 242, 0.8));
   transform: translateY(-4px);
+}
+
+/* ==========================================================================
+   Founder Refinements
+   ========================================================================== */
+
+.founder-feature-card {
+  background: rgba(20, 25, 30, 0.4);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 220, 255, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.founder-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(140, 255, 0, 0.15);
+  border-color: rgba(140, 255, 0, 0.4);
+}
+
+.founder-feature-card .feature-icon {
+  color: var(--primary-accent);
+  margin-bottom: 1rem;
+}
+
+.founder-feature-card h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.founder-feature-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.quote-card-glass {
+  position: relative;
+  background: rgba(10, 15, 20, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 220, 255, 0.4);
+  border-left: 4px solid var(--secondary-accent-alt);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.quote-card-glass:hover {
+  transform: translateY(-3px);
+}
+
+.quote-card-glass::before {
+  content: '“';
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-size: 8rem;
+  color: var(--primary-accent);
+  opacity: 0.08;
+  font-family: serif;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.quote-card-glass p {
+  margin: 0;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.7;
+  position: relative;
+  z-index: 2;
+}
+
+.founder-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.founder-social-icon:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(0, 220, 255, 0.3);
+  color: var(--primary-accent);
+  border-color: rgba(0, 220, 255, 0.5);
 }
