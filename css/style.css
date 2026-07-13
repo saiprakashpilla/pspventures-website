@@ -842,6 +842,10 @@ footer {
   fill: #FF0000;
 }
 
+.footer-info .logo-wrapper {
+  margin-left: -0.85rem;
+}
+
 .footer-column h4 {
   font-family: var(--font-display);
   font-size: 0.9rem;
