@@ -2478,35 +2478,44 @@ body footer, body footer.section-masked {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: float-frame 8s ease-in-out infinite;
+  animation: float-frame 6s ease-in-out infinite;
   min-height: auto;
+  margin-right: -30px;
 }
 
 @keyframes float-frame {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-3px); }
 }
 
 .hologram-aura {
   position: absolute;
   top: 50%; left: 50%;
-  width: 80%; height: 90%;
+  width: 70%; height: 70%;
+  border-radius: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(ellipse, rgba(0, 220, 255, 0.15) 0%, transparent 65%);
-  filter: blur(30px);
+  background: radial-gradient(circle, rgba(0, 220, 255, 0.15) 0%, transparent 70%);
+  filter: blur(40px);
   z-index: 1;
+  animation: breath-aura 6s ease-in-out infinite;
+}
+
+@keyframes breath-aura {
+  0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
 }
 
 .founder-img {
   position: relative;
   width: 100%;
-  max-width: 790px;
+  max-width: 650px;
   height: auto;
   max-height: 95vh;
   mix-blend-mode: screen;
   mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
   -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
   z-index: 2;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
 }
 
 /* Minimal Hologram Effects */
@@ -2925,8 +2934,8 @@ body footer, body footer.section-masked {
 
 .founder-feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 30px rgba(140, 255, 0, 0.2), inset 0 0 30px rgba(140, 255, 0, 0.05);
-  border-color: rgba(140, 255, 0, 0.6);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 30px rgba(0, 220, 255, 0.15), inset 0 0 30px rgba(0, 220, 255, 0.05);
+  border-color: rgba(0, 220, 255, 0.4);
 }
 
 .founder-feature-card .feature-icon {
@@ -2954,14 +2963,14 @@ body footer, body footer.section-masked {
   background: rgba(15, 20, 25, 0.5);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(0, 220, 255, 0.5);
+  border: 1px solid rgba(0, 220, 255, 0.25);
   border-left: 4px solid var(--secondary-accent-alt);
   border-radius: 18px;
-  padding: 1.5rem 2rem;
+  padding: 1rem 1.5rem;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.6), inset 0 0 30px rgba(0, 220, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4), inset 0 0 20px rgba(0, 220, 255, 0.1);
 }
 
 .quote-card-glass:hover {
