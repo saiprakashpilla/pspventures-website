@@ -2515,7 +2515,6 @@ body footer, body footer.section-masked {
   overflow: hidden;
   mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
   -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
-  animation: portrait-breathe 9s ease-in-out infinite;
 }
 
 @keyframes portrait-breathe {
