@@ -117,28 +117,35 @@
   </section>
 
   <!-- Founder Section -->
-  <section class="section section-transparent" style="margin-bottom: 2rem;">
+  <section class="section section-transparent" style="margin-bottom: 2rem; position: relative; overflow: hidden;">
+    <!-- Lab Effects -->
+    <div class="lab-background"></div>
+    <div class="lab-grid"></div>
+    <div class="lab-data-particles"></div>
     <!-- Background Glow -->
-    <div class="ambient-glow" style="top: 30%; right: -10%; width: 50vw; height: 50vh; background: radial-gradient(circle, rgba(0,220,255,0.04) 0%, transparent 60%); z-index: 1;"></div>
+    <div class="ambient-glow" style="top: 30%; right: -10%; width: 50vw; height: 50vh; background: radial-gradient(circle, rgba(0,220,255,0.06) 0%, transparent 60%); z-index: 1;"></div>
 
     <div class="container" style="position: relative; z-index: 2;">
       <div class="grid-2 align-center">
         <!-- Left Side: Hologram Founder -->
         <div class="founder-hologram-container reveal reveal-left">
-          <div class="hologram-display-frame">
-            <div class="frame-glass"></div>
-            <img src="assets/images/founder.jpg" alt="Founder & CEO" class="founder-img" onerror="this.src='https://via.placeholder.com/500x700/0a0a0a/00dcff?text=Upload+founder.jpg'">
-            
-            <!-- Authentic Jarvis Projection -->
-            <div class="jarvis-projection-overlay"></div>
+          <div class="hologram-aura"></div>
+          <img src="assets/images/founder.jpg" alt="Founder & CEO" class="founder-img" onerror="this.src='https://via.placeholder.com/500x700/0a0a0a/00dcff?text=Upload+founder.jpg'">
+          
+          <!-- Authentic Jarvis Projection -->
+          <div class="jarvis-projection-overlay">
+            <div class="jarvis-scan-line jarvis-scan-fast"></div>
+            <div class="jarvis-scan-line jarvis-scan-slow"></div>
+            <div class="jarvis-scan-line jarvis-scan-glitch"></div>
+          </div>
 
-            <!-- Advanced Stark Platform -->
-            <div class="stark-platform">
-              <div class="stark-ring stark-ring-outer"></div>
-              <div class="stark-ring stark-ring-middle"></div>
-              <div class="stark-ring stark-ring-inner"></div>
-              <div class="stark-core"></div>
-            </div>
+          <!-- Advanced Stark Platform -->
+          <div class="stark-platform">
+            <div class="stark-ring stark-ring-outer"></div>
+            <div class="stark-ring stark-ring-middle"></div>
+            <div class="stark-ring stark-ring-inner"></div>
+            <div class="stark-core"></div>
+            <div class="stark-orbiting-lights"></div>
           </div>
         </div>
 
@@ -149,8 +156,8 @@
           </h2>
           <span class="section-subtitle" style="display: block; font-size: 0.95rem; color: var(--primary-accent); letter-spacing: 2px; margin-bottom: 1.25rem; margin-top: 0;">FOUNDER & CEO</span>
           
-          <h3 style="font-size: clamp(1.8rem, 3vw, 2.2rem); margin-bottom: 1rem; text-transform: uppercase; color: #ffffff;">
-            Building Digital<br>Products That<br><span style="color: var(--secondary-accent-alt); text-shadow: 0 0 20px rgba(140,255,0,0.4);">Make an Impact</span>
+          <h3 style="font-size: clamp(1.8rem, 3vw, 2.2rem); margin-bottom: 1rem; text-transform: uppercase; color: #ffffff; line-height: 1.2;">
+            BUILDING DIGITAL PRODUCTS<br>THAT <span class="gradient-text-cyan">MAKE AN IMPACT</span>
           </h3>
           
           <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem; max-width: 550px;">
