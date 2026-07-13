@@ -2481,22 +2481,22 @@ body footer, body footer.section-masked {
   display: inline-block;
   margin-bottom: 2rem;
   z-index: 2;
-  overflow: hidden;
-  border-radius: 12px;
+  /* Removed overflow: hidden and border-radius so the glow/image doesn't crop */
 }
 
 .founder-img {
   display: block;
-  max-width: 100%;
+  width: 100%;
+  max-width: 500px;
   height: auto;
-  max-height: 500px;
+  max-height: 85vh; /* Scale to ~90% of column height */
+  mix-blend-mode: screen; /* Cleanly removes black background */
   filter: drop-shadow(0 0 20px rgba(0, 220, 255, 0.4));
-  border-bottom: 2px solid rgba(0, 220, 255, 0.4);
 }
 
 .hologram-platform {
   position: absolute;
-  bottom: 5%;
+  bottom: 0%; /* Adjusted so he stands naturally above it */
   left: 50%;
   transform: translateX(-50%);
   width: 280px;
