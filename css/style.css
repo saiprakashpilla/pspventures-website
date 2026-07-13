@@ -2487,11 +2487,12 @@ body footer, body footer.section-masked {
 .founder-img {
   display: block;
   width: 100%;
-  max-width: 500px;
+  max-width: 650px;
   height: auto;
-  max-height: 85vh; /* Scale to ~90% of column height */
-  mix-blend-mode: screen; /* Cleanly removes black background */
-  filter: drop-shadow(0 0 20px rgba(0, 220, 255, 0.4));
+  max-height: 100vh;
+  mix-blend-mode: screen;
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
 .hologram-platform {
@@ -2565,7 +2566,7 @@ body footer, body footer.section-masked {
 }
 
 @keyframes scan-vertical {
-  0% { top: -10%; opacity: 0; }
+  0% { top: 60%; opacity: 0; }
   10% { opacity: 1; }
   90% { opacity: 1; }
   100% { top: 100%; opacity: 0; }
