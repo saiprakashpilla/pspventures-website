@@ -2477,9 +2477,9 @@ body footer, body footer.section-masked {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   animation: float-frame 8s ease-in-out infinite;
-  min-height: 75vh;
+  min-height: auto;
 }
 
 @keyframes float-frame {
@@ -2500,152 +2500,92 @@ body footer, body footer.section-masked {
 .founder-img {
   position: relative;
   width: 100%;
-  max-width: 550px;
+  max-width: 790px;
   height: auto;
-  max-height: 85vh;
+  max-height: 95vh;
   mix-blend-mode: screen;
   mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
   -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
   z-index: 2;
 }
 
-/* Jarvis Projection Overlay */
-.jarvis-projection-overlay {
+/* Minimal Hologram Effects */
+.minimal-light-beams {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  bottom: 0; left: 0; width: 100%; height: 30%;
+  background: linear-gradient(to top, rgba(0, 220, 255, 0.2) 0%, transparent 100%);
+  mask-image: linear-gradient(to top, black 0%, transparent 80%);
+  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 80%);
   z-index: 3;
   pointer-events: none;
-  background: repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 220, 255, 0.05) 2px, rgba(0, 220, 255, 0.05) 4px);
-  mask-image: linear-gradient(to top, black 0%, transparent 70%);
-  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 70%);
+  animation: pulse-beams 4s ease-in-out infinite alternate;
+}
+@keyframes pulse-beams {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
 }
 
-.jarvis-scan-line {
+.minimal-particles {
   position: absolute;
-  left: 0; width: 100%;
+  bottom: 5%; left: 0; width: 100%; height: 50%;
+  z-index: 3;
+  pointer-events: none;
 }
-.jarvis-scan-fast {
-  height: 15%;
-  background: linear-gradient(to top, transparent, rgba(0, 220, 255, 0.5) 50%, transparent);
-  animation: jarvis-scan-up 3.5s linear infinite;
-}
-.jarvis-scan-slow {
-  height: 30%;
-  background: linear-gradient(to top, transparent, rgba(0, 220, 255, 0.2) 50%, transparent);
-  animation: jarvis-scan-up 6s linear infinite 1s;
-}
-.jarvis-scan-glitch {
-  height: 2%;
-  background: rgba(0, 220, 255, 0.8);
-  animation: jarvis-scan-up 2s ease-in-out infinite 0.5s;
-  opacity: 0.5;
-}
-
-@keyframes jarvis-scan-up {
-  0% { bottom: -20%; opacity: 0; }
-  10% { opacity: 1; }
-  70% { opacity: 1; }
-  100% { bottom: 100%; opacity: 0; }
-}
-
-/* Advanced Stark Platform */
-.stark-platform {
+.m-dot {
   position: absolute;
-  bottom: -20px;
+  bottom: 0;
+  width: 3px; height: 3px;
+  background: rgba(0, 220, 255, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 220, 255, 0.8);
+  animation: float-m-dot 6s linear infinite;
+  opacity: 0;
+}
+@keyframes float-m-dot {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 0.8; }
+  80% { opacity: 0.8; }
+  100% { transform: translateY(-100px); opacity: 0; }
+}
+
+.minimal-platform {
+  position: absolute;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%) rotateX(75deg);
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   z-index: 1;
-  perspective: 1000px;
-  transform-style: preserve-3d;
 }
-
-.stark-ring {
+.minimal-ring {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 0; left: 0; width: 100%; height: 100%;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
-  border: 2px solid rgba(0, 220, 255, 0.5);
-  box-shadow: 0 0 15px rgba(0, 220, 255, 0.5), inset 0 0 15px rgba(0, 220, 255, 0.5);
+  border: 1px solid rgba(0, 220, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 220, 255, 0.1), inset 0 0 10px rgba(0, 220, 255, 0.1);
+  animation: spin-minimal 15s linear infinite;
 }
-
-.stark-ring-outer {
-  width: 100%; height: 100%;
-  border-style: dashed;
-  animation: spin-stark 10s linear infinite;
-}
-
-.stark-ring-middle {
-  width: 75%; height: 75%;
-  border-color: rgba(140, 255, 0, 0.4);
-  box-shadow: 0 0 15px rgba(140, 255, 0, 0.4);
-  animation: spin-stark-reverse 8s linear infinite;
-}
-
-.stark-ring-inner {
-  width: 50%; height: 50%;
-  border-width: 4px;
-  animation: spin-stark 5s linear infinite;
-}
-
-.stark-core {
+.minimal-ring::before {
+  content: '';
   position: absolute;
-  top: 50%; left: 50%;
-  width: 30%; height: 30%;
-  border-radius: 50%;
+  top: -1px; left: 50%; width: 20px; height: 2px;
   background: rgba(0, 220, 255, 0.8);
+  box-shadow: 0 0 10px #00dcff;
+}
+.minimal-core {
+  position: absolute;
+  top: 50%; left: 50%; width: 40%; height: 40%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 220, 255, 0.3) 0%, transparent 70%);
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 40px #00dcff, 0 0 80px #00dcff;
-  animation: pulse-stark-core 2s ease-in-out infinite alternate;
+  animation: pulse-minimal-core 3s ease-in-out infinite alternate;
 }
-
-@keyframes spin-stark {
-  0% { transform: translate(-50%, -50%) rotateZ(0deg); }
-  100% { transform: translate(-50%, -50%) rotateZ(360deg); }
+@keyframes spin-minimal {
+  100% { transform: rotateZ(360deg); }
 }
-
-@keyframes spin-stark-reverse {
-  0% { transform: translate(-50%, -50%) rotateZ(360deg); }
-  100% { transform: translate(-50%, -50%) rotateZ(0deg); }
-}
-
-@keyframes pulse-stark-core {
-  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.8; }
-  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
-}
-
-/* Lab Background Effects */
-.lab-background {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: radial-gradient(circle at center, rgba(10, 15, 20, 0.8) 0%, rgba(5, 5, 8, 1) 100%);
-  z-index: 0;
-  pointer-events: none;
-}
-.lab-grid {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-image: linear-gradient(rgba(0, 220, 255, 0.03) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(0, 220, 255, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  transform: perspective(500px) rotateX(60deg) translateY(100px) translateZ(-200px);
-  animation: grid-move 20s linear infinite;
-  z-index: 0;
-  pointer-events: none;
-}
-@keyframes grid-move {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 50px; }
-}
-.lab-data-particles {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
-  opacity: 0.02;
-  mix-blend-mode: overlay;
-  z-index: 0;
-  pointer-events: none;
+@keyframes pulse-minimal-core {
+  0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
 }
 
 .platform-particles {
@@ -2972,10 +2912,10 @@ body footer, body footer.section-masked {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: rgba(10, 15, 20, 0.4);
+  background: rgba(15, 20, 25, 0.6);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(0, 220, 255, 0.3);
+  border: 1px solid rgba(44, 203, 255, 0.15);
   border-radius: 18px;
   padding: 1.5rem 1.25rem;
   text-align: left;
@@ -2984,7 +2924,7 @@ body footer, body footer.section-masked {
 }
 
 .founder-feature-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 30px rgba(140, 255, 0, 0.2), inset 0 0 30px rgba(140, 255, 0, 0.05);
   border-color: rgba(140, 255, 0, 0.6);
 }
@@ -3011,13 +2951,13 @@ body footer, body footer.section-masked {
 
 .quote-card-glass {
   position: relative;
-  background: rgba(10, 15, 20, 0.4);
+  background: rgba(15, 20, 25, 0.5);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(0, 220, 255, 0.5);
   border-left: 4px solid var(--secondary-accent-alt);
   border-radius: 18px;
-  padding: 2rem 2rem;
+  padding: 1.5rem 2rem;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
   overflow: hidden;
   z-index: 1;
