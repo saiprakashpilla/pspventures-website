@@ -612,7 +612,7 @@ header.scrolled .nav-container {
 .logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 1.85rem; /* Increased gap to separate icon and text by ~30px (16-20px increase) */
+  gap: 0;
 }
 
 .logo-img {
@@ -626,6 +626,7 @@ header.scrolled .nav-container {
   font-size: 1.15rem;
   letter-spacing: -0.01em;
   color: var(--text-primary);
+  margin-left: -1.2rem;
 }
 
 .nav-links {
