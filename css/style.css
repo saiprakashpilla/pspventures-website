@@ -843,7 +843,11 @@ footer {
 }
 
 .footer-info .logo-wrapper {
-  margin-left: -0.85rem;
+  margin-left: -1.35rem;
+}
+
+.footer-info .logo-img {
+  height: 78px;
 }
 
 .footer-column h4 {
