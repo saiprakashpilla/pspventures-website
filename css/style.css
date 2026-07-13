@@ -470,6 +470,46 @@ p {
               inset 0 0 8px rgba(0, 217, 255, 0.2);
 }
 
+.social-glass-btn svg {
+  fill: var(--text-secondary);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 18px;
+  height: 18px;
+}
+
+.social-glass-btn.linkedin:hover {
+  background: rgba(0, 119, 181, 0.08);
+  border-color: #0077b5;
+  transform: scale(1.12);
+  box-shadow: 0 0 20px rgba(0, 119, 181, 0.35),
+              inset 0 0 8px rgba(0, 119, 181, 0.2);
+}
+.social-glass-btn.linkedin:hover svg {
+  fill: #0077b5;
+}
+
+.social-glass-btn.instagram:hover {
+  background: rgba(225, 48, 108, 0.08);
+  border-color: #cc2366;
+  transform: scale(1.12);
+  box-shadow: 0 0 20px rgba(225, 48, 108, 0.35),
+              inset 0 0 8px rgba(225, 48, 108, 0.2);
+}
+.social-glass-btn.instagram:hover svg {
+  fill: url(#ig-grad);
+}
+
+.social-glass-btn.youtube:hover {
+  background: rgba(255, 0, 0, 0.08);
+  border-color: #FF0000;
+  transform: scale(1.12);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.35),
+              inset 0 0 8px rgba(255, 0, 0, 0.2);
+}
+.social-glass-btn.youtube:hover svg {
+  fill: #FF0000;
+}
+
 .btn-secondary {
   background: rgba(255, 255, 255, 0.02);
   color: var(--text-primary);
