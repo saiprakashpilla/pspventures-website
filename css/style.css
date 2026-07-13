@@ -620,6 +620,10 @@ header.scrolled .nav-container {
   width: auto;
 }
 
+.nav-container .logo-img {
+  height: 38px;
+}
+
 .logo-text {
   font-family: var(--font-display);
   font-weight: 700;
