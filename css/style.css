@@ -2505,19 +2505,72 @@ body footer, body footer.section-masked {
   50% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
 }
 
-.founder-img {
+.founder-img-wrapper {
   position: relative;
   width: 100%;
   max-width: 790px;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  overflow: hidden;
+  mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
+  animation: portrait-breathe 9s ease-in-out infinite;
+}
+
+@keyframes portrait-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+
+.founder-img {
+  position: relative;
+  width: 100%;
   height: auto;
   max-height: 95vh;
   mix-blend-mode: screen;
-  mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
-  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
-  z-index: 2;
-  filter: contrast(1.05) drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+  filter: contrast(1.05) drop-shadow(0 0 25px rgba(0, 220, 255, 0.25));
 }
 
+.glass-sweep {
+  position: absolute;
+  top: 0; left: -150%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  animation: sweep-motion 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+  z-index: 3;
+}
+
+@keyframes sweep-motion {
+  0%, 70% { left: -150%; }
+  100% { left: 200%; }
+}
+
+.subtle-particles {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.s-dot {
+  position: absolute;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: subtle-float-fade 8s ease-in-out infinite;
+}
+
+.cyan-dot { background: rgba(0, 220, 255, 0.6); box-shadow: 0 0 6px rgba(0,220,255,0.8); }
+.green-dot { background: rgba(140, 255, 0, 0.6); box-shadow: 0 0 6px rgba(140,255,0,0.8); }
+
+@keyframes subtle-float-fade {
+  0% { transform: translateY(0) scale(0.8); opacity: 0; }
+  50% { transform: translateY(-40px) scale(1.2); opacity: 0.8; }
+  100% { transform: translateY(-80px) scale(0.8); opacity: 0; }
+}
 /* Minimal Hologram Effects */
 .minimal-light-beams {
   position: absolute;
@@ -2565,6 +2618,11 @@ body footer, body footer.section-masked {
   width: 200px;
   height: 200px;
   z-index: 1;
+  animation: platform-breathe 5.5s ease-in-out infinite;
+}
+@keyframes platform-breathe {
+  0%, 100% { opacity: 0.7; transform: translateX(-50%) rotateX(75deg) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) rotateX(75deg) scale(1.05); }
 }
 .minimal-ring {
   position: absolute;
@@ -2926,7 +2984,7 @@ body footer, body footer.section-masked {
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(44, 203, 255, 0.15);
   border-radius: 18px;
-  padding: 1.25rem 1rem;
+  padding: 1rem;
   text-align: left;
   box-shadow: 0 5px 20px rgba(0,0,0,0.5), inset 0 0 15px rgba(0, 220, 255, 0.05);
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease, border-color 0.4s ease;
@@ -2940,14 +2998,14 @@ body footer, body footer.section-masked {
 
 .founder-feature-card .feature-icon {
   color: var(--primary-accent);
-  margin-bottom: 1rem;
-  transform: scale(0.9);
+  margin-bottom: 0.75rem;
+  transform: scale(0.75);
   transform-origin: left;
 }
 
 .founder-feature-card h4 {
-  margin: 0 0 0.5rem 0;
-  font-size: 0.95rem;
+  margin: 0 0 0.4rem 0;
+  font-size: 0.9rem;
   color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -2955,9 +3013,9 @@ body footer, body footer.section-masked {
 
 .founder-feature-card p {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .quote-card-glass {
@@ -2968,7 +3026,7 @@ body footer, body footer.section-masked {
   border: 1px solid rgba(0, 220, 255, 0.25);
   border-left: 4px solid var(--secondary-accent-alt);
   border-radius: 18px;
-  padding: 1rem 1.5rem;
+  padding: 1.25rem 2rem;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
   overflow: hidden;
   z-index: 1;
