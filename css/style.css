@@ -2478,7 +2478,6 @@ body footer, body footer.section-masked {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: float-frame 6s ease-in-out infinite;
   min-height: auto;
   margin-right: -30px;
 }
@@ -2494,9 +2493,7 @@ body footer, body footer.section-masked {
   max-width: 750px;
   height: auto;
   max-height: 95vh;
-  mix-blend-mode: screen;
   z-index: 2;
-  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
 }
 
 /* Minimal Hologram Effects */
