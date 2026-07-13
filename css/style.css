@@ -2468,85 +2468,156 @@ body footer, body footer.section-masked {
    Founder Section Hologram Styles
    ========================================================================== */
 
+/* ==========================================================================
+   Advanced Founder Frame & Jarvis Projection
+   ========================================================================== */
+
 .founder-hologram-container {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: float-hologram 8s ease-in-out infinite;
+  animation: float-frame 8s ease-in-out infinite;
 }
 
-@keyframes float-hologram {
+@keyframes float-frame {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-10px); }
 }
 
-.hologram-image-wrapper {
+.hologram-display-frame {
   position: relative;
-  display: inline-block;
-  margin-bottom: 2rem;
-  z-index: 2;
-  /* Removed overflow: hidden and border-radius so the glow/image doesn't crop */
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4/5;
+  border-radius: 20px;
+  background: rgba(5, 10, 15, 0.4);
+  border: 1px solid rgba(0, 220, 255, 0.3);
+  box-shadow: 0 0 40px rgba(0, 220, 255, 0.15), inset 0 0 30px rgba(0, 220, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.frame-glass {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 50%, rgba(255,255,255,0.02) 100%);
+  pointer-events: none;
+  z-index: 10;
 }
 
 .founder-img {
-  display: block;
-  width: 100%;
-  max-width: 550px;
-  height: auto;
-  max-height: 85vh;
+  position: relative;
+  width: auto;
+  height: 105%;
+  max-width: none;
   mix-blend-mode: screen;
-  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
+  z-index: 2;
 }
 
-.hologram-platform {
+/* Jarvis Projection Overlay */
+.jarvis-projection-overlay {
   position: absolute;
-  bottom: 0%; /* Adjusted so he stands naturally above it */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 280px;
-  height: 60px;
-  z-index: 1;
-}
-
-.platform-ring {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 2px solid rgba(0, 220, 255, 0.6);
-  box-shadow: 0 0 20px rgba(0, 220, 255, 0.8), inset 0 0 20px rgba(0, 220, 255, 0.4);
-  transform: rotateX(75deg);
-  animation: pulse-ring 3s infinite alternate;
-}
-
-.platform-core {
-  position: absolute;
-  width: 60%;
-  height: 60%;
-  top: 20%;
-  left: 20%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 220, 255, 0.8) 0%, transparent 70%);
-  transform: rotateX(75deg);
-  filter: blur(5px);
-  animation: pulse-core 2s infinite alternate;
-}
-
-.hologram-projection {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0, 220, 255, 0.05) 3px, rgba(0, 220, 255, 0.05) 6px),
-              linear-gradient(to top, rgba(0, 220, 255, 0.25) 0%, transparent 70%);
-  mask-image: linear-gradient(to top, black 0%, transparent 70%);
-  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 70%);
+  top: 0; left: 0; right: 0; bottom: 0;
   z-index: 3;
   pointer-events: none;
+  background: repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 220, 255, 0.05) 2px, rgba(0, 220, 255, 0.05) 4px);
+  mask-image: linear-gradient(to top, black 0%, transparent 70%);
+  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 70%);
+}
+
+.jarvis-projection-overlay::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; width: 100%; height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+}
+
+.jarvis-projection-overlay::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; width: 100%; height: 200%;
+  background: linear-gradient(to top, transparent, rgba(0,220,255,0.4) 50%, transparent);
+  animation: jarvis-scan 4s linear infinite;
+}
+
+@keyframes jarvis-scan {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* Advanced Stark Platform */
+.stark-platform {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%) rotateX(75deg);
+  width: 250px;
+  height: 250px;
+  z-index: 1;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.stark-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(0, 220, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 220, 255, 0.5), inset 0 0 15px rgba(0, 220, 255, 0.5);
+}
+
+.stark-ring-outer {
+  width: 100%; height: 100%;
+  border-style: dashed;
+  animation: spin-stark 10s linear infinite;
+}
+
+.stark-ring-middle {
+  width: 75%; height: 75%;
+  border-color: rgba(140, 255, 0, 0.4);
+  box-shadow: 0 0 15px rgba(140, 255, 0, 0.4);
+  animation: spin-stark-reverse 8s linear infinite;
+}
+
+.stark-ring-inner {
+  width: 50%; height: 50%;
+  border-width: 4px;
+  animation: spin-stark 5s linear infinite;
+}
+
+.stark-core {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 30%; height: 30%;
+  border-radius: 50%;
+  background: rgba(0, 220, 255, 0.8);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 40px #00dcff, 0 0 80px #00dcff;
+  animation: pulse-stark-core 2s ease-in-out infinite alternate;
+}
+
+@keyframes spin-stark {
+  0% { transform: translate(-50%, -50%) rotateZ(0deg); }
+  100% { transform: translate(-50%, -50%) rotateZ(360deg); }
+}
+
+@keyframes spin-stark-reverse {
+  0% { transform: translate(-50%, -50%) rotateZ(360deg); }
+  100% { transform: translate(-50%, -50%) rotateZ(0deg); }
+}
+
+@keyframes pulse-stark-core {
+  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
 }
 
 .platform-particles {
@@ -2873,15 +2944,15 @@ body footer, body footer.section-masked {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: rgba(15, 20, 25, 0.15);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
-  border: 1px solid rgba(0, 220, 255, 0.25);
-  border-radius: 20px;
+  background: rgba(10, 15, 20, 0.4);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(0, 220, 255, 0.3);
+  border-radius: 18px;
   padding: 1.5rem 1.25rem;
   text-align: left;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 30px rgba(0, 220, 255, 0.05);
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease, border-color 0.5s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 0 20px rgba(0, 220, 255, 0.1);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .founder-feature-card:hover {
@@ -2912,32 +2983,32 @@ body footer, body footer.section-masked {
 
 .quote-card-glass {
   position: relative;
-  background: rgba(10, 15, 20, 0.6);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
-  border: 1px solid rgba(0, 220, 255, 0.4);
+  background: rgba(10, 15, 20, 0.4);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(0, 220, 255, 0.5);
   border-left: 4px solid var(--secondary-accent-alt);
-  border-radius: 20px;
-  padding: 2.5rem 2rem;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease;
+  border-radius: 18px;
+  padding: 2rem 2rem;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.5), inset 0 0 30px rgba(0, 220, 255, 0.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6), inset 0 0 30px rgba(0, 220, 255, 0.1);
 }
 
 .quote-card-glass:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.6), inset 0 0 30px rgba(0, 220, 255, 0.1);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.7), inset 0 0 30px rgba(0, 220, 255, 0.2);
 }
 
 .quote-card-glass::before {
   content: '“';
   position: absolute;
-  top: -20px;
-  left: 10px;
-  font-size: 8rem;
+  top: -10px;
+  left: 15px;
+  font-size: 5rem;
   color: var(--secondary-accent-alt);
-  opacity: 0.1;
+  opacity: 0.15;
   font-family: serif;
   line-height: 1;
   pointer-events: none;
