@@ -55,41 +55,60 @@
     </div>
   </header>
 
-  <!-- About Hero Section -->
-  <section class="section-transparent section" style="padding-top: calc(var(--header-height) + 5rem); padding-bottom: 5rem; text-align: center;">
+  <!-- Hero Section -->
+  <section class="section-transparent section hero-section" style="padding-top: calc(var(--header-height) + 4rem); padding-bottom: 4rem; text-align: center;">
+    
+    <!-- Central soft radial green glow -->
+    <div class="ambient-glow" style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70vw; height: 70vh; background: radial-gradient(circle, rgba(140,255,0,0.06) 0%, transparent 60%); z-index: 1;"></div>
+    
     <div class="glow-container">
       <div class="ambient-glow glow-1" style="top: -20%; right: 10%;"></div>
       <div class="ambient-glow glow-3" style="top: 20%; left: 10%;"></div>
     </div>
+    
     <div class="grid-bg-overlay"></div>
+    
+    <!-- Floating particles contained in this section -->
+    <div class="particles-overlay-container">
+      <div class="particle-item" style="width: 4px; height: 4px; left: 20%; top: 80%; animation-duration: 6s; animation-delay: 0s;"></div>
+      <div class="particle-item" style="width: 3px; height: 3px; left: 75%; top: 90%; animation-duration: 8s; animation-delay: 1s;"></div>
+      <div class="particle-item" style="width: 5px; height: 5px; left: 45%; top: 70%; animation-duration: 7s; animation-delay: 2s;"></div>
+      <div class="particle-item" style="width: 4px; height: 4px; left: 85%; top: 60%; animation-duration: 9s; animation-delay: 0.5s;"></div>
+      <div class="particle-item" style="width: 3px; height: 3px; left: 15%; top: 50%; animation-duration: 7s; animation-delay: 1.5s;"></div>
+      <div class="particle-item" style="width: 2px; height: 2px; left: 60%; top: 40%; animation-duration: 5s; animation-delay: 0.8s;"></div>
+    </div>
 
     <div class="container" style="position: relative; z-index: 2;">
       <div class="reveal">
         <span class="section-subtitle">Who We Are</span>
-        <h1>Driven by Design, Engineered for <span class="gradient-text">Scale</span></h1>
-        <p style="max-width: 800px; margin: 0 auto; font-size: 1.25rem; color: var(--text-secondary); line-height: 1.8;">
+        
+        <h1 class="about-hero-title">Driven by Design, Engineered for <span class="gradient-text about-hero-glow">Scale</span></h1>
+        
+        <div class="about-hero-line"></div>
+        
+        <p class="about-hero-desc">
           PSP Ventures is a forward-thinking technology company founded on the principle that digital tools should be both exceptionally beautiful and engineering marvels.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Mission & Vision Section -->
-  <section class="section-masked section" >
+  <!-- Mission & Vision -->
+  <section class="section-masked section mission-vision-section">
     <div class="container">
       <div class="grid-2">
         <div class="glass-card glow-green reveal reveal-left">
           <span class="section-subtitle" style="color: var(--primary-accent-alt);">Our Mission</span>
-          <h3 style="margin-bottom: 1.5rem;">To Empower Through Software</h3>
-          <p style="margin-bottom: 0; color: var(--text-secondary);">
+          <h3>To Empower Through Software</h3>
+          <p style="margin-bottom: 0;">
             Our mission is to conceive, refine, and ship high-performance mobile apps, AI engines, and SaaS utilities that solve real-world productivity hurdles. We strip away complexity to build products that users genuinely look forward to opening every single day.
           </p>
         </div>
 
         <div class="glass-card glow-cyan reveal reveal-right">
           <span class="section-subtitle" style="color: var(--primary-accent);">Our Vision</span>
-          <h3 style="margin-bottom: 1.5rem;">The Premier Digital Venture Studio</h3>
-          <p style="margin-bottom: 0; color: var(--text-secondary);">
+          <h3>The Premier Digital Venture Studio</h3>
+          <p style="margin-bottom: 0;">
             We aim to create a global ecosystem of interconnected software products. By maintaining a highly-disciplined, design-centric development pipeline, PSP Ventures sets a new benchmark for utility, speed, and integrity across the digital products landscape.
           </p>
         </div>
@@ -97,8 +116,88 @@
     </div>
   </section>
 
+  <!-- Founder Section -->
+  <section class="section section-transparent">
+    <!-- Background Glow -->
+    <div class="ambient-glow" style="top: 30%; right: -10%; width: 50vw; height: 50vh; background: radial-gradient(circle, rgba(0,220,255,0.04) 0%, transparent 60%); z-index: 1;"></div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="grid-2 align-center">
+        <!-- Left Side: Hologram Founder -->
+        <div class="founder-hologram-container reveal reveal-left">
+          
+          <!-- Hologram Platform -->
+          <div class="hologram-platform">
+            <div class="platform-ring"></div>
+            <div class="platform-core"></div>
+          </div>
+          
+          <!-- Image Wrapper with scanlines and glow -->
+          <div class="hologram-image-wrapper">
+            <img src="assets/images/founder.png" alt="Founder & CEO" class="founder-img" onerror="this.src='https://via.placeholder.com/500x700/0a0a0a/00dcff?text=Upload+founder.png'">
+            <div class="scanline"></div>
+          </div>
+
+          <!-- Gentle Platform Particles -->
+          <div class="platform-particles">
+            <div class="p-dot" style="left: 30%; animation-delay: 0s;"></div>
+            <div class="p-dot" style="left: 50%; animation-delay: 1.2s;"></div>
+            <div class="p-dot" style="left: 70%; animation-delay: 0.5s;"></div>
+            <div class="p-dot" style="left: 40%; animation-delay: 2.1s;"></div>
+            <div class="p-dot" style="left: 60%; animation-delay: 1.8s;"></div>
+          </div>
+        </div>
+
+        <!-- Right Side: Content -->
+        <div class="founder-content reveal reveal-right">
+          <span class="section-subtitle" style="color: var(--secondary-accent-alt);">FOUNDER & CEO</span>
+          <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); line-height: 1.1; margin-bottom: 1.5rem; text-transform: uppercase;">
+            Building the Future<br><span class="gradient-text-cyan">With Purpose</span>
+          </h2>
+          
+          <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2.5rem;">
+            As the visionary behind PSP Ventures, our founder blends deep engineering expertise with an uncompromising standard for design. The goal has always been simple: build software that people love, and build it flawlessly.
+          </p>
+
+          <!-- Feature Blocks -->
+          <div class="grid-3" style="gap: 1.5rem; margin-bottom: 2.5rem;">
+            <div class="glass-card glow-cyan" style="padding: 1.25rem 1rem; text-align: center; border-radius: 16px;">
+              <h4 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); text-transform: uppercase; letter-spacing: 1px;">Vision</h4>
+            </div>
+            <div class="glass-card glow-cyan" style="padding: 1.25rem 1rem; text-align: center; border-radius: 16px;">
+              <h4 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); text-transform: uppercase; letter-spacing: 1px;">Innovation</h4>
+            </div>
+            <div class="glass-card glow-cyan" style="padding: 1.25rem 1rem; text-align: center; border-radius: 16px;">
+              <h4 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); text-transform: uppercase; letter-spacing: 1px;">Impact</h4>
+            </div>
+          </div>
+
+          <!-- Highlighted Quote -->
+          <div class="glass-card" style="padding: 2rem; border-left: 4px solid var(--secondary-accent-alt); margin-bottom: 2.5rem; background: rgba(0, 220, 255, 0.03);">
+            <p style="margin: 0; font-size: 1.2rem; font-style: italic; color: var(--text-primary); line-height: 1.7;">
+              "We don't just write code. We architect experiences that empower people to do their best work."
+            </p>
+          </div>
+
+          <!-- Socials -->
+          <div style="display: flex; gap: 1.25rem; align-items: center;">
+            <a href="#" class="social-icon linkedin" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="#" class="social-icon instagram" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="fill: url(#ig-grad);"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="social-icon facebook" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Core Pillars -->
-  <section class="section-transparent section">
+  <section class="section-transparent section core-pillars-section">
     <div class="container">
       <div class="section-header center reveal">
         <span class="section-subtitle">Operational Code</span>
@@ -106,44 +205,44 @@
         <p>The engineering philosophies and design ethics integrated into everything we compile.</p>
       </div>
 
-      <div class="grid-4 reveal delay-1">
-        <div class="glass-card glow-green" style="padding: 2rem 1.5rem; text-align: center;">
-          <div style="color: var(--primary-accent); margin-bottom: 1.25rem; display: inline-block;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path><path d="M12 16V12"></path><path d="M12 8H12.01"></path></svg>
+      <div class="grid-4 reveal delay-1" style="gap: 1.5rem;">
+        <div class="glass-card glow-green pillar-card">
+          <div class="pillar-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path><path d="M12 16V12"></path><path d="M12 8H12.01"></path></svg>
           </div>
-          <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Premium Design</h4>
-          <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; color: var(--text-secondary);">Minimal aesthetics, pixel-perfect spacing, and smooth gradients modeled on Stripe and Apple architectures.</p>
+          <h4>Premium Design</h4>
+          <p>Minimal aesthetics, pixel-perfect spacing, and smooth gradients modeled on Stripe and Apple architectures.</p>
         </div>
 
-        <div class="glass-card glow-cyan" style="padding: 2rem 1.5rem; text-align: center;">
-          <div style="color: var(--primary-accent-alt); margin-bottom: 1.25rem; display: inline-block;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4 7.55 4.24a1.79 1.79 0 0 0-2.5 1.53v12.46a1.79 1.79 0 0 0 2.5 1.53l8.95-5.16a1.8 1.8 0 0 0 0-3.2z"></path></svg>
+        <div class="glass-card glow-cyan pillar-card">
+          <div class="pillar-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4 7.55 4.24a1.79 1.79 0 0 0-2.5 1.53v12.46a1.79 1.79 0 0 0 2.5 1.53l8.95-5.16a1.8 1.8 0 0 0 0-3.2z"></path></svg>
           </div>
-          <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Absolute Performance</h4>
-          <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; color: var(--text-secondary);">Optimized assets, minimal script payloads, and static network distribution guarantees page loads in milliseconds.</p>
+          <h4>Absolute Performance</h4>
+          <p>Optimized assets, minimal script payloads, and static network distribution guarantees page loads in milliseconds.</p>
         </div>
 
-        <div class="glass-card glow-purple" style="padding: 2rem 1.5rem; text-align: center;">
-          <div style="color: var(--secondary-accent-alt); margin-bottom: 1.25rem; display: inline-block;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <div class="glass-card glow-purple pillar-card">
+          <div class="pillar-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
           </div>
-          <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Privacy & Trust</h4>
-          <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; color: var(--text-secondary);">We enforce strict data policies, local processing priorities, and zero-tracking frameworks across app pipelines.</p>
+          <h4>Privacy & Trust</h4>
+          <p>We enforce strict data policies, local processing priorities, and zero-tracking frameworks across app pipelines.</p>
         </div>
 
-        <div class="glass-card glow-green" style="padding: 2rem 1.5rem; text-align: center;">
-          <div style="color: var(--primary-accent); margin-bottom: 1.25rem; display: inline-block;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        <div class="glass-card glow-green pillar-card">
+          <div class="pillar-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
           </div>
-          <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Ecosystem Growth</h4>
-          <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; color: var(--text-secondary);">Engineered modularly, our products share foundational modules, boosting integration efficiency and scale speed.</p>
+          <h4>Ecosystem Growth</h4>
+          <p>Engineered modularly, our products share foundational modules, boosting integration efficiency and scale speed.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Future Timeline Roadmap -->
-  <section class="section-masked section" id="roadmap" >
+  <!-- Evolution & Roadmap -->
+  <section class="section-masked section roadmap-section" id="roadmap">
     <div class="container">
       <div class="section-header center reveal">
         <span class="section-subtitle">Timeline</span>
@@ -151,47 +250,47 @@
         <p>The strategic milestones marking the expansion and development of PSP Ventures from 2026 onwards.</p>
       </div>
 
-      <div style="position: relative; max-width: 900px; margin: 0 auto; padding: 2rem 0;">
+      <div class="timeline-container">
         <!-- Vertical Line -->
-        <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: rgba(255, 255, 255, 0.08); transform: translateX(-50%);"></div>
+        <div class="timeline-line"></div>
 
         <!-- Timeline Step 1 (Right) -->
-        <div class="reveal reveal-right" style="display: flex; justify-content: flex-end; position: relative; margin-bottom: 4rem; width: 50%; margin-left: 50%; padding-left: 3rem;">
-          <div style="position: absolute; left: 0; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: var(--primary-accent); border: 4px solid var(--bg-secondary); transform: translateX(-50%); box-shadow: 0 0 10px var(--primary-accent);"></div>
-          <div class="glass-card glow-green" style="width: 100%; padding: 2rem;">
-            <span style="font-family: monospace; font-size: 0.95rem; color: var(--primary-accent); font-weight: 600; display: block; margin-bottom: 0.5rem;">Q3 2026</span>
-            <h4 style="margin-bottom: 0.5rem;">Foundation & Platform Launch</h4>
-            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; color: var(--text-secondary);">Inauguration of PSP Ventures web and app portal, consolidating mobile app publishing pipelines, and securing initial verification marks.</p>
+        <div class="timeline-step step-right reveal reveal-right active-milestone">
+          <div class="timeline-dot"></div>
+          <div class="glass-card glow-green timeline-card">
+            <span class="timeline-date">Q3 2026</span>
+            <h4>Foundation & Platform Launch</h4>
+            <p>Inauguration of PSP Ventures web and app portal, consolidating mobile app publishing pipelines, and securing initial verification marks.</p>
           </div>
         </div>
 
         <!-- Timeline Step 2 (Left) -->
-        <div class="reveal reveal-left" style="display: flex; justify-content: flex-start; position: relative; margin-bottom: 4rem; width: 50%; margin-right: 50%; padding-right: 3rem; text-align: right;">
-          <div style="position: absolute; right: 0; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: var(--primary-accent-alt); border: 4px solid var(--bg-secondary); transform: translateX(50%); box-shadow: 0 0 10px var(--primary-accent-alt);"></div>
-          <div class="glass-card glow-cyan" style="width: 100%; padding: 2rem;">
-            <span style="font-family: monospace; font-size: 0.95rem; color: var(--primary-accent-alt); font-weight: 600; display: block; margin-bottom: 0.5rem;">Q1 2027</span>
-            <h4 style="margin-bottom: 0.5rem;">Taskify Platform Rollout</h4>
-            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; color: var(--text-secondary);">Global launch of Taskify project dashboard, integrating seamless multi-user syncing channels and sub-item dependencies engines.</p>
+        <div class="timeline-step step-left reveal reveal-left">
+          <div class="timeline-dot dot-cyan"></div>
+          <div class="glass-card glow-cyan timeline-card">
+            <span class="timeline-date">Q1 2027</span>
+            <h4>Taskify Platform Rollout</h4>
+            <p>Global launch of Taskify project dashboard, integrating seamless multi-user syncing channels and sub-item dependencies engines.</p>
           </div>
         </div>
 
         <!-- Timeline Step 3 (Right) -->
-        <div class="reveal reveal-right" style="display: flex; justify-content: flex-end; position: relative; margin-bottom: 4rem; width: 50%; margin-left: 50%; padding-left: 3rem;">
-          <div style="position: absolute; left: 0; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: var(--secondary-accent-alt); border: 4px solid var(--bg-secondary); transform: translateX(-50%); box-shadow: 0 0 10px var(--secondary-accent-alt);"></div>
-          <div class="glass-card glow-purple" style="width: 100%; padding: 2rem;">
-            <span style="font-family: monospace; font-size: 0.95rem; color: var(--secondary-accent-alt); font-weight: 600; display: block; margin-bottom: 0.5rem;">Q4 2027</span>
-            <h4 style="margin-bottom: 0.5rem;">ScribeAI Launch & Edge Sync</h4>
-            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; color: var(--text-secondary);">Official release of ScribeAI. Expanding platform accessibility with native macOS and iOS companion apps for cloud syncing.</p>
+        <div class="timeline-step step-right reveal reveal-right">
+          <div class="timeline-dot dot-purple"></div>
+          <div class="glass-card glow-purple timeline-card">
+            <span class="timeline-date">Q4 2027</span>
+            <h4>ScribeAI Launch & Edge Sync</h4>
+            <p>Official release of ScribeAI. Expanding platform accessibility with native macOS and iOS companion apps for cloud syncing.</p>
           </div>
         </div>
 
         <!-- Timeline Step 4 (Left) -->
-        <div class="reveal reveal-left" style="display: flex; justify-content: flex-start; position: relative; width: 50%; margin-right: 50%; padding-right: 3rem; text-align: right;">
-          <div style="position: absolute; right: 0; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: var(--primary-accent); border: 4px solid var(--bg-secondary); transform: translateX(50%); box-shadow: 0 0 10px var(--primary-accent);"></div>
-          <div class="glass-card glow-green" style="width: 100%; padding: 2rem;">
-            <span style="font-family: monospace; font-size: 0.95rem; color: var(--primary-accent); font-weight: 600; display: block; margin-bottom: 0.5rem;">2028 - 2030</span>
-            <h4 style="margin-bottom: 0.5rem;">Autonomous SaaS & Localized Models</h4>
-            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; color: var(--text-secondary);">Unveiling Nexus LLM local indexing models and hosting global app publishing initiatives supporting next-generation web technologies.</p>
+        <div class="timeline-step step-left reveal reveal-left">
+          <div class="timeline-dot"></div>
+          <div class="glass-card glow-green timeline-card">
+            <span class="timeline-date">2028 - 2030</span>
+            <h4>Autonomous SaaS & Localized Models</h4>
+            <p>Unveiling Nexus LLM local indexing models and hosting global app publishing initiatives supporting next-generation web technologies.</p>
           </div>
         </div>
       </div>
@@ -199,29 +298,46 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="section-transparent section" style="text-align: center;">
+  <section class="section-transparent section cta-premium-section">
     <div class="container">
-      <div class="reveal">
-        <h2>Ready to build a partnership?</h2>
-        <p style="max-width: 600px; margin: 0 auto 2.5rem auto;">Contact our business strategies division directly to negotiate publishing, licensing, or investment alignments.</p>
-        <a href="contact.html" class="btn btn-primary">Get In Touch Today</a>
+      <div class="glass-card reveal glow-green cta-glass-container" style="max-width: 800px; margin: 0 auto; padding: 4rem 2rem; position: relative; overflow: hidden; text-align: center; border-radius: 24px;">
+        
+        <!-- CTA Particles Background -->
+        <div class="cta-particles" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 0;">
+            <div class="p-dot" style="left: 20%; animation-delay: 0.5s;"></div>
+            <div class="p-dot" style="left: 80%; animation-delay: 1.2s;"></div>
+            <div class="p-dot" style="left: 40%; animation-delay: 2s;"></div>
+            <div class="p-dot" style="left: 60%; animation-delay: 0.8s;"></div>
+        </div>
+
+        <div style="position: relative; z-index: 1;">
+          <h2>Ready to Build Something<br><span class="gradient-text-cyan">Extraordinary?</span></h2>
+          <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 500px; margin: 0 auto 3rem auto; line-height: 1.7;">Let's create software that users love and businesses rely on.</p>
+          
+          <div class="cta-button-wrapper" style="position: relative; display: inline-block;">
+            <div class="cta-btn-glow"></div>
+            <a href="contact.html" class="btn btn-primary cta-btn-premium">Start Your Project</a>
+          </div>
+          
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 1.5rem; letter-spacing: 0.5px;">Typically responding within 24 hours.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer style="padding: 6rem 0 3rem 0;">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-grid" style="gap: 4rem;">
         <div class="footer-info">
-          <a href="index.html" class="logo-wrapper logo-glow-effect" style="display: inline-flex; margin-bottom: 1.5rem;">
-            <img src="assets/images/logo-icon.png" alt="PSP Ventures Logo Icon" class="logo-img">
-            <span class="logo-text">PSP VENTURES</span>
+          <a href="index.html" class="logo-wrapper logo-glow-effect" style="display: inline-flex; margin-bottom: 2rem; align-items: center;">
+            <img src="assets/images/logo-icon.png" alt="PSP Ventures Logo Icon" class="logo-img" style="height: 98px; margin-left: -1.7rem;">
+            <span class="logo-text" style="font-size: 1.4rem;">PSP VENTURES</span>
           </a>
-          <p class="footer-description">
+          <p class="footer-description" style="margin-bottom: 2rem;">
             Building innovative digital products for a better tomorrow.
           </p>
-          <div class="footer-socials">
+          <div class="footer-socials" style="display: flex; gap: 1.25rem;">
             <svg width="0" height="0" style="position:absolute">
               <defs>
                 <linearGradient id="ig-grad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -233,14 +349,14 @@
                 </linearGradient>
               </defs>
             </svg>
-            <a href="https://linkedin.com" class="social-icon linkedin" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <a href="https://linkedin.com" class="social-icon social-hover-glow linkedin" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
             </a>
-            <a href="https://instagram.com/pspventures" class="social-icon instagram" aria-label="Instagram">
-              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <a href="https://instagram.com/pspventures" class="social-icon social-hover-glow instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="fill: url(#ig-grad);"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             </a>
-            <a href="https://youtube.com" class="social-icon youtube" aria-label="YouTube">
-              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <a href="https://facebook.com" class="social-icon social-hover-glow facebook" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
             </a>
           </div>
         </div>
@@ -287,8 +403,8 @@
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <span class="copyright">&copy; 2025 PSP Ventures. All rights reserved.</span>
+      <div class="footer-bottom" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05);">
+        <span class="copyright" style="font-size: 0.8rem; color: rgba(255,255,255,0.3);">&copy; 2025 PSP Ventures. All rights reserved.</span>
       </div>
     </div>
   </footer>
