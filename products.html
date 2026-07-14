@@ -112,90 +112,392 @@
   </section>
 
   <!-- Products Portfolio Showcase -->
+    <!-- Products Portfolio Showcase -->
   <section class="section-masked section" style="padding-top: 0;" id="all-products-showcase">
     <div class="container">
+      
       <!-- Category Filter Controls -->
-      <div class="filter-container reveal">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
+      <div class="filter-container reveal" style="margin-bottom: 3rem;">
+        <button class="filter-btn active" data-filter="all">All Products</button>
         <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
-        <button class="filter-btn" data-filter="saas">SaaS Platforms</button>
-        <button class="filter-btn" data-filter="ai">AI Solutions</button>
+        <button class="filter-btn" data-filter="web">Web Platforms</button>
+        <button class="filter-btn" data-filter="ai">AI Products</button>
+        <button class="filter-btn" data-filter="soon">Coming Soon</button>
       </div>
 
-      <!-- Products Grid -->
-      <div class="grid-3 reveal delay-1">
+      <!-- Products Grid Container -->
+      <div id="products-grid-container" class="reveal delay-1">
         
-        <!-- 1. My Savings Book -->
-        <div class="product-card-wrapper" data-category="mobile">
-          <div class="glass-card glow-green" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
-                <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); background: rgba(124, 255, 0, 0.15); border: 1px solid rgba(124, 255, 0, 0.25); display: flex; align-items: center; justify-content: center; color: var(--primary-accent);">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M12 18V6M6 12h12"></path>
-                  </svg>
+        <!-- Featured Card: PSP Portfolio -->
+        <div class="product-card-wrapper" data-category="web" style="margin-bottom: 3rem; width: 100%;">
+          <div class="featured-product-card product-card glow-green-cyan">
+            <div class="featured-bg-layer"></div>
+            <div class="featured-product-details" style="display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem;">
+              <div>
+                <div class="product-card-top" style="align-items: flex-start;">
+                  <div style="width: 165px; height: 48px; display: flex; align-items: center; margin-bottom: 0.5rem; position: relative;">
+                    <div style="position: absolute; width: 80px; height: 80px; background: rgba(140, 255, 0, 0.15); filter: blur(20px); border-radius: 50%; left: -20px;"></div>
+                    <img src="assets/product-logos/psp-ventures-logo.png" alt="PSP Ventures Logo" onerror="this.style.display='none'" style="width: 48px; height: auto; object-fit: contain; object-position: left center; display: block; margin: 0; position: relative; z-index: 1;">
+                  </div>
+                  <span class="product-badge-live">LIVE</span>
                 </div>
-                <span class="pulse-badge">Live</span>
+                <div class="product-card-body">
+                  <h3 class="product-title">PSP Ventures</h3>
+                  <span class="product-category category-green-cyan">OFFICIAL WEBSITE</span>
+                  <p class="product-description">
+                    An interactive digital portfolio showcasing PSP Ventures, mobile applications, web experiences, AI-powered projects, and products in development.
+                  </p>
+                  
+                  <div class="tech-chips-container">
+                    <span class="tech-chip">HTML5</span>
+                    <span class="tech-chip">CSS3</span>
+                    <span class="tech-chip">VANILLA JS</span>
+                    <span class="tech-chip">THREE.JS</span>
+                  </div>
+                </div>
               </div>
-              <h3>My Savings Book</h3>
-              <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; color: var(--text-secondary);">
-                A secure expense management tool helping users catalog daily costs, savings metrics, and monthly budgets privately.
-              </p>
+              <div class="product-card-footer">
+                <a href="https://pspventures.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  VISIT WEBSITE
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
             </div>
-            <a href="product-mysavingsbook.html" class="btn btn-secondary" style="font-size: 0.85rem; width: 100%;">Explore Details</a>
+            
+            <div class="featured-mockup-preview">
+              <div class="mockup-header">
+                <div class="mockup-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="mockup-address-bar">PSP VENTURES</div>
+              </div>
+              <div class="mockup-content" style="background: #000; position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 16px; height: 100%;">
+                <div style="position: absolute; top: -10px; left: -10px; width: 80px; height: 80px; background: rgba(0, 240, 255, 0.12); filter: blur(25px); border-radius: 50%;"></div>
+                <div style="position: absolute; bottom: -20px; right: -10px; width: 100px; height: 100px; background: rgba(140, 255, 0, 0.08); filter: blur(25px); border-radius: 50%;"></div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; z-index: 1;">
+                  <img src="assets/images/logo-full.png" alt="Logo" style="height: 12px; object-fit: contain;">
+                  <div style="display: flex; gap: 4px; align-items: center;">
+                    <div style="width: 14px; height: 2px; background: rgba(255, 255, 255, 0.3); border-radius: 1px;"></div>
+                    <div style="width: 14px; height: 2px; background: rgba(255, 255, 255, 0.3); border-radius: 1px;"></div>
+                    <div style="width: 20px; height: 8px; border: 1px solid rgba(0, 240, 255, 0.5); border-radius: 4px; margin-left: 4px;"></div>
+                  </div>
+                </div>
+                
+                <div style="flex: 1; display: flex; flex-direction: row; justify-content: space-between; align-items: center; z-index: 1; margin-top: 10px; padding: 0 10px;">
+                  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                    <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.45rem; line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 2px;">INNOVATE.</div>
+                    <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.45rem; line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 2px;">BUILD.</div>
+                    <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.45rem; line-height: 1.1; letter-spacing: -0.02em; background: linear-gradient(90deg, #8cff00, #00d9ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px;">IMPACT.</div>
+                    
+                    <div style="width: 55%; height: 4px; background: rgba(255, 255, 255, 0.4); border-radius: 2px; margin-bottom: 4px;"></div>
+                    <div style="width: 45%; height: 4px; background: rgba(255, 255, 255, 0.4); border-radius: 2px; margin-bottom: 16px;"></div>
+                    
+                    <div style="display: flex; gap: 8px;">
+                      <div style="width: 40px; height: 10px; background: #8cff00; border-radius: 5px; box-shadow: 0 0 6px rgba(140, 255, 0, 0.3);"></div>
+                      <div style="width: 40px; height: 10px; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 5px;"></div>
+                    </div>
+                  </div>
+                  
+                  <div style="width: 90px; height: 90px; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <div style="position: absolute; width: 70px; height: 70px; background: rgba(0, 240, 255, 0.2); filter: blur(15px); border-radius: 50%;"></div>
+                    <div style="position: absolute; bottom: 15px; width: 50px; height: 4px; background: rgba(140, 255, 0, 0.5); filter: blur(2px); border-radius: 50%;"></div>
+                    <img src="assets/images/logo-icon.png" alt="Hologram" style="width: 36px; height: 36px; object-fit: contain; position: relative; z-index: 1; filter: drop-shadow(0 0 6px rgba(140, 255, 0, 0.6));">
+                  </div>
+                </div>
+                
+                <div style="position: absolute; top: 35%; right: 15%; width: 2px; height: 2px; background: #8cff00; box-shadow: 0 0 4px #8cff00; border-radius: 50%;"></div>
+                <div style="position: absolute; bottom: 30%; left: 20%; width: 2px; height: 2px; background: #00d9ff; box-shadow: 0 0 4px #00d9ff; border-radius: 50%;"></div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- 2. Taskify -->
-        <div class="product-card-wrapper" data-category="saas">
-          <div class="glass-card glow-cyan" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
-                <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); background: rgba(0, 229, 255, 0.15); border: 1px solid rgba(0, 229, 255, 0.25); display: flex; align-items: center; justify-content: center; color: var(--primary-accent-alt);">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="9 11 12 14 22 4"></polyline>
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                  </svg>
+        <div class="products-grid-3" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem;">
+          
+          <!-- 1. My Savings Book -->
+          <div class="product-card-wrapper" data-category="mobile">
+            <div class="product-card glow-green" style="position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+              <div class="top-glow-savings"></div>
+              <div class="product-card-body-wrapper" style="position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1;">
+                <div class="product-card-top">
+                  <img src="assets/product-logos/my-savings-book.png" alt="My Savings Book Logo" onerror="this.style.display='none'" style="width: 56px; height: 56px; object-fit: contain; object-position: center; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                  <span class="product-badge-review">IN REVIEW</span>
                 </div>
-                <span class="pulse-badge dev-status">In Development</span>
-              </div>
-              <h3>Taskify</h3>
-              <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; color: var(--text-secondary);">
-                A keyboard-navigable project workspace checklist and calendar built to speed up developer task logs.
-              </p>
-            </div>
-            <a href="product-taskify.html" class="btn btn-secondary" style="font-size: 0.85rem; width: 100%;">Explore Details</a>
-          </div>
-        </div>
-
-        <!-- 3. ScribeAI -->
-        <div class="product-card-wrapper" data-category="ai">
-          <div class="glass-card glow-purple" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
-                <div style="width: 50px; height: 50px; border-radius: var(--border-radius-sm); background: rgba(138, 92, 255, 0.15); border: 1px solid rgba(138, 92, 255, 0.25); display: flex; align-items: center; justify-content: center; color: var(--secondary-accent-alt);">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 20h9"></path>
-                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                  </svg>
+                <div class="product-card-body" style="flex: 1; display: flex; flex-direction: column;">
+                  <h3 class="product-title">My Savings Book</h3>
+                  <span class="product-category category-green">PERSONAL FINANCE APP</span>
+                  <p class="product-description">
+                    A simple personal finance app designed to help users track income, expenses, savings, balances, and everyday financial activity.
+                  </p>
+                  <div class="tech-chips-container" style="margin-bottom: 1rem;">
+                    <span class="tech-chip">ANDROID</span>
+                    <span class="tech-chip">SQLITE</span>
+                    <span class="tech-chip">ENCRYPTION</span>
+                  </div>
                 </div>
-                <span class="pulse-badge soon-status">Coming Soon</span>
               </div>
-              <h3>ScribeAI</h3>
-              <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; color: var(--text-secondary);">
-                A context-aware linguistic editor mapping unorganized meeting voice audio logs to structured markdown templates.
-              </p>
+              <div class="product-card-footer">
+                <a href="#" class="btn btn-secondary">
+                  VIEW PRODUCT
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
             </div>
-            <a href="product-scribeai.html" class="btn btn-secondary" style="font-size: 0.85rem; width: 100%;">Explore Details</a>
           </div>
-        </div>
 
+          <!-- 2. Future Mobile Apps -->
+          <div class="product-card-wrapper" data-category="mobile soon">
+            <div class="product-card glow-green" style="position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+              <div class="product-card-body-wrapper" style="position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1;">
+                <div class="product-card-top">
+                  <div style="width: 56px; height: 56px; border-radius: 12px; background: rgba(140, 255, 0, 0.1); border: 1px dashed rgba(140, 255, 0, 0.3); display: flex; align-items: center; justify-content: center; color: var(--primary-accent);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                  </div>
+                  <span class="product-badge-future">PLANNING</span>
+                </div>
+                <div class="product-card-body" style="flex: 1; display: flex; flex-direction: column;">
+                  <h3 class="product-title">Project Catalyst</h3>
+                  <span class="product-category category-green">MOBILE UTILITY</span>
+                  <p class="product-description">
+                    Next-generation mobile applications currently in the research and prototyping phase, focusing on productivity and daily utility.
+                  </p>
+                  <div class="tech-chips-container" style="margin-bottom: 1rem;">
+                    <span class="tech-chip">IOS</span>
+                    <span class="tech-chip">ANDROID</span>
+                    <span class="tech-chip">REACT NATIVE</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product-card-footer">
+                <a href="#" class="btn btn-secondary" style="opacity: 0.6; pointer-events: none;">
+                  COMING SOON
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Trend Bull -->
+          <div class="product-card-wrapper" data-category="web">
+            <div class="product-card glow-cyan" style="position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+              <div class="top-glow-trendbull"></div>
+              <div class="product-card-body-wrapper" style="position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1;">
+                <div class="product-card-top">
+                  <img src="assets/product-logos/trend-bull-logo.png" alt="Trend Bull Logo" onerror="this.style.display='none'" style="width: 135px; height: auto; max-width: 135px; max-height: 80px; object-fit: contain; object-position: left center; flex-shrink: 0; margin-left: -30px; margin-right: -30px;">
+                  <span class="product-badge-live">LIVE</span>
+                </div>
+                <div class="product-card-body" style="flex: 1; display: flex; flex-direction: column;">
+                  <h3 class="product-title">Trend Bull</h3>
+                  <span class="product-category category-cyan">STOCK MARKET PLATFORM</span>
+                  <p class="product-description">
+                    A stock-market-focused web platform created to provide market-related content, screening tools, and resources for users exploring financial markets.
+                  </p>
+                  <div class="tech-chips-container" style="margin-bottom: 1rem;">
+                    <span class="tech-chip">WEB PLATFORM</span>
+                    <span class="tech-chip">SCREENER</span>
+                    <span class="tech-chip">MARKET DATA</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product-card-footer">
+                <a href="https://trendbull.infinityfree.io/admin/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  VISIT WEBSITE
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Taskify -->
+          <div class="product-card-wrapper" data-category="web">
+            <div class="product-card glow-cyan" style="position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+              <div class="product-card-body-wrapper" style="position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1;">
+                <div class="product-card-top">
+                  <div style="width: 56px; height: 56px; border-radius: 12px; background: rgba(0, 229, 255, 0.1); border: 1px solid rgba(0, 229, 255, 0.3); display: flex; align-items: center; justify-content: center; color: var(--primary-accent-alt);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                  </div>
+                  <span class="product-badge-future">IN DEVELOPMENT</span>
+                </div>
+                <div class="product-card-body" style="flex: 1; display: flex; flex-direction: column;">
+                  <h3 class="product-title">Taskify</h3>
+                  <span class="product-category category-cyan">DEVELOPER WORKSPACE</span>
+                  <p class="product-description">
+                    A keyboard-navigable project workspace checklist and calendar built to speed up developer task logs and timeline management.
+                  </p>
+                  <div class="tech-chips-container" style="margin-bottom: 1rem;">
+                    <span class="tech-chip">HTML5</span>
+                    <span class="tech-chip">CSS3</span>
+                    <span class="tech-chip">JS</span>
+                    <span class="tech-chip">LOCALSTORAGE</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product-card-footer">
+                <a href="#" class="btn btn-secondary">
+                  LEARN MORE
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. AI Trading Bot -->
+          <div class="product-card-wrapper" data-category="ai">
+            <div class="product-card glow-purple card-muted" style="position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+              <div class="top-glow-aitrading"></div>
+              <div class="product-card-body-wrapper" style="position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1;">
+                <div class="product-card-top">
+                  <img src="assets/product-logos/ai-trading-bot.png" alt="AI Trading Bot Logo" onerror="this.style.display='none'" style="width: 58px; height: 58px; object-fit: contain; object-position: center; border-radius: 8px; box-shadow: 0 0 15px rgba(138, 92, 255, 0.3);">
+                  <span class="product-badge-future">IN DEVELOPMENT</span>
+                </div>
+                <div class="product-card-body" style="flex: 1; display: flex; flex-direction: column;">
+                  <h3 class="product-title">AI Trading Bot</h3>
+                  <span class="product-category category-purple">ALGORITHMIC TRADING BOT</span>
+                  <p class="product-description">
+                    An AI-powered algorithmic trading bot being developed to analyze markets, identify opportunities, and support automated trading workflows.
+                  </p>
+                  <div class="tech-chips-container" style="margin-bottom: 1rem;">
+                    <span class="tech-chip">AI</span>
+                    <span class="tech-chip">ALGO TRADING</span>
+                    <span class="tech-chip">DATA ANALYSIS</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product-card-footer">
+                <a href="#" class="btn btn-secondary">
+                  LEARN MORE
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. ScribeAI -->
+          <div class="product-card-wrapper" data-category="ai soon">
+            <div class="product-card glow-purple card-muted" style="position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+              <div class="product-card-body-wrapper" style="position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1;">
+                <div class="product-card-top">
+                  <div style="width: 56px; height: 56px; border-radius: 12px; background: rgba(138, 92, 255, 0.1); border: 1px dashed rgba(138, 92, 255, 0.3); display: flex; align-items: center; justify-content: center; color: var(--secondary-accent-alt);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                  </div>
+                  <span class="product-badge-future">COMING SOON</span>
+                </div>
+                <div class="product-card-body" style="flex: 1; display: flex; flex-direction: column;">
+                  <h3 class="product-title">ScribeAI</h3>
+                  <span class="product-category category-purple">LINGUISTIC EDITOR</span>
+                  <p class="product-description">
+                    A context-aware linguistic editor mapping unorganized meeting voice audio logs to structured markdown templates.
+                  </p>
+                  <div class="tech-chips-container" style="margin-bottom: 1rem;">
+                    <span class="tech-chip">AI</span>
+                    <span class="tech-chip">NLP</span>
+                    <span class="tech-chip">AUDIO PROCESSING</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product-card-footer">
+                <a href="#" class="btn btn-secondary" style="opacity: 0.6; pointer-events: none;">
+                  COMING SOON
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Nexus LLM -->
+          <div class="product-card-wrapper" data-category="ai">
+            <div class="product-card glow-purple" style="position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+              <div class="product-card-body-wrapper" style="position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1;">
+                <div class="product-card-top">
+                  <div style="width: 56px; height: 56px; border-radius: 12px; background: rgba(138, 92, 255, 0.1); border: 1px solid rgba(138, 92, 255, 0.3); display: flex; align-items: center; justify-content: center; color: var(--secondary-accent-alt);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  </div>
+                  <span class="product-badge-future">RESEARCH</span>
+                </div>
+                <div class="product-card-body" style="flex: 1; display: flex; flex-direction: column;">
+                  <h3 class="product-title">Nexus LLM</h3>
+                  <span class="product-category category-purple">LARGE LANGUAGE MODEL</span>
+                  <p class="product-description">
+                    An experimental context-driven artificial intelligence system designed to optimize small-scale reasoning tasks and code generation.
+                  </p>
+                  <div class="tech-chips-container" style="margin-bottom: 1rem;">
+                    <span class="tech-chip">MACHINE LEARNING</span>
+                    <span class="tech-chip">LLM</span>
+                    <span class="tech-chip">PYTHON</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product-card-footer">
+                <a href="#" class="btn btn-secondary">
+                  LEARN MORE
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. Edge Sync -->
+          <div class="product-card-wrapper" data-category="ai soon">
+            <div class="product-card glow-purple card-muted" style="position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+              <div class="product-card-body-wrapper" style="position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1;">
+                <div class="product-card-top">
+                  <div style="width: 56px; height: 56px; border-radius: 12px; background: rgba(138, 92, 255, 0.1); border: 1px dashed rgba(138, 92, 255, 0.3); display: flex; align-items: center; justify-content: center; color: var(--secondary-accent-alt);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  </div>
+                  <span class="product-badge-future">PLANNING</span>
+                </div>
+                <div class="product-card-body" style="flex: 1; display: flex; flex-direction: column;">
+                  <h3 class="product-title">Edge Sync</h3>
+                  <span class="product-category category-purple">DISTRIBUTED AI</span>
+                  <p class="product-description">
+                    A lightweight synchronization protocol designed to allow edge devices to share machine learning model states securely and instantly.
+                  </p>
+                  <div class="tech-chips-container" style="margin-bottom: 1rem;">
+                    <span class="tech-chip">RUST</span>
+                    <span class="tech-chip">DISTRIBUTED SYSTEMS</span>
+                    <span class="tech-chip">AI</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product-card-footer">
+                <a href="#" class="btn btn-secondary" style="opacity: 0.6; pointer-events: none;">
+                  COMING SOON
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- CTA Section -->
+  <section class="section particle-target section-open" id="contact-cta" style="position: relative; padding-top: 80px; padding-bottom: 60px;">
+    <!-- Green portal ambient glow behind -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 300px; background: radial-gradient(circle, rgba(127, 255, 0, 0.08) 0%, rgba(0,0,0,0) 80%); filter: blur(40px); pointer-events: none; z-index: 1;"></div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="glass-card glow-green reveal" style="display: flex; justify-content: space-between; align-items: center; gap: 2.5rem; flex-wrap: wrap; padding: 3.5rem 4rem; background: rgba(14, 14, 14, 0.65);">
+        <div style="text-align: left; max-width: 600px;">
+          <h2 style="font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.01em;">
+            Let's Build Something<br>
+            <span class="gradient-text">Exceptional</span>
+          </h2>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0;">
+            Discover the products shaping the future of PSP Ventures, or get in touch to build something extraordinary together.
+          </p>
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-end;">
+          <a href="contact.html" class="btn btn-primary" style="padding: 1.25rem 2.5rem;">Get In Touch</a>
+          <a href="products.html" class="btn btn-outlined-neon" style="padding: 1.25rem 2.5rem;">View All Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
   <site-footer></site-footer>
   <script src="js/footer.js"></script>
 
