@@ -23,6 +23,16 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
+<style>
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: rgba(140, 255, 0, 0.6) !important;
+      box-shadow: 0 0 12px rgba(140, 255, 0, 0.15), inset 0 0 8px rgba(140, 255, 0, 0.05);
+    }
+    .copy-email-wrapper:hover .copy-icon {
+      opacity: 0.6 !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -75,11 +85,11 @@
   </section>
 
   <!-- Main Contact Content Section -->
-  <section class="section-masked section" style="padding-top: 0;">
+  <section class="section-masked section" style="margin-top: -50px; padding-top: 0; position: relative; z-index: 10;">
     <div class="container">
-      <div class="grid-2">
+      <div class="grid-2" style="align-items: flex-start;">
         <div class="reveal reveal-left">
-          <h2>Strategic Inquiries</h2>
+          <h2 style="margin-bottom: 1.5rem;">Strategic Inquiries</h2>
           <p>
             PSP Ventures actively collaborates with developers and investors to bring high-quality digital assets to market. Select from our dedicated contact departments or use the secure form.
           </p>
@@ -99,7 +109,11 @@
               <div>
                 <h4 style="margin-bottom: 0.25rem; font-size: 1.05rem;">Publishing & Ventures</h4>
                 <p style="font-size: 0.95rem; margin-bottom: 0.25rem; color: var(--text-secondary);">Submit mobile apps and design concepts for publishing.</p>
-                <a href="mailto:publish@psp.company" style="font-family: var(--font-display); font-weight: 500; color: var(--text-primary);">publish@psp.company</a>
+                <div class="copy-email-wrapper" onclick="copyEmail('publish@psp.company', this)" style="display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.2rem 0;">
+                  <span style="font-family: var(--font-display); font-weight: 500; color: var(--text-primary); transition: color 0.2s;">publish@psp.company</span>
+                  <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0; transition: opacity 0.2s;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span class="copy-success" style="font-size: 0.75rem; color: var(--primary-accent); opacity: 0; transition: opacity 0.2s; position: absolute; transform: translateX(100%); margin-left: 30px;">Copied!</span>
+                </div>
               </div>
             </div>
 
@@ -114,12 +128,16 @@
               <div>
                 <h4 style="margin-bottom: 0.25rem; font-size: 1.05rem;">Official Relations</h4>
                 <p style="font-size: 0.95rem; margin-bottom: 0.25rem; color: var(--text-secondary);">Request corporate layouts, partnerships, and developer verification.</p>
-                <a href="mailto:pspventuresofficial@gmail.com" style="font-family: var(--font-display); font-weight: 500; color: var(--text-primary);">pspventuresofficial@gmail.com</a>
+                <div class="copy-email-wrapper" onclick="copyEmail('pspventuresofficial@gmail.com', this)" style="display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.2rem 0;">
+                  <span style="font-family: var(--font-display); font-weight: 500; color: var(--text-primary); transition: color 0.2s;">pspventuresofficial@gmail.com</span>
+                  <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0; transition: opacity 0.2s;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span class="copy-success" style="font-size: 0.75rem; color: var(--primary-accent-alt); opacity: 0; transition: opacity 0.2s; position: absolute; transform: translateX(100%); margin-left: 30px;">Copied!</span>
+                </div>
               </div>
             </div>
 
             <!-- Console Verification Notice -->
-            <div class="glass-card glow-purple" style="padding: 1.5rem; border-left: 3px solid var(--secondary-accent-alt); background: rgba(138, 92, 255, 0.02); margin-top: 1.5rem;">
+            <div class="glass-card glow-purple" style="padding: 1.75rem; border: 1px solid rgba(138, 92, 255, 0.3); border-left: 3px solid var(--secondary-accent-alt); background: rgba(138, 92, 255, 0.04); box-shadow: 0 0 20px rgba(138, 92, 255, 0.15); margin-top: 1.5rem;">
               <h5 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem;">Developer Verification</h5>
               <p style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 0; color: var(--text-secondary);">
                 PSP Ventures is a verified publisher on Apple App Store and Google Play Console directories. For verification requests from review teams, email <a href="mailto:pspventuresofficial@gmail.com" style="color: var(--primary-accent-alt); text-decoration: underline;">pspventuresofficial@gmail.com</a> directly.
@@ -130,22 +148,22 @@
 
         <div class="reveal reveal-right">
           <!-- Form Card -->
-          <form class="glass-card glow-green" id="partnership-form" style="background: rgba(255, 255, 255, 0.02);">
-            <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem;">
+          <form class="glass-card glow-green" id="partnership-form" style="background: rgba(255, 255, 255, 0.03); box-shadow: 0 15px 35px rgba(0,0,0,0.4), inset 0 0 20px rgba(140, 255, 0, 0.05); border: 1px solid rgba(140, 255, 0, 0.3);">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
               
               <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                 <label for="name" style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Contact Name</label>
-                <input type="text" id="name" name="name" placeholder="John Doe" style="width: 100%; padding: 0.85rem 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); transition: border-color 0.3s ease;" required>
+                <input type="text" id="name" name="name" placeholder="John Doe" style="width: 100%; padding: 1rem 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); transition: border-color 0.3s ease;" required>
               </div>
               
               <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                 <label for="email" style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="john@company.com" style="width: 100%; padding: 0.85rem 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); transition: border-color 0.3s ease;" required>
+                <input type="email" id="email" name="email" placeholder="john@company.com" style="width: 100%; padding: 1rem 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); transition: border-color 0.3s ease;" required>
               </div>
 
               <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                 <label for="inquiry-type" style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Inquiry Type</label>
-                <select id="inquiry-type" name="subject" style="width: 100%; padding: 0.85rem 1rem; background: #0D1117; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); color: var(--text-primary); transition: border-color 0.3s ease;">
+                <select id="inquiry-type" name="subject" style="width: 100%; padding: 1rem 1rem; background: #0D1117; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); color: var(--text-primary); transition: border-color 0.3s ease;">
                   <option value="Publishing Agreement">App Publishing Agreement</option>
                   <option value="Investment Opportunities">Investment Opportunities</option>
                   <option value="Strategic Partnership">Strategic Partnership</option>
@@ -155,7 +173,7 @@
 
               <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                 <label for="message" style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Proposal Details</label>
-                <textarea id="message" name="message" rows="5" placeholder="Tell us about your application, studio size, or investment goals..." style="width: 100%; padding: 0.85rem 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); transition: border-color 0.3s ease; resize: none;" required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your application, studio size, or investment goals..." style="width: 100%; padding: 1rem 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); transition: border-color 0.3s ease; resize: none;" required></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">
@@ -177,5 +195,19 @@
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
+<script>
+    function copyEmail(email, el) {
+      navigator.clipboard.writeText(email).then(() => {
+        const textSpan = el.querySelector('span');
+        const successText = el.querySelector('.copy-success');
+        textSpan.style.color = '#8CFF00';
+        successText.style.opacity = '1';
+        setTimeout(() => {
+          textSpan.style.color = '';
+          successText.style.opacity = '0';
+        }, 2000);
+      });
+    }
+  </script>
 </body>
 </html>
