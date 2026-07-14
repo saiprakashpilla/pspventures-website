@@ -41,6 +41,12 @@
   --border-radius-lg: 32px;
   --transition-speed: 0.35s;
   --ease-custom: cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Global Spacing Rhythm */
+  --spacing-section-gap: 40px;      /* 40px top/bottom = 80px total between sections */
+  --spacing-heading-gap: 24px;      /* Gap between heading and description */
+  --spacing-desc-gap: 40px;         /* Gap between description and content/cards */
+  --spacing-content-gap: 72px;      /* Gap from content to next boundary */
 }
 
 /* ==========================================================================
@@ -185,15 +191,19 @@ p {
 }
 
 .section {
-  padding: 4.5rem 0;
+  padding: var(--spacing-section-gap) 0;
   position: relative;
   overflow: hidden;
 }
 
 .section-header {
   max-width: 700px;
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-desc-gap);
   text-align: left;
+}
+
+.section-header h2 {
+  margin-bottom: var(--spacing-heading-gap);
 }
 
 .section-header.center {
