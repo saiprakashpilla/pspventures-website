@@ -2716,60 +2716,99 @@ body footer, body footer.section-masked {
    Core Pillars Section Redesign
    ========================================================================== */
 
-.core-pillars-section .pillar-card {
+.pillar-card {
   padding: 2.5rem 2rem !important;
   text-align: center;
   transition: all 0.4s ease !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.core-pillars-section .pillar-card:hover {
+.pillar-card:hover {
   transform: translateY(-4px) !important;
   border-color: rgba(0, 220, 255, 0.25) !important;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 220, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
-.core-pillars-section .glass-card.glow-green:hover {
+.glass-card.glow-green.pillar-card:hover {
   border-color: rgba(140, 255, 0, 0.25) !important;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(140, 255, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
-.core-pillars-section .glass-card.glow-purple:hover {
+.glass-card.glow-purple.pillar-card:hover {
   border-color: rgba(138, 92, 255, 0.25) !important;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(138, 92, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
-.core-pillars-section .pillar-icon {
-  margin-bottom: 1.25rem;
-  display: inline-block;
+.glass-card.glow-cyan.pillar-card:hover {
+  border-color: rgba(0, 220, 255, 0.25) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 220, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
-.core-pillars-section .glow-green .pillar-icon {
+.pillar-icon {
+  margin-bottom: 1.25rem;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+/* Base icon glow behind */
+.pillar-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(15px);
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+}
+
+.glow-green .pillar-icon {
   color: var(--primary-accent);
   filter: drop-shadow(0 0 12px rgba(140, 255, 0, 0.6));
 }
 
-.core-pillars-section .glow-cyan .pillar-icon {
+.glow-green .pillar-icon::after {
+  background: var(--primary-accent);
+}
+
+.glow-cyan .pillar-icon {
   color: var(--primary-accent-alt);
   filter: drop-shadow(0 0 12px rgba(0, 217, 255, 0.6));
 }
 
-.core-pillars-section .glow-purple .pillar-icon {
+.glow-cyan .pillar-icon::after {
+  background: var(--primary-accent-alt);
+}
+
+.glow-purple .pillar-icon {
   color: var(--secondary-accent-alt);
   filter: drop-shadow(0 0 12px rgba(138, 92, 255, 0.6));
 }
 
-.core-pillars-section h4 {
+.glow-purple .pillar-icon::after {
+  background: var(--secondary-accent-alt);
+}
+
+.pillar-card h4 {
   font-size: 1.15rem;
   margin-bottom: 0.75rem;
   color: var(--text-primary);
 }
 
-.core-pillars-section p {
+.pillar-card p {
   font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 0;
   color: var(--text-secondary);
+  flex-grow: 1;
 }
 
 /* ==========================================================================
@@ -2855,6 +2894,9 @@ body footer, body footer.section-masked {
 
 .timeline-card {
   width: 100%;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
   padding: 2.5rem !important;
   border-radius: 20px !important;
   transition: all 0.4s ease !important;
