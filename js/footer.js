@@ -1,7 +1,7 @@
 class SiteFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <footer class="site-footer-wrapper section-masked" style="border-top: 1px solid rgba(0, 220, 255, 0.15); position: relative; overflow: hidden; background: rgba(10, 15, 20, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding-top: 5rem;">
+      <footer class="site-footer-wrapper section-masked" style="border-top: 1px solid rgba(0, 220, 255, 0.15); position: relative; overflow: hidden; background: rgba(10, 15, 20, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding-top: 3rem; padding-bottom: 0;">
         
         <!-- Soft Ambient Glows -->
         <div style="position: absolute; top: -100px; left: 15%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0, 220, 255, 0.04) 0%, transparent 70%); pointer-events: none;"></div>
