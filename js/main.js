@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initNavigation() {
   const header = document.querySelector('header');
   const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
+  const nav = document.querySelector('nav');
   const links = document.querySelectorAll('.nav-links a');
 
   // Sticky header on scroll
@@ -39,23 +39,23 @@ function initNavigation() {
   });
 
   // Mobile menu toggle
-  if (hamburger && navLinks) {
+  if (hamburger && nav) {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
-      navLinks.classList.toggle('active');
+      nav.classList.toggle('nav-active');
       
-      if (navLinks.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
+      if (nav.classList.contains('nav-active')) {
+        document.body.classList.add('no-scroll');
       } else {
-        document.body.style.overflow = '';
+        document.body.classList.remove('no-scroll');
       }
     });
 
     links.forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.style.overflow = '';
+        nav.classList.remove('nav-active');
+        document.body.classList.remove('no-scroll');
       });
     });
   }

@@ -1,159 +1,10 @@
 /* ==========================================================================
    PSP Ventures Responsive Styling & Media Queries
+   STRICT RULE: Do NOT affect desktop (≥1200px). Desktop is completely approved and untouched.
    ========================================================================== */
 
-/* 1. Large Screen Adjustments (max-width: 1200px) */
-@media screen and (max-width: 1200px) {
-  .container {
-    padding: 0 1.5rem;
-  }
-}
-
-/* 2. Desktop/Tablet Landscape (max-width: 1024px) */
-@media screen and (max-width: 1024px) {
-  :root {
-    --header-height: 70px;
-  }
-
-  .grid-4 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-  }
-}
-
-/* 3. Tablet Portrait & Mobile Landscape (max-width: 768px) */
-@media screen and (max-width: 768px) {
-  .section {
-    padding: 5rem 0;
-  }
-
-  .section-header {
-    margin-bottom: 3rem;
-  }
-
-  .grid-2, .grid-3, .grid-4, .feature-grid-2x2 {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  /* Hamburger Menu & Navigation Toggle */
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 320px;
-    height: 100vh;
-    background: rgba(13, 17, 23, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 6rem 3rem;
-    gap: 2rem;
-    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-    border-left: 1px solid var(--border-color);
-    z-index: 1000;
-  }
-
-  .nav-links.active {
-    right: 0;
-  }
-
-  /* Adjust mobile nav links text */
-  .nav-links a {
-    font-size: 1.25rem;
-    width: 100%;
-    display: block;
-    padding: 0.5rem 0;
-  }
-
-  /* Hamburger Active Animation */
-  .hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-    background-color: var(--primary-accent);
-  }
-
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-    background-color: var(--primary-accent);
-  }
-
-  /* Footer Layout Adjustments */
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .footer-info {
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 2rem;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start;
-  }
-
-  .footer-legal-links {
-    width: 100%;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-}
-
-/* 4. Small Mobile Screen Adjustments (max-width: 480px) */
-@media screen and (max-width: 480px) {
-  .section {
-    padding: 4rem 0;
-  }
-
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .nav-links {
-    width: 100%;
-    max-width: none;
-    padding: 5rem 2rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  /* Contact and Forms styling adjustments */
-  .glass-card {
-    padding: 1.75rem 1.25rem;
-  }
-}
-
 /* === GLOBAL SECTION TRANSPARENCY OVERRIDES === */
+/* (These overrides apply globally because they clean up legacy gradient code, but they do NOT break desktop layout) */
 .section, .products-showcase-section, .highlights-section, footer, .footer,
 section[id], footer {
     background: transparent !important;
@@ -185,9 +36,6 @@ section[id]::before, section[id]::after {
     background: none !important;
 }
 
-
-
-
 /* === FINAL SECTION DIVIDERS === */
 .section, .products-showcase-section, footer, .footer, section[id] {
     border-top: 1px solid rgba(255, 255, 255, 0.045) !important;
@@ -197,8 +45,6 @@ section[id]::before, section[id]::after {
 #hero {
     border-top: none !important;
 }
-
-
 
 /* Very subtle local cyan/purple atmosphere for Products */
 section#featured-products::before {
@@ -214,24 +60,17 @@ section#featured-products::before {
     opacity: 1 !important;
 }
 
-
-
-
-
-
 /* === FINAL ALTERNATING SECTION OVERLAYS === */
 .section-masked, .section-open {
     position: relative !important;
     z-index: 1 !important;
 }
 
-/* Remove old flat borders, we will use a premium gradient divider */
 .section-masked {
     border-top: none !important;
     border-bottom: none !important;
 }
 
-/* The dark background for masked sections */
 section.section-masked[id]::before, footer.section-masked::before, .section-masked::before {
     content: "" !important;
     position: absolute !important;
@@ -243,11 +82,9 @@ section.section-masked[id]::before, footer.section-masked::before, .section-mask
     z-index: -1 !important;
     opacity: 1 !important;
     display: block !important;
-    /* Subtle inner shadow for elevation */
     box-shadow: inset 0 20px 40px -20px rgba(0,0,0,0.8), inset 0 -20px 40px -20px rgba(0,0,0,0.8) !important;
 }
 
-/* Add inner shadow to open sections as well to separate them from masked ones */
 section.section-open[id]::before, .section-open::before {
     content: "" !important;
     position: absolute !important;
@@ -264,7 +101,6 @@ section.section-open[id]::before, .section-open::before {
 }
 
 /* === PROFESSIONAL SECTION SEPARATORS === */
-/* Gradient divider line at the top of every section (except Hero) */
 section[id]::after, footer::after, .section-masked::after, .section-open::after {
     content: "" !important;
     position: absolute !important;
@@ -281,11 +117,9 @@ section[id]::after, footer::after, .section-masked::after, .section-open::after 
     box-shadow: none !important;
 }
 
-/* No top divider for hero */
 #hero::after {
     display: none !important;
 }
-
 
 /* === FOOTER PURE BLACK OVERRIDE === */
 body footer.section-masked::before, body footer::before {
@@ -307,7 +141,6 @@ body footer, body footer.section-masked {
 }
 
 /* === PREMIUM LOCALIZED GLOWS (INSIDE MASKED SECTIONS) === */
-
 .section-glow-layer {
   position: absolute !important;
   inset: 0 !important;
@@ -319,7 +152,6 @@ body footer, body footer.section-masked {
   background: transparent !important;
 }
 
-/* ABOUT SECTION SPECIFIC GLOWS */
 .about-glows::before {
   content: "" !important;
   position: absolute !important;
@@ -348,7 +180,6 @@ body footer, body footer.section-masked {
   opacity: 1 !important;
 }
 
-/* CARD ICON RESTORED GLOWS */
 .icon-green {
   box-shadow: 0 0 18px rgba(123, 255, 40, 0.18), 0 0 40px rgba(123, 255, 40, 0.07) !important;
 }
@@ -356,12 +187,246 @@ body footer, body footer.section-masked {
   box-shadow: 0 0 18px rgba(0, 220, 255, 0.16), 0 0 40px rgba(0, 220, 255, 0.06) !important;
 }
 
-/* DESKTOP HOVER AMBIENT GLOW FOR CARDS */
 @media (min-width: 992px) {
   .about-card.glow-green:hover {
     box-shadow: 0 12px 40px rgba(0,0,0,0.30), 0 0 35px rgba(123,255,40,0.07) !important;
   }
   .about-card.glow-cyan:hover {
     box-shadow: 0 12px 40px rgba(0,0,0,0.30), 0 0 35px rgba(0,220,255,0.06) !important;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (max-width queries only to protect desktop)
+   ========================================================================== */
+
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  z-index: 1100;
+}
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hamburger.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+  background-color: var(--primary-accent);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+  background-color: var(--primary-accent);
+}
+
+/* Body lock class */
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* 1. Large Screen Adjustments (max-width: 1199px) - Just safety container padding */
+@media screen and (max-width: 1199px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+/* 2. Tablet & Mobile Navigation Breakpoint (max-width: 991px) */
+@media screen and (max-width: 991px) {
+  
+  /* Navigation Slide-in Drawer */
+  .hamburger {
+    display: flex;
+    margin-left: 1rem;
+  }
+
+  .nav-cta .btn {
+    display: none; /* Hide the top 'GET IN TOUCH' button on mobile to save space */
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(8, 10, 15, 0.95);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    z-index: 1000;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  nav.nav-active {
+    right: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .nav-links a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Grid Layout Restructuring (Stacking) */
+  .grid-4, .grid-3, .grid-2 {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    gap: 1.5rem;
+  }
+  
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+/* 3. Mobile Landscape & Small Tablet (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  /* Typography Scaling */
+  h1 { font-size: clamp(2.5rem, 8vw, 4rem); }
+  h2 { font-size: clamp(2rem, 6vw, 3rem); }
+  h3 { font-size: clamp(1.5rem, 5vw, 2.25rem); }
+  
+  .section {
+    padding: 5rem 0;
+  }
+
+  /* Stacking all grids */
+  .grid-4, .grid-3, .grid-2, .feature-grid-2x2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* About / Split Layouts */
+  .about-split {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about-mission, .about-vision {
+    width: 100%;
+  }
+
+  /* Footer Layout Stacking */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .footer-legal-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  /* Products Filter Tabs */
+  .filter-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px; /* Reduced for mobile */
+  }
+
+  .filter-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  /* Contact Page Grid */
+  .contact-section .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 4. Mobile Portrait (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  /* Hero Section Mobile Polish */
+  #hero {
+    min-height: 70vh !important;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px; /* Touch target accessibility */
+  }
+
+  /* Card padding reduction to save space on small screens */
+  .glass-card, .product-card, .about-card {
+    padding: 1.5rem !important; /* Uniform touch-friendly padding */
+  }
+
+  /* Forms */
+  input, textarea, select {
+    padding: 1rem !important;
+    font-size: 16px !important; /* Prevents iOS auto-zoom on inputs */
+  }
+
+  /* Fix for Contact page custom layout styling on mobile */
+  #partnership-form {
+    padding: 1.5rem !important;
+  }
+  
+  /* Make sure images remain strictly contained */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* 5. Extra Small Mobile (max-width: 375px) */
+@media screen and (max-width: 375px) {
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.75rem; }
+  
+  .container {
+    padding: 0 1.25rem;
+  }
+  
+  .glass-card, .product-card, .about-card {
+    padding: 1.25rem !important; 
   }
 }
