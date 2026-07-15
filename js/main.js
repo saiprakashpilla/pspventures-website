@@ -173,7 +173,8 @@ function initBackgroundParticles() {
   let width = 0;
   let height = 0;
   const particles = [];
-  const maxParticles = 250;
+  const isMobileGlobal = window.matchMedia("(max-width: 768px)").matches;
+  const maxParticles = isMobileGlobal ? Math.floor(250 * 0.4) : 250;
 
   function resize() {
     width = window.innerWidth;
@@ -365,7 +366,8 @@ function initHologramParticles() {
   let width = 0;
   let height = 0;
   const particles = [];
-  const maxParticles = 720; // Reduced density by 20% to keep logo as primary focus
+  const isMobileHolo = window.matchMedia("(max-width: 768px)").matches;
+  const maxParticles = isMobileHolo ? Math.floor(720 * 0.4) : 720; // Reduced density by 20% to keep logo as primary focus
 
   let platformOffsetY = 360;
   let maxOrbitDistance = 530;

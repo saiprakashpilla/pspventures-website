@@ -430,3 +430,109 @@ body.no-scroll {
     padding: 1.25rem !important; 
   }
 }
+
+/* ==========================================================================
+   MOBILE HERO REDESIGN (max-width: 768px)
+   ========================================================================== */
+@media screen and (min-width: 769px) {
+  .mobile-hero-content {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Hide all original desktop elements inside .reveal-left */
+  .reveal-left > .section-subtitle,
+  .reveal-left > h1,
+  .reveal-left > p,
+  .reveal-left > .hero-buttons,
+  .reveal-left > .hero-social-section {
+    display: none !important;
+  }
+  
+  #hero {
+    height: auto !important;
+    min-height: auto !important;
+    padding-top: 110px !important;
+    padding-bottom: 70px !important;
+    overflow: hidden; 
+  }
+
+  /* Center everything */
+  .mobile-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Typography & Spacing */
+  .mobile-subtitle {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 12px;
+    color: var(--primary-accent);
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  .mobile-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--text-primary);
+    margin-bottom: 32px;
+  }
+  
+  .mobile-title .line-1 {
+    display: block;
+    font-size: 34px;
+    margin-bottom: 8px;
+  }
+  
+  .mobile-title .neon-text {
+    display: block;
+    font-size: 48px;
+    color: #8CFF00; /* Neon green */
+    text-shadow: 0 0 20px rgba(140, 255, 0, 0.4);
+  }
+
+  .mobile-desc {
+    max-width: 340px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(230, 235, 245, 0.85);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+
+  /* Buttons */
+  .mobile-cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+  }
+  
+  .mobile-cta-group .btn {
+    width: 90%;
+    height: 56px;
+    min-height: 56px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 16px;
+  }
+
+  .mobile-cta-group .btn svg {
+    margin-left: 8px;
+    width: 18px;
+    height: 18px;
+  }
+}
