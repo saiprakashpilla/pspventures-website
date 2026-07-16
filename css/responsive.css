@@ -786,18 +786,17 @@ body.no-scroll {
      GLOBAL MOBILE SPACING OPTIMIZATION
      ========================================================================== */
   
-  /* Reduce global section padding by ~25-30%, explicitly excluding the Hero (first section) */
-  body > section:not(:first-of-type) {
+  /* Apply global offset to body so all content inherently clears the fixed navbar */
+  body {
+    padding-top: var(--header-height) !important;
+  }
+  
+  /* Reduce global section padding by ~25-30% */
+  .section {
     padding-top: 3.25rem !important;
     padding-bottom: 3.25rem !important;
   }
   
-  /* Hero section whitespace fix - consistently apply sufficient padding to clear fixed navbar across all pages */
-  body > section:first-of-type {
-    padding-top: calc(var(--header-height) + 5rem) !important;
-    padding-bottom: 50px !important;
-  }
-
   /* Reduce inline margin/padding overrides that create excessive gaps */
   section[style*="margin-top: 60px"] {
     margin-top: 40px !important;
