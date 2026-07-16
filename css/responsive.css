@@ -565,8 +565,8 @@ body.no-scroll {
   #hero {
     height: auto !important;
     min-height: auto !important;
-    padding-top: 110px !important;
-    padding-bottom: 50px !important;
+    padding-top: 96px !important;
+    padding-bottom: 30px !important;
     overflow: hidden; 
     position: relative !important;
   }
@@ -574,14 +574,18 @@ body.no-scroll {
   /* Make hologram a glowing background element to fit naturally on phone */
   .hero-hologram-col {
     position: absolute !important;
-    top: 180px !important;
+    top: 140px !important;
     left: 50% !important;
     transform: translate(-50%, -50%) scale(0.49) !important;
     width: 100vw !important;
     min-height: unset !important;
     z-index: -1 !important;
-    opacity: 0.42 !important;
+    opacity: 1 !important;
     pointer-events: none;
+  }
+  
+  .hero-hologram-col .hologram-glow-radial {
+    opacity: 0.25 !important;
   }
 
   /* Center everything */
@@ -592,7 +596,8 @@ body.no-scroll {
     text-align: center;
     width: 100%;
     position: relative;
-    padding-top: 150px !important;
+    padding-top: 230px !important;
+    background: radial-gradient(circle at 50% 30%, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.5) 45%, transparent 70%);
   }
 
   /* Typography & Spacing */
@@ -604,7 +609,7 @@ body.no-scroll {
     color: var(--primary-accent);
     font-weight: 700;
     position: absolute !important;
-    top: 0 !important;
+    top: 20px !important;
     left: 50% !important;
     transform: translateX(-50%);
     margin: 0 !important;
@@ -618,29 +623,40 @@ body.no-scroll {
     margin-bottom: 16px !important;
   }
   
+  .mobile-title br {
+    display: none !important;
+  }
+
   .mobile-title .line-1 {
     display: block;
     font-size: 26px !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 32px !important;
   }
   
   .mobile-title .neon-text {
     display: block;
     font-size: 48px !important;
     color: #8CFF00; /* Neon green */
-    text-shadow: 0 0 14px rgba(140, 255, 0, 0.28) !important;
+    text-shadow: 0 0 10px rgba(140, 255, 0, 0.2) !important;
     line-height: 1.05 !important;
-    margin-bottom: 2px !important;
+  }
+  
+  .mobile-title .neon-text:first-of-type {
+    margin-bottom: 18px !important;
+  }
+  
+  .mobile-title .neon-text:last-of-type {
+    margin-bottom: 0 !important;
   }
 
   .mobile-desc {
     max-width: 320px !important;
     font-size: 16px !important;
-    line-height: 1.7 !important;
+    line-height: 1.65 !important;
     color: rgba(230, 235, 245, 0.85);
     margin-left: auto !important;
     margin-right: auto !important;
-    margin-bottom: 36px !important;
+    margin-bottom: 32px !important;
     text-align: center !important;
   }
 
