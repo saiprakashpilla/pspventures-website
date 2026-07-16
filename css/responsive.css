@@ -565,7 +565,7 @@ body.no-scroll {
   #hero {
     height: auto !important;
     min-height: auto !important;
-    padding-top: 85px !important;
+    padding-top: 110px !important;
     padding-bottom: 50px !important;
     overflow: hidden; 
     position: relative !important;
@@ -574,13 +574,13 @@ body.no-scroll {
   /* Make hologram a glowing background element to fit naturally on phone */
   .hero-hologram-col {
     position: absolute !important;
-    top: 50% !important;
+    top: 180px !important;
     left: 50% !important;
-    transform: translate(-50%, -50%) scale(0.52) !important;
+    transform: translate(-50%, -50%) scale(0.49) !important;
     width: 100vw !important;
     min-height: unset !important;
-    z-index: 0 !important;
-    opacity: 0.35;
+    z-index: -1 !important;
+    opacity: 0.42 !important;
     pointer-events: none;
   }
 
@@ -591,6 +591,8 @@ body.no-scroll {
     align-items: center;
     text-align: center;
     width: 100%;
+    position: relative;
+    padding-top: 150px !important;
   }
 
   /* Typography & Spacing */
@@ -601,7 +603,11 @@ body.no-scroll {
     font-size: 12px;
     color: var(--primary-accent);
     font-weight: 700;
-    margin-bottom: 12px;
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    margin: 0 !important;
   }
 
   .mobile-title {
@@ -609,32 +615,33 @@ body.no-scroll {
     font-weight: 900;
     line-height: 1.0;
     color: var(--text-primary);
-    margin-bottom: 24px;
+    margin-bottom: 16px !important;
   }
   
   .mobile-title .line-1 {
     display: block;
-    font-size: 34px;
-    margin-bottom: 4px;
+    font-size: 26px !important;
+    margin-bottom: 4px !important;
   }
   
   .mobile-title .neon-text {
     display: block;
-    font-size: 48px;
+    font-size: 48px !important;
     color: #8CFF00; /* Neon green */
-    text-shadow: 0 0 20px rgba(140, 255, 0, 0.4);
-    line-height: 1.05;
-    margin-bottom: 2px;
+    text-shadow: 0 0 14px rgba(140, 255, 0, 0.28) !important;
+    line-height: 1.05 !important;
+    margin-bottom: 2px !important;
   }
 
   .mobile-desc {
-    max-width: 330px;
-    font-size: 16px;
-    line-height: 1.7;
+    max-width: 320px !important;
+    font-size: 16px !important;
+    line-height: 1.7 !important;
     color: rgba(230, 235, 245, 0.85);
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 32px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 36px !important;
+    text-align: center !important;
   }
 
   /* Buttons */
@@ -643,14 +650,14 @@ body.no-scroll {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 12px;
+    gap: 18px !important;
   }
   
   .mobile-cta-group .btn {
-    width: 100%;
-    height: 56px;
-    min-height: 56px;
-    border-radius: 16px;
+    width: 100% !important;
+    height: 56px !important;
+    min-height: 56px !important;
+    border-radius: 16px !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -665,85 +672,119 @@ body.no-scroll {
   }
 }
 
-  /* ==========================================================================
-     MOBILE ABOUT SECTION REDESIGN
-     ========================================================================== */
-  .about-grid .reveal-left {
-    text-align: center !important;
+  /* FEATURES CARD REDESIGN */
+  .highlights-section {
+    padding: 40px 0 !important;
   }
-  
-  .about-grid .reveal-left h2 {
-    font-size: 2.25rem !important;
-    line-height: 1.1 !important;
-    margin-bottom: 32px !important;
-    text-align: center !important;
-  }
-  
-  .about-grid .reveal-left p {
-    text-align: center !important;
-  }
-  
-  .about-grid .btn-about-more {
-    width: 100% !important;
-    height: 56px !important;
-    min-height: 56px !important;
-    border-radius: 16px !important;
-    transition: box-shadow 0.3s ease !important;
-  }
-  
-  .about-grid .btn-about-more:active, .about-grid .btn-about-more:hover {
-    box-shadow: 0 0 15px rgba(140, 255, 0, 0.4) !important;
-  }
-  
-  .about-grid {
-    gap: 2rem !important;
-  }
-  
-  .about-grid .feature-grid-2x2 {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 20px !important;
+
+  .highlights-container {
     width: 92% !important;
     margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
     padding: 24px !important;
-    border-radius: 22px !important;
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
-    backdrop-filter: blur(12px) !important;
+    border-radius: 24px !important;
+    background: rgba(15, 15, 15, 0.7) !important;
+    backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(140, 255, 0, 0.25) !important;
+    box-shadow: 0 0 25px rgba(140, 255, 0, 0.1) !important;
+    height: auto !important;
+    justify-content: flex-start !important;
   }
-  
-  .about-grid .about-card {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
+
+  .highlight-divider {
+    display: none !important;
+  }
+
+  .highlight-item {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     gap: 16px !important;
+    width: 100% !important;
+    justify-content: flex-start !important;
+  }
+
+  .highlight-icon svg {
+    width: 22px !important;
+    height: 22px !important;
+    color: #8CFF00 !important;
+  }
+
+  .highlight-text {
+    font-size: 20px !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    font-weight: 600 !important;
+  }
+
+  /* STATISTICS SECTION REDESIGN */
+  #statistics {
+    padding: 40px 0 !important;
   }
   
-  .about-grid .about-card-icon-wrapper {
-    margin: 0 !important;
-    width: 28px !important;
-    height: 28px !important;
-    min-width: 28px !important;
+  #statistics .grid-4 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    width: 92% !important;
+    margin: 0 auto !important;
   }
-  
-  .about-grid .about-card-icon-wrapper svg {
-    width: 16px !important;
-    height: 16px !important;
+
+  #statistics .grid-4 > div {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 20px !important;
+    height: 92px !important;
+    border-radius: 18px !important;
+    padding: 20px 24px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(15px) !important;
+    transition: box-shadow 0.3s ease !important;
   }
-  
-  .about-grid .about-card h3 {
-    margin: 0 !important;
+
+  #statistics .grid-4 > div:active, #statistics .grid-4 > div:hover {
+    box-shadow: 0 0 15px rgba(140, 255, 0, 0.2) !important;
+    border-color: rgba(140, 255, 0, 0.3) !important;
+  }
+
+  #statistics .grid-4 > div > div:first-child {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(140, 255, 0, 0.15) !important;
+  }
+
+  #statistics .grid-4 > div > div:first-child svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  #statistics .grid-4 > div > div:last-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+  }
+
+  #statistics .stat-number {
+    font-size: 44px !important;
+    line-height: 1 !important;
+  }
+
+  #statistics .grid-4 > div > div:last-child > div:last-child {
     font-size: 18px !important;
-    text-align: left !important;
-  }
-  
-  .about-grid .about-card p {
-    display: none !important;
+    margin-top: 0 !important;
+    letter-spacing: 0.05em !important;
   }
 
 /* ==========================================================================
