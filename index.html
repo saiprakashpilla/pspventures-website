@@ -60,10 +60,19 @@
 
       <!-- Navigation Links -->
       <nav>
-        <ul class="nav-links">
+        <!-- Desktop Nav -->
+        <ul class="nav-links desktop-nav">
           <li><a href="index.html" class="active">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
           <li><a href="products.html">OUR WORK</a></li>
+        </ul>
+        
+        <!-- Mobile Nav (Title Case, includes Get In Touch) -->
+        <ul class="nav-links mobile-nav" style="display: none;">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Our Work</a></li>
+          <li><a href="contact.html">Get In Touch</a></li>
         </ul>
       </nav>
 
@@ -304,7 +313,7 @@
             
             <!-- Card 1: Innovation -->
             <div class="card-float-wrapper float-1">
-              <div class="glass-card about-card glow-green reveal reveal-scale" style="transition-delay: 0.05s;">
+              <div class="glass-card about-card glow-green reveal reveal-scale m-animate-fade-up" style="transition-delay: 0.05s;">
                 <div class="about-card-icon-wrapper icon-green">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path><path d="M12 16V12"></path><path d="M12 8H12.01"></path></svg>
                 </div>
@@ -317,7 +326,7 @@
 
             <!-- Card 2: Focus -->
             <div class="card-float-wrapper float-2">
-              <div class="glass-card about-card glow-cyan reveal reveal-scale" style="transition-delay: 0.15s;">
+              <div class="glass-card about-card glow-cyan reveal reveal-scale m-animate-fade-up" style="transition-delay: 0.15s;">
                 <div class="about-card-icon-wrapper icon-cyan">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
                 </div>
@@ -330,7 +339,7 @@
 
             <!-- Card 3: Performance -->
             <div class="card-float-wrapper float-2">
-              <div class="glass-card about-card glow-cyan reveal reveal-scale" style="transition-delay: 0.25s;">
+              <div class="glass-card about-card glow-cyan reveal reveal-scale m-animate-fade-up" style="transition-delay: 0.25s;">
                 <div class="about-card-icon-wrapper icon-cyan">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                 </div>
@@ -343,7 +352,7 @@
 
             <!-- Card 4: Trust -->
             <div class="card-float-wrapper float-1">
-              <div class="glass-card about-card glow-green reveal reveal-scale" style="transition-delay: 0.35s;">
+              <div class="glass-card about-card glow-green reveal reveal-scale m-animate-fade-up" style="transition-delay: 0.35s;">
                 <div class="about-card-icon-wrapper icon-green">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 </div>
@@ -382,14 +391,14 @@
       </div>
 
       <!-- Featured Card: PSP Portfolio -->
-      <div class="featured-product-card product-card glow-green-cyan reveal delay-1">
+      <div class="featured-product-card product-card glow-green-cyan reveal delay-1 m-animate-fade-up">
         <div class="featured-bg-layer"></div>
         <div class="featured-product-details" style="display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem;">
           <div>
             <div class="product-card-top" style="align-items: flex-start;">
               <div style="width: 165px; height: 48px; display: flex; align-items: center; margin-bottom: 0.5rem; position: relative;">
                 <div style="position: absolute; width: 80px; height: 80px; background: rgba(140, 255, 0, 0.15); filter: blur(20px); border-radius: 50%; left: -20px;"></div>
-                <img src="assets/product-logos/psp-ventures-logo.png" alt="PSP Ventures Logo" onerror="this.style.display='none'" style="width: 48px; height: auto; object-fit: contain; object-position: left center; display: block; margin: 0; position: relative; z-index: 1;">
+                <img src="assets/product-logos/psp-ventures-logo.png" alt="PSP Ventures Logo" loading="lazy" onerror="this.style.display='none'" style="width: 48px; height: auto; object-fit: contain; object-position: left center; display: block; margin: 0; position: relative; z-index: 1;">
               </div>
               <span class="product-badge-live">LIVE</span>
             </div>
@@ -481,12 +490,12 @@
       <div class="products-grid-3 reveal delay-2">
         
         <!-- Card 1: My Savings Book -->
-        <div class="product-card glow-green" style="position: relative; overflow: hidden;">
+        <div class="product-card glow-green m-animate-fade-up" style="position: relative; overflow: hidden;">
           <div class="top-glow-savings"></div>
           <div class="motif-savings"></div>
           <div class="product-card-body-wrapper" style="position: relative; z-index: 1;">
             <div class="product-card-top">
-              <img src="assets/product-logos/my-savings-book.png" alt="My Savings Book Logo" onerror="this.style.display='none'" style="width: 56px; height: 56px; object-fit: contain; object-position: center; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+              <img src="assets/product-logos/my-savings-book.png" alt="My Savings Book Logo" loading="lazy" onerror="this.style.display='none'" style="width: 56px; height: 56px; object-fit: contain; object-position: center; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
               <span class="product-badge-live">LIVE</span>
             </div>
             <div class="product-card-body">
@@ -513,12 +522,12 @@
         </div>
 
         <!-- Card 2: Trend Bull -->
-        <div class="product-card glow-cyan" style="position: relative; overflow: hidden;">
+        <div class="product-card glow-cyan m-animate-fade-up" style="position: relative; overflow: hidden;">
           <div class="top-glow-trendbull"></div>
           <div class="motif-trendbull"></div>
           <div class="product-card-body-wrapper" style="position: relative; z-index: 1;">
             <div class="product-card-top">
-              <img src="assets/product-logos/trend-bull-logo.png" alt="Trend Bull Logo" onerror="this.style.display='none'" style="width: 135px; height: auto; max-width: 135px; max-height: 80px; object-fit: contain; object-position: left center; flex-shrink: 0; margin-left: -30px; margin-right: -30px;">
+              <img src="assets/product-logos/trend-bull-logo.png" alt="Trend Bull Logo" loading="lazy" onerror="this.style.display='none'" style="width: 135px; height: auto; max-width: 135px; max-height: 80px; object-fit: contain; object-position: left center; flex-shrink: 0; margin-left: -30px; margin-right: -30px;">
               <span class="product-badge-live">LIVE</span>
             </div>
             <div class="product-card-body">
@@ -545,12 +554,12 @@
         </div>
 
         <!-- Card 3: AI Trading Bot -->
-        <div class="product-card glow-purple card-muted" style="position: relative; overflow: hidden;">
+        <div class="product-card glow-purple card-muted m-animate-fade-up" style="position: relative; overflow: hidden;">
           <div class="top-glow-aitrading"></div>
           <div class="motif-aitrading"></div>
           <div class="product-card-body-wrapper" style="position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1;">
             <div class="product-card-top">
-              <img src="assets/product-logos/ai-trading-bot.png" alt="AI Trading Bot Logo" onerror="this.style.display='none'" style="width: 58px; height: 58px; object-fit: contain; object-position: center; border-radius: 8px; box-shadow: 0 0 15px rgba(138, 92, 255, 0.3);">
+              <img src="assets/product-logos/ai-trading-bot.png" alt="AI Trading Bot Logo" loading="lazy" onerror="this.style.display='none'" style="width: 58px; height: 58px; object-fit: contain; object-position: center; border-radius: 8px; box-shadow: 0 0 15px rgba(138, 92, 255, 0.3);">
               <span class="product-badge-future">IN DEVELOPMENT</span>
             </div>
             <div class="product-card-body" style="flex: 1; display: flex; flex-direction: column;">
@@ -640,7 +649,7 @@
     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 300px; background: radial-gradient(circle, rgba(127, 255, 0, 0.08) 0%, rgba(0,0,0,0) 80%); filter: blur(40px); pointer-events: none; z-index: 1;"></div>
     
     <div class="container" style="position: relative; z-index: 2;">
-      <div class="glass-card glow-green reveal" style="display: flex; justify-content: space-between; align-items: center; gap: 2.5rem; flex-wrap: wrap; padding: 3.5rem 4rem; background: rgba(14, 14, 14, 0.65);">
+      <div class="glass-card glow-green reveal m-animate-fade-up" style="display: flex; justify-content: space-between; align-items: center; gap: 2.5rem; flex-wrap: wrap; padding: 3.5rem 4rem; background: rgba(14, 14, 14, 0.65);">
         <div style="text-align: left;">
           <span class="section-subtitle" style="margin-bottom: 0.75rem;">COLLABORATION</span>
           <h2 style="font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; margin-bottom: 0; letter-spacing: -0.01em;">

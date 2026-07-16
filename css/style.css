@@ -2513,6 +2513,11 @@ body footer, body footer.section-masked {
   50% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
 }
 
+#ceo-section {
+  margin-top: 60px;
+  margin-bottom: 2rem;
+}
+
 .founder-img-wrapper {
   position: relative;
   width: 100%;
@@ -2523,6 +2528,10 @@ body footer, body footer.section-masked {
   overflow: hidden;
   mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
   -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 100%);
+}
+
+.footer-chevron {
+  display: none;
 }
 
 @keyframes portrait-breathe {
