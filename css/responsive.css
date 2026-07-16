@@ -773,28 +773,12 @@ body.no-scroll {
     margin: 0 auto !important;
   }
   .founder-img-wrapper {
-    width: 85% !important;
     margin: 0 auto !important;
   }
-  .founder-content {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  .founder-content h2,
-  .founder-content .section-subtitle,
-  .founder-content div[style*="max-width: 520px"] p {
-    text-align: center !important;
-  }
-  .founder-content .premium-divider {
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-  .founder-content > div[style*="flex-wrap: wrap"],
-  .founder-content > div[style*="gap: 18px"] {
-    justify-content: center !important;
+
+  /* Make About cards full width and vertically stacked */
+  .founder-expertise-card {
+    width: 100% !important;
+    height: 200px !important;
   }
 }
