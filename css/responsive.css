@@ -565,8 +565,8 @@ body.no-scroll {
   #hero {
     height: auto !important;
     min-height: auto !important;
-    padding-top: 80px !important;
-    padding-bottom: 40px !important;
+    padding-top: 70px !important;
+    padding-bottom: 20px !important;
     overflow: hidden; 
     position: relative !important;
   }
@@ -603,7 +603,7 @@ body.no-scroll {
     font-size: clamp(10px, 3vw, 14px) !important;
     color: var(--primary-accent);
     font-weight: 700;
-    margin: 0 0 24px 0 !important;
+    margin: 0 0 16px 0 !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
     overflow-wrap: break-word !important;
@@ -617,7 +617,7 @@ body.no-scroll {
     left: auto !important;
     transform: none !important;
     width: 100% !important;
-    height: 180px !important; /* Base height for the flex flow */
+    height: 160px !important; /* Base height for the flex flow */
     min-height: unset !important;
     z-index: 1 !important;
     opacity: 1 !important;
@@ -625,7 +625,7 @@ body.no-scroll {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    margin: 0 0 24px 0 !important;
+    margin: 0 0 20px 0 !important;
   }
   
   .hero-hologram-col .hologram-wrapper {
@@ -638,6 +638,12 @@ body.no-scroll {
 
   .hero-hologram-col .hologram-platform-base {
     transform: scale(0.65) !important;
+    opacity: 0.6 !important;
+  }
+
+  .hero-hologram-col .hologram-hud-grid,
+  .hero-hologram-col .hologram-radar {
+    transform: scale(0.6) !important;
     opacity: 0.6 !important;
   }
 
@@ -663,7 +669,7 @@ body.no-scroll {
     color: var(--text-primary);
     line-height: 1.0 !important;
     font-size: clamp(28px, 8vw, 54px) !important;
-    margin: 0 0 24px 0 !important;
+    margin: 0 0 18px 0 !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
     overflow-wrap: break-word !important;
@@ -683,7 +689,7 @@ body.no-scroll {
   
   .mobile-title .neon-text:nth-of-type(2) {
     font-size: clamp(48px, 12vw, 76px) !important;
-    margin: 0 0 14px 0 !important;
+    margin: 0 0 8px 0 !important;
   }
   
   .mobile-title .neon-text:nth-of-type(3) {
@@ -697,7 +703,7 @@ body.no-scroll {
     font-size: 16px !important;
     line-height: 1.7 !important;
     color: rgba(230, 235, 245, 0.88) !important;
-    margin: 0 auto 24px auto !important;
+    margin: 0 auto 28px auto !important;
     text-align: center !important;
   }
 
