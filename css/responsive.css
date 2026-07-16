@@ -786,15 +786,15 @@ body.no-scroll {
      GLOBAL MOBILE SPACING OPTIMIZATION
      ========================================================================== */
   
-  /* Reduce global section padding by ~25-30% */
-  .section {
+  /* Reduce global section padding by ~25-30%, explicitly excluding the Hero (first section) */
+  body > section:not(:first-of-type) {
     padding-top: 3.25rem !important;
     padding-bottom: 3.25rem !important;
   }
   
-  /* Hero section whitespace reduction */
-  .hero {
-    padding-top: 160px !important;
+  /* Hero section whitespace fix - consistently apply sufficient padding to clear fixed navbar across all pages */
+  body > section:first-of-type {
+    padding-top: calc(var(--header-height) + 5rem) !important;
     padding-bottom: 50px !important;
   }
 
