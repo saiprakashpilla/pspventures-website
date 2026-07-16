@@ -842,4 +842,14 @@ body.no-scroll {
   .premium-divider[style*="margin: 30px"] {
     margin: 20px 0 15px 0 !important;
   }
+  
+  /* Reduce space between Hero buttons and Follow Our Journey section */
+  .hero-social-section {
+    margin-top: 2.25rem !important;
+  }
+  
+  /* Tighten bottom padding of Hero section for a more connected transition */
+  body > section:first-of-type {
+    padding-bottom: 1.5rem !important;
+  }
 }
