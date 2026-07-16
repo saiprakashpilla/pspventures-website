@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initHologramParticles();
   initHeroParallax();
   initContactForm();
-  initMobileAnimations();
 });
 
 /* ==========================================================================
@@ -58,15 +57,6 @@ function initNavigation() {
         nav.classList.remove('nav-active');
         document.body.classList.remove('no-scroll');
       });
-    });
-
-    // Close when clicking outside (on the overlay background)
-    nav.addEventListener('click', (e) => {
-      if (e.target === nav || e.target.classList.contains('nav-links')) {
-        hamburger.classList.remove('active');
-        nav.classList.remove('nav-active');
-        document.body.classList.remove('no-scroll');
-      }
     });
   }
 
@@ -113,35 +103,6 @@ function initScrollReveals() {
 
   reveals.forEach(reveal => {
     revealObserver.observe(reveal);
-  });
-}
-
-/* ==========================================================================
-   Mobile-Specific Animations
-   ========================================================================== */
-function initMobileAnimations() {
-  if (window.innerWidth > 768) return; // Only run on mobile
-
-  const mobileReveals = document.querySelectorAll('.m-animate-fade-up');
-  if (!mobileReveals.length) return;
-
-  const mobileObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        // Stagger animation based on index
-        setTimeout(() => {
-          entry.target.classList.add('is-visible');
-        }, index * 100);
-        mobileObserver.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -20px 0px'
-  });
-
-  mobileReveals.forEach(reveal => {
-    mobileObserver.observe(reveal);
   });
 }
 
@@ -212,8 +173,7 @@ function initBackgroundParticles() {
   let width = 0;
   let height = 0;
   const particles = [];
-  const isMobileGlobal = window.matchMedia("(max-width: 768px)").matches;
-  const maxParticles = isMobileGlobal ? Math.floor(250 * 0.4) : 250;
+  const maxParticles = 250;
 
   function resize() {
     width = window.innerWidth;
@@ -405,8 +365,7 @@ function initHologramParticles() {
   let width = 0;
   let height = 0;
   const particles = [];
-  const isMobileHolo = window.matchMedia("(max-width: 768px)").matches;
-  const maxParticles = isMobileHolo ? Math.floor(720 * 0.4) : 720; // Reduced density by 20% to keep logo as primary focus
+  const maxParticles = 720; // Reduced density by 20% to keep logo as primary focus
 
   let platformOffsetY = 360;
   let maxOrbitDistance = 530;

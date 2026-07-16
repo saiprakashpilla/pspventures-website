@@ -42,7 +42,7 @@ class SiteFooter extends HTMLElement {
             </div>
     
             <div class="footer-column">
-              <h4>Quick Links <svg class="footer-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></h4>
+              <h4>Quick Links</h4>
               <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -52,7 +52,7 @@ class SiteFooter extends HTMLElement {
             </div>
     
             <div class="footer-column">
-              <h4>Products <svg class="footer-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></h4>
+              <h4>Products</h4>
               <ul class="footer-links">
                 <li><a href="products.html">All Products</a></li>
                 <li><a href="product-mysavingsbook.html">Mobile Apps</a></li>
@@ -62,7 +62,7 @@ class SiteFooter extends HTMLElement {
             </div>
     
             <div class="footer-column">
-              <h4>Legal <svg class="footer-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></h4>
+              <h4>Legal</h4>
               <ul class="footer-links">
                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
                 <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
@@ -71,7 +71,7 @@ class SiteFooter extends HTMLElement {
             </div>
     
             <div class="footer-column">
-              <h4>Get In Touch <svg class="footer-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></h4>
+              <h4>Get In Touch</h4>
               <ul class="footer-links">
                 <li style="font-size: 0.95rem; color: var(--text-secondary); word-break: break-all;">
                   <a href="mailto:pspventuresofficial@gmail.com" style="color: var(--primary-accent); transition: color 0.3s ease;">pspventuresofficial@gmail.com</a>
@@ -93,17 +93,6 @@ class SiteFooter extends HTMLElement {
         </div>
       </footer>
     `;
-
-    // Accordion logic for mobile
-    const headers = this.querySelectorAll('.footer-column h4');
-    headers.forEach(header => {
-      header.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          const parent = header.parentElement;
-          parent.classList.toggle('active');
-        }
-      });
-    });
   }
 }
 
