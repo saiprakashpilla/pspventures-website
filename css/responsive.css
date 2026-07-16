@@ -565,8 +565,8 @@ body.no-scroll {
   #hero {
     height: auto !important;
     min-height: auto !important;
-    padding-top: 96px !important;
-    padding-bottom: 30px !important;
+    padding-top: 80px !important;
+    padding-bottom: 20px !important;
     overflow: hidden; 
     position: relative !important;
   }
@@ -574,7 +574,7 @@ body.no-scroll {
   /* Make hologram a glowing background element to fit naturally on phone */
   .hero-hologram-col {
     position: absolute !important;
-    top: 140px !important;
+    top: 145px !important;
     left: 50% !important;
     transform: translate(-50%, -50%) scale(0.49) !important;
     width: 100vw !important;
@@ -588,6 +588,11 @@ body.no-scroll {
     opacity: 0.25 !important;
   }
 
+  .hero-hologram-col .hologram-platform-base {
+    transform: scale(0.65) !important;
+    opacity: 0.6 !important;
+  }
+
   /* Center everything */
   .mobile-hero-content {
     display: flex;
@@ -596,8 +601,8 @@ body.no-scroll {
     text-align: center;
     width: 100%;
     position: relative;
-    padding-top: 230px !important;
-    background: radial-gradient(circle at 50% 30%, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.5) 45%, transparent 70%);
+    padding-top: 250px !important;
+    background: radial-gradient(circle at 50% 30%, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.75) 55%, transparent 80%);
   }
 
   /* Typography & Spacing */
@@ -609,7 +614,7 @@ body.no-scroll {
     color: var(--primary-accent);
     font-weight: 700;
     position: absolute !important;
-    top: 20px !important;
+    top: 40px !important;
     left: 50% !important;
     transform: translateX(-50%);
     margin: 0 !important;
@@ -620,7 +625,7 @@ body.no-scroll {
     font-weight: 900;
     line-height: 1.0;
     color: var(--text-primary);
-    margin-bottom: 16px !important;
+    margin-bottom: 0px !important;
   }
   
   .mobile-title br {
@@ -629,8 +634,8 @@ body.no-scroll {
 
   .mobile-title .line-1 {
     display: block;
-    font-size: 26px !important;
-    margin-bottom: 32px !important;
+    font-size: 54px !important;
+    margin-bottom: 26px !important;
   }
   
   .mobile-title .neon-text {
@@ -642,10 +647,12 @@ body.no-scroll {
   }
   
   .mobile-title .neon-text:first-of-type {
-    margin-bottom: 18px !important;
+    font-size: 76px !important;
+    margin-bottom: 14px !important;
   }
   
   .mobile-title .neon-text:last-of-type {
+    font-size: 88px !important;
     margin-bottom: 0 !important;
   }
 
@@ -653,10 +660,10 @@ body.no-scroll {
     max-width: 320px !important;
     font-size: 16px !important;
     line-height: 1.65 !important;
-    color: rgba(230, 235, 245, 0.85);
+    color: rgba(230, 235, 245, 0.88) !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    margin-bottom: 32px !important;
+    margin-bottom: 14px !important;
     text-align: center !important;
   }
 
@@ -671,8 +678,8 @@ body.no-scroll {
   
   .mobile-cta-group .btn {
     width: 100% !important;
-    height: 56px !important;
-    min-height: 56px !important;
+    height: 50px !important;
+    min-height: 50px !important;
     border-radius: 16px !important;
     display: flex;
     justify-content: center;
