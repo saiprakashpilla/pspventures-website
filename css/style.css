@@ -3205,3 +3205,4 @@ body footer, body footer.section-masked {
 .mobile-text { display: none; }
 .desktop-text { display: inline; }
 .mobile-only-link { display: none; }
+.mobile-only-btn { display: none; }

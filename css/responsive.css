@@ -654,4 +654,147 @@ body.no-scroll {
     text-align: center !important;
     justify-content: center !important;
   }
+
+  /* ==========================================================================
+     ABOUT PAGE MOBILE REDESIGN
+     ========================================================================== */
+  /* --- 1. SERVICE CARDS --- */
+  .grid-2[style*="scale"] {
+    transform: none !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    gap: 24px !important;
+  }
+  .pillar-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+    min-height: 260px !important;
+    height: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  }
+  .pillar-card:active {
+    transform: scale(0.96) !important;
+    box-shadow: 0 0 20px rgba(140, 255, 0, 0.2) !important;
+  }
+
+  /* --- 2. QUOTE SECTION --- */
+  .quote-card-glass {
+    width: 90% !important;
+    max-width: 90% !important;
+    margin: 0 auto !important;
+    padding: 24px 32px !important; 
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border-left: 3px solid var(--primary-accent) !important;
+  }
+  .quote-card-glass p {
+    font-size: 0.95rem !important; 
+  }
+  /* Scale down quotation marks */
+  .quote-card-glass::before, .quote-card-glass::after {
+    font-size: 3rem !important; /* Original might be bigger */
+  }
+
+  /* --- 3. TIMELINE --- */
+  .timeline-container {
+    width: 100% !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .timeline-line {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .timeline-step {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    margin: 0 0 40px 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+  .step-left .timeline-card,
+  .step-right .timeline-card {
+    margin: 32px 0 0 0 !important;
+    width: 85% !important;
+    text-align: center !important;
+  }
+  .timeline-dot {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    margin: 0 auto !important;
+  }
+  .timeline-card p {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 6 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    margin-bottom: 0 !important;
+  }
+  .timeline-card p.expanded {
+    -webkit-line-clamp: unset !important;
+  }
+  .read-more-btn {
+    background: none !important;
+    border: none !important;
+    color: var(--primary-accent) !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    padding: 12px 0 0 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    display: inline-block !important;
+  }
+  .read-more-btn:active {
+    opacity: 0.7 !important;
+  }
+
+  /* --- 4. FOUNDER SECTION ALIGNMENT --- */
+  .founder-hologram-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+  }
+  .founder-img-wrapper {
+    width: 85% !important;
+    margin: 0 auto !important;
+  }
+  .founder-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .founder-content h2,
+  .founder-content .section-subtitle,
+  .founder-content div[style*="max-width: 520px"] p {
+    text-align: center !important;
+  }
+  .founder-content .premium-divider {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .founder-content > div[style*="flex-wrap: wrap"],
+  .founder-content > div[style*="gap: 18px"] {
+    justify-content: center !important;
+  }
 }

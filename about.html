@@ -303,6 +303,7 @@
             <span class="timeline-date">Q2 2026</span>
             <h4>Trend Bull Launch</h4>
             <p>Launch of Trend Bull, PSP Ventures' intelligent stock market platform designed to provide market insights, screening tools, financial resources, and a modern investment experience for traders and investors.</p>
+            <button class="read-more-btn mobile-only-btn">Read More</button>
           </div>
         </div>
 
@@ -313,6 +314,7 @@
             <span class="timeline-date">Q3 2026</span>
             <h4>PSP Ventures Official Launch</h4>
             <p>Official launch of the PSP Ventures website and digital portfolio, establishing the company's online presence and showcasing products, innovation, and future technology initiatives.</p>
+            <button class="read-more-btn mobile-only-btn">Read More</button>
           </div>
         </div>
 
@@ -323,6 +325,7 @@
             <span class="timeline-date">Q4 2026</span>
             <h4>My Savings Book Release</h4>
             <p>Release of My Savings Book, a personal finance application that enables users to track income, expenses, savings, and financial goals through a secure and offline-first experience.</p>
+            <button class="read-more-btn mobile-only-btn">Read More</button>
           </div>
         </div>
 
@@ -333,6 +336,7 @@
             <span class="timeline-date">Q1 2027</span>
             <h4>AI Trading Bot Beta</h4>
             <p>Launch of the first beta version of the AI Trading Bot, introducing AI-powered market analysis, intelligent trading insights, and algorithmic automation for modern investors.</p>
+            <button class="read-more-btn mobile-only-btn">Read More</button>
           </div>
         </div>
 
@@ -343,6 +347,7 @@
             <span class="timeline-date">2028 - 2030</span>
             <h4>Global SaaS Expansion</h4>
             <p>Expand PSP Ventures into a global software ecosystem by launching new AI products, SaaS platforms, developer tools, productivity applications, and enterprise solutions while continuously improving existing products.</p>
+            <button class="read-more-btn mobile-only-btn">Read More</button>
           </div>
         </div>
       </div>
@@ -380,5 +385,22 @@
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
+  <script>
+    // Timeline Read More Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.timeline-card .read-more-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const p = e.target.previousElementSibling;
+          if (p.classList.contains('expanded')) {
+            p.classList.remove('expanded');
+            e.target.textContent = 'Read More';
+          } else {
+            p.classList.add('expanded');
+            e.target.textContent = 'Show Less';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
