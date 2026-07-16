@@ -93,6 +93,25 @@ class SiteFooter extends HTMLElement {
         </div>
       </footer>
     `;
+    
+    // Add Accordion logic
+    setTimeout(() => {
+      const columns = this.querySelectorAll('.footer-column');
+      columns.forEach(col => {
+        const header = col.querySelector('h4');
+        if (header) {
+          header.addEventListener('click', () => {
+            const isActive = col.classList.contains('active');
+            // Close all siblings
+            columns.forEach(c => c.classList.remove('active'));
+            // Toggle current
+            if (!isActive) {
+              col.classList.add('active');
+            }
+          });
+        }
+      });
+    }, 0);
   }
 }
 
