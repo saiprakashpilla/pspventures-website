@@ -552,20 +552,24 @@ body.no-scroll {
   }
 }
 
-@media screen and (max-width: 768px) {
-  /* Hide all original desktop elements inside .reveal-left */
+@media screen and (max-width: 768px)   /* Hide the custom mobile hero injected into the HTML */
+  .mobile-hero-content {
+    display: none !important;
+  }
+  
+  /* Unhide all original desktop elements inside .reveal-left and set to flex for ordering */
   .reveal-left > .section-subtitle,
   .reveal-left > h1,
   .reveal-left > p,
   .reveal-left > .hero-buttons,
   .reveal-left > .hero-social-section {
-    display: none !important;
+    display: flex !important;
   }
   
   #hero {
     height: auto !important;
     min-height: auto !important;
-    padding-top: 70px !important;
+    padding-top: 60px !important;
     padding-bottom: 20px !important;
     overflow: hidden; 
     position: relative !important;
@@ -588,28 +592,25 @@ body.no-scroll {
   }
 
   /* Flatten DOM to naturally mix left and right columns */
-  .reveal-left, .mobile-hero-content {
+  .reveal-left {
     display: contents !important;
   }
 
-  /* Typography & Spacing - Flex Items */
-  .mobile-subtitle {
+  /* 1. Desktop Subtitle: WELCOME TO */
+  .reveal-left > .section-subtitle {
     order: 1 !important;
-    position: static !important;
-    transform: none !important;
-    font-family: var(--font-display);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: clamp(10px, 3vw, 14px) !important;
-    color: var(--primary-accent);
-    font-weight: 700;
+    font-size: clamp(12px, 3.5vw, 16px) !important;
     margin: 0 0 16px 0 !important;
+    letter-spacing: 0.15em !important;
+    font-family: var(--font-display) !important;
+    color: var(--primary-accent) !important;
+    font-weight: 700 !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
     overflow-wrap: break-word !important;
   }
 
-  /* Make hologram a normal document flow element */
+  /* 2. Logo */
   .hero-hologram-col {
     order: 2 !important;
     position: relative !important;
@@ -617,7 +618,7 @@ body.no-scroll {
     left: auto !important;
     transform: none !important;
     width: 100% !important;
-    height: 160px !important; /* Base height for the flex flow */
+    height: 120px !important; /* Reduced to accommodate smaller logo */
     min-height: unset !important;
     z-index: 1 !important;
     opacity: 1 !important;
@@ -625,11 +626,11 @@ body.no-scroll {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    margin: 0 0 20px 0 !important;
+    margin: 0 0 16px 0 !important;
   }
   
   .hero-hologram-col .hologram-wrapper {
-    transform: scale(0.49) !important;
+    transform: scale(0.3) !important; /* scaled down proportionally */
   }
 
   .hero-hologram-col .hologram-glow-radial {
@@ -647,92 +648,74 @@ body.no-scroll {
     opacity: 0.6 !important;
   }
 
-  /* Group title elements properly */
-  .mobile-title {
+  /* 3. Desktop Title: INNOVATE. BUILD. IMPACT. */
+  .reveal-left > h1 {
     order: 3 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    margin: 0 0 24px 0 !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .mobile-title br {
-    display: none !important;
-  }
-
-  .mobile-title .line-1 {
-    display: block;
-    font-family: var(--font-display);
-    font-weight: 900;
-    color: var(--text-primary);
+    display: block !important;
+    font-family: var(--font-display) !important;
+    font-weight: 900 !important;
+    color: var(--text-primary) !important;
     line-height: 1.0 !important;
-    font-size: clamp(28px, 8vw, 54px) !important;
-    margin: 0 0 18px 0 !important;
+    font-size: clamp(36px, 10vw, 60px) !important;
+    margin: 0 0 20px 0 !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
     overflow-wrap: break-word !important;
   }
   
-  .mobile-title .neon-text {
-    display: block;
-    font-family: var(--font-display);
-    font-weight: 900;
-    color: #8CFF00; /* Neon green */
-    text-shadow: 0 0 10px rgba(140, 255, 0, 0.2) !important;
-    line-height: 1.05 !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    overflow-wrap: break-word !important;
-  }
-  
-  .mobile-title .neon-text:nth-of-type(2) {
-    font-size: clamp(48px, 12vw, 76px) !important;
-    margin: 0 0 8px 0 !important;
-  }
-  
-  .mobile-title .neon-text:nth-of-type(3) {
-    font-size: clamp(56px, 14vw, 88px) !important;
-    margin: 0 !important;
+  .reveal-left > h1 br {
+    display: block !important;
   }
 
-  .mobile-desc {
+  /* 4. Desktop Description */
+  .reveal-left > p {
     order: 4 !important;
+    display: block !important;
     max-width: 320px !important;
     font-size: 16px !important;
     line-height: 1.7 !important;
     color: rgba(230, 235, 245, 0.88) !important;
-    margin: 0 auto 28px auto !important;
+    margin: 0 auto 24px auto !important;
     text-align: center !important;
   }
 
-  /* Buttons */
-  .mobile-cta-group {
+  /* 5. Desktop Buttons */
+  .reveal-left > .hero-buttons {
     order: 5 !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 18px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 16px !important;
+    margin: 0 !important;
   }
   
-  .mobile-cta-group .btn {
+  .reveal-left > .hero-buttons .btn {
     width: min(90%, 420px) !important;
     height: 50px !important;
     min-height: 50px !important;
     border-radius: 16px !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    font-size: 16px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+  }
+  
+  .reveal-left > .hero-buttons .btn svg {
+    margin-left: 8px !important;
+    width: 18px !important;
+    height: 18px !important;
   }
 
-  .mobile-cta-group .btn svg {
-    margin-left: 8px;
-    width: 18px;
-    height: 18px;
+  /* 6. Desktop Social Icons */
+  .reveal-left > .hero-social-section {
+    order: 6 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin: 32px 0 0 0 !important;
+    gap: 12px !important;
   }
 }
 
