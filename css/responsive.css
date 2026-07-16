@@ -570,20 +570,68 @@ body.no-scroll {
     overflow: hidden; 
     position: relative !important;
   }
+  
+  #hero .container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    box-sizing: border-box !important;
+  }
 
-  /* Make hologram a glowing background element to fit naturally on phone */
+  /* Completely fluid hero flex container */
+  .hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Flatten DOM so elements can be ordered naturally */
+  .reveal-left, .mobile-hero-content, .mobile-title {
+    display: contents !important;
+  }
+
+  /* Typography & Spacing - Flex Items */
+  .mobile-subtitle {
+    order: 1 !important;
+    position: static !important;
+    transform: none !important;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: clamp(10px, 3vw, 14px) !important;
+    color: var(--primary-accent);
+    font-weight: 700;
+    margin: 0 0 2vh 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Make hologram a normal document flow element */
   .hero-hologram-col {
-    position: absolute !important;
-    top: 145px !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) scale(0.49) !important;
-    width: 100vw !important;
+    order: 2 !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: 180px !important; /* Base height for the flex flow */
     min-height: unset !important;
-    z-index: -1 !important;
+    z-index: 1 !important;
     opacity: 1 !important;
     pointer-events: none;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 2vh 0 !important;
   }
   
+  .hero-hologram-col .hologram-wrapper {
+    transform: scale(0.49) !important;
+  }
+
   .hero-hologram-col .hologram-glow-radial {
     opacity: 0.25 !important;
   }
@@ -593,82 +641,61 @@ body.no-scroll {
     opacity: 0.6 !important;
   }
 
-  /* Center everything */
-  .mobile-hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    position: relative;
-    padding-top: 250px !important;
-    background: radial-gradient(circle at 50% 30%, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.75) 55%, transparent 80%);
-  }
-
-  /* Typography & Spacing */
-  .mobile-subtitle {
-    font-family: var(--font-display);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 12px;
-    color: var(--primary-accent);
-    font-weight: 700;
-    position: absolute !important;
-    top: 40px !important;
-    left: 50% !important;
-    transform: translateX(-50%);
-    margin: 0 !important;
-  }
-
-  .mobile-title {
-    font-family: var(--font-display);
-    font-weight: 900;
-    line-height: 1.0;
-    color: var(--text-primary);
-    margin-bottom: 0px !important;
-  }
-  
   .mobile-title br {
     display: none !important;
   }
 
   .mobile-title .line-1 {
+    order: 3 !important;
     display: block;
-    font-size: 54px !important;
-    margin-bottom: 26px !important;
+    font-family: var(--font-display);
+    font-weight: 900;
+    color: var(--text-primary);
+    line-height: 1.0 !important;
+    font-size: clamp(28px, 8vw, 54px) !important;
+    margin: 0 0 1vh 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
   }
   
   .mobile-title .neon-text {
     display: block;
-    font-size: 48px !important;
+    font-family: var(--font-display);
+    font-weight: 900;
     color: #8CFF00; /* Neon green */
     text-shadow: 0 0 10px rgba(140, 255, 0, 0.2) !important;
     line-height: 1.05 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
   }
   
   .mobile-title .neon-text:first-of-type {
-    font-size: 76px !important;
-    margin-bottom: 14px !important;
+    order: 4 !important;
+    font-size: clamp(48px, 12vw, 76px) !important;
+    margin: 0 !important;
   }
   
   .mobile-title .neon-text:last-of-type {
-    font-size: 88px !important;
-    margin-bottom: 0 !important;
+    order: 5 !important;
+    font-size: clamp(56px, 14vw, 88px) !important;
+    margin: 0 0 3vh 0 !important;
   }
 
   .mobile-desc {
+    order: 6 !important;
     max-width: 320px !important;
     font-size: 16px !important;
-    line-height: 1.65 !important;
+    line-height: 1.7 !important;
     color: rgba(230, 235, 245, 0.88) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-bottom: 14px !important;
+    margin: 0 auto 3vh auto !important;
     text-align: center !important;
   }
 
   /* Buttons */
   .mobile-cta-group {
+    order: 7 !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -677,7 +704,7 @@ body.no-scroll {
   }
   
   .mobile-cta-group .btn {
-    width: 100% !important;
+    width: min(90%, 420px) !important;
     height: 50px !important;
     min-height: 50px !important;
     border-radius: 16px !important;
