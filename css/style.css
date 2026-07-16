@@ -3200,3 +3200,9 @@ body footer, body footer.section-masked {
   color: var(--text-secondary);
   margin: 0;
 }
+
+/* Hide mobile menu specific texts from desktop view */
+.mobile-text { display: none; }
+.desktop-text { display: inline; }
+.mobile-only-link { display: none; }
+.mobile-only-btn { display: none; }
