@@ -283,16 +283,30 @@ body.no-scroll {
   .nav-links {
     flex-direction: column;
     align-items: center;
-    gap: 2.5rem;
+    gap: 40px !important;
   }
 
   .nav-links a {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-family: var(--font-display);
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
     padding: 0.5rem 1rem;
     width: 100%;
     text-align: center;
+    transition: color 250ms ease, text-shadow 250ms ease !important;
   }
+
+  .nav-links a:hover,
+  .nav-links a:active {
+    color: #8CFF00 !important;
+    text-shadow: 0 0 10px rgba(140, 255, 0, 0.5) !important;
+  }
+
+  /* Handle dynamic text swapping */
+  .mobile-text { display: inline !important; }
+  .desktop-text { display: none !important; }
+  .mobile-only-link { display: list-item !important; }
 
   /* Grid Layout Restructuring (Stacking) */
   .grid-4, .grid-3, .grid-2 {
