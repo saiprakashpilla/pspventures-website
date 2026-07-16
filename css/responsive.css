@@ -781,4 +781,66 @@ body.no-scroll {
     width: 100% !important;
     height: 200px !important;
   }
+
+  /* ==========================================================================
+     GLOBAL MOBILE SPACING OPTIMIZATION
+     ========================================================================== */
+  
+  /* Reduce global section padding by ~25-30% */
+  .section {
+    padding-top: 3.25rem !important;
+    padding-bottom: 3.25rem !important;
+  }
+  
+  /* Hero section whitespace reduction */
+  .hero {
+    padding-top: 110px !important;
+    padding-bottom: 50px !important;
+  }
+
+  /* Reduce inline margin/padding overrides that create excessive gaps */
+  section[style*="margin-top: 60px"] {
+    margin-top: 40px !important;
+  }
+  section[style*="margin-bottom: 2rem"] {
+    margin-bottom: 1.5rem !important;
+  }
+  section[style*="padding-top: 80px"] {
+    padding-top: 55px !important;
+  }
+  section[style*="padding-bottom: 60px"] {
+    padding-bottom: 40px !important;
+  }
+  
+  /* Bring headings closer to content */
+  .section-header {
+    margin-bottom: 1.5rem !important;
+  }
+  h2[style*="margin-bottom: 8px"],
+  h3, h4 {
+    margin-bottom: 0.5rem !important;
+  }
+  .section-subtitle {
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Timeline spacing reduction */
+  .timeline-step {
+    margin-bottom: 28px !important; 
+  }
+  
+  /* Reduce empty space around standalone buttons */
+  .btn-primary, .btn-outlined-neon {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* Adjust inline large margins within founder/about content */
+  .founder-content > div[style*="margin-top: 2.5rem"] {
+    margin-top: 1.75rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .premium-divider[style*="margin: 30px"] {
+    margin: 20px 0 15px 0 !important;
+  }
 }
